@@ -1,0 +1,779 @@
+% 注释的快捷键: Ctrl + /
+
+% \documentclass[a4paper]{ctexart}
+\documentclass{book}
+
+\usepackage{xeCJK}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+% \usepackage{times}
+% \usepackage{mathptmx}
+% \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+% \DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+
+% \usepackage{unicode-math}
+% \setmathfont{XITS Math}
+% \setmathfont{XITS Math}[StylisticSet=1,range=cal]
+
+%下面是引用前文定理的代码
+% \usepackage{hyperref}
+% \begin{lemma}[test]\label{test}
+	%     test
+	%   \end{lemma}
+
+%   number: \ref{test}, name: \nameref{test}
+
+\newtheorem{theorem}{\indent 定理}[section]
+\newtheorem{definition}[theorem]{\indent 定义}
+\newtheorem{proposition}[theorem]{\indent 命题}
+\newtheorem{lemma}[theorem]{\indent 引理}
+\newtheorem{corollary}[theorem]{\indent 推论}
+\newtheorem{example}[theorem]{\indent 例}
+\newtheorem*{remark}{\indent 注}
+\renewcommand{\proofname}{\indent \bf 证明}
+\newcommand{\me}{{\rm e}}
+\newcommand{\md}{{\rm d}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+
+
+% \graphicspath{{Figures/}}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+    \tableofcontents
+    \newpage
+    
+    \chapter{高等代数}
+	\section{线性空间、对偶空间}
+        \subsection{对偶空间}
+
+        \subsection{协变张量与反变张量}
+
+        “The general formulation of covariance and contravariance refers to 
+        how the components of a coordinate vector transform under a change of basis.”
+        协变张量与反变张量描述了向量的坐标分量是如何随基向量的变化而变化的.
+
+        设线性空间 $V$ 有两组基:
+        \begin{align*}
+            &\{e_i\}:\quad e_1,\dots,e_n \\
+            &\{{e}'_i\}:\quad {e'}_1,\dots,{e'}_n
+        \end{align*}
+        它们的对偶基分别为
+        \begin{align*}
+            &\{{e^*}_i\}:\quad {e^*}_1,\dots,{e*}_n \\
+            &\{{e^*}'_i\}:\quad {e^*}'_1,\dots,{e^*}'_n
+        \end{align*}
+        并且 $\{e_i\}$ 到 $\{{e}'_i\}$ 的过渡矩阵为 $P = (a_{ij})$, 即
+        \begin{equation*}
+            ({e'}_1,\dots,{e'}_n) = (e_1,\dots,e_n)P = (e_1,\dots,e_n)
+            \begin{pmatrix}
+                a_{11} & \cdots & a_{1n} \\
+                \vdots & & \vdots \\
+                a_{n1} & \cdots & a_{nn}
+            \end{pmatrix}
+        \end{equation*}
+
+        \textbf{反变张量: }设 $v$ 是 $V$ 中的某个向量, 它在基 $\{e_i\},\,\{{e'}_i\}$ 下的坐标 $v[e_i],\,v[{e'}_i]$ 分别为 $\{X_i\}$ 和 $\{{X'}_i\}$, 即
+        \begin{equation*}
+            v = 
+            \begin{pmatrix}
+                e_1,\dots,e_n
+            \end{pmatrix}
+            \begin{pmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{pmatrix} = 
+            \begin{pmatrix}
+                {e'}_1,\dots,{e'}_n
+            \end{pmatrix}
+            \begin{pmatrix}
+                {x'}_1 \\ \vdots \\ {x'}_n
+            \end{pmatrix}
+        \end{equation*}
+        则由
+        \begin{equation*}
+            v = 
+            \begin{pmatrix}
+                {e'}_1,\dots,{e'}_n
+            \end{pmatrix}
+            \begin{pmatrix}
+                {x'}_1 \\ \vdots \\ {x'}_n
+            \end{pmatrix} = 
+            \begin{pmatrix}
+                e_1,\dots,e_n
+            \end{pmatrix}
+            P
+            % \begin{pmatrix}
+            %     a_{11} & \cdots & a_{1n} \\
+            %     \vdots & & \vdots \\
+            %     a_{n1} & \cdots & a_{nn}
+            % \end{pmatrix}
+            \begin{pmatrix}
+                {x'}_1 \\ \vdots \\ {x'}_n
+            \end{pmatrix}
+        \end{equation*}
+        知
+        \begin{equation*}
+            \begin{pmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{pmatrix} = 
+            P
+            % \begin{pmatrix}
+            %     a_{11} & \cdots & a_{1n} \\
+            %     \vdots & & \vdots \\
+            %     a_{n1} & \cdots & a_{nn}
+            % \end{pmatrix}
+            \begin{pmatrix}
+                {x'}_1 \\ \vdots \\ {x'}_n
+            \end{pmatrix}
+        \end{equation*}
+        于是
+        \begin{equation*}
+            \begin{pmatrix}
+                {x'}_1 \\ \vdots \\ {x'}_n
+            \end{pmatrix} = 
+            P^{-1}
+            % \begin{pmatrix}
+            %     a_{11} & \cdots & a_{1n} \\
+            %     \vdots & & \vdots \\
+            %     a_{n1} & \cdots & a_{nn}
+            % \end{pmatrix}^{-1}
+            \begin{pmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{pmatrix}
+        \end{equation*}
+        从表达式可以看出 $v$ 坐标分量的变化与基向量的变化是相反的, 也可以这么理解: $v$ 本就是不随基底改变的一个固有对象, 为了保持不变, 
+        它坐标分量的变化必须与基底变化相反, 才能抵消基变换带来的影响, 用式子表示即为
+        \begin{align*}
+            v &= 
+            \begin{pmatrix}
+                e_1,\dots,e_n
+            \end{pmatrix}
+            \begin{pmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{pmatrix} \\ &= 
+            \begin{pmatrix}
+                e_1,\dots,e_n
+            \end{pmatrix}PP^{-1}
+            \begin{pmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{pmatrix} \\ &= 
+            \begin{pmatrix}
+                {e'}_1,\dots,{e'}_n
+            \end{pmatrix}
+            \begin{pmatrix}
+                {x'}_1 \\ \vdots \\ {x'}_n
+            \end{pmatrix}
+        \end{align*}
+
+        \textbf{共变张量:}设 $f$ 是对偶空间 $V^*$ 中的元素, 即 $f$ 是 $V$ 上的线性函数, $\{y_i\} = \{f[e_i]\},\,\{{y'}_i\} = \{f[{e'}_i]\}$ 为它在这两组基下的坐标, 即
+        \begin{align*}
+            f &= \sum_{i=1}^{n}y_i e^*_i = \sum_{i=1}^{n}f(e_i)e^*_i \\
+            &= \sum_{i=1}^{n}y'_i {e^*}'_i = \sum_{i=1}^{n}f(e'_i){e^*}'_i
+        \end{align*}
+        而
+        \begin{align*}
+            \begin{pmatrix}
+                y'_1, \dots, y'_n
+            \end{pmatrix} &= 
+            \begin{pmatrix}
+                f(e'_1), \dots, f(e'_n)
+            \end{pmatrix} \\
+            &= f\left(
+                \begin{pmatrix}
+                    {e'}_1,\dots,{e'}_n
+                \end{pmatrix}
+            \right) \\
+            &= f\left(
+                \begin{pmatrix}
+                    e_1,\dots,e_n
+                \end{pmatrix} P
+            \right) \\
+            &= \begin{pmatrix}
+                f(e_1), \dots, f(e_n)
+            \end{pmatrix}P \\
+            &= \begin{pmatrix}
+                y_1, \dots, y_n
+            \end{pmatrix}P
+        \end{align*}
+        所以 $f$ 的坐标的变化与基底的变化保持一致.
+    
+    \section{线性映射、线性变换的矩阵表示}
+
+        设线性映射 $\mathcal{A}:V\rightarrow W$, $(\xi^1,\xi^2,\dots,\xi^m)$ 是 $V$ 的一组基, $(\eta^1,\eta^2,\dots,\eta^n)$ 是 $W$ 的一组基, 那么 $\mathcal{A}$ 在这两组基下的矩阵为,
+        \begin{equation*}
+            \mathcal{A}(\xi^1,\dots,\xi^m)=(\mathcal{A}\xi^1,\dots,\mathcal{A}\xi^m)=(\eta^1,\dots,\eta^n)
+            \begin{pmatrix}
+                a_{11} & \cdots & a_{1m} \\
+                \vdots &        & \vdots \\
+                a_{n1} & \cdots & a_{nm}
+            \end{pmatrix} = (\eta^1,\dots,\eta^n)A
+        \end{equation*}
+
+        设 $v$ 是 $V$ 中的向量, 并设
+        \begin{equation*}
+            v=x_1\xi^1+\cdots+x_m\xi^m=(\xi^1,\dots,\xi^m)
+            \begin{pmatrix}
+                x_1 \\
+                \vdots \\
+                x_m
+            \end{pmatrix}=(\xi^1,\dots,\xi^m)X
+        \end{equation*}
+        其中 $X$ 是 $v$ 在基 $(\xi^1,\dots,\xi^m)$ 下的坐标, 那么由于
+        \begin{align*}
+            \mathcal{A}v &=\mathcal{A}(x_1\xi^1+\cdots+x_m\xi^m) \\
+            &=\mathcal{A}(\xi^1,\dots,\xi^m)
+            \begin{pmatrix}
+                x_1 \\
+                \vdots \\
+                x_m
+            \end{pmatrix} \\
+            &=(\mathcal{A}\xi^1,\dots,\mathcal{A}\xi^m)
+            \begin{pmatrix}
+                x_1 \\
+                \vdots \\
+                x_m
+            \end{pmatrix} \\
+            & = (\eta^1,\dots,\eta^n)
+            \begin{pmatrix}
+                a_{11} & \cdots & a_{1m} \\
+                \vdots &        & \vdots \\
+                a_{n1} & \cdots & a_{nm}
+            \end{pmatrix}
+            \begin{pmatrix}
+                x_1 \\
+                \vdots \\
+                x_m
+            \end{pmatrix} \\
+            & = (\eta^1,\dots,\eta^n)AX
+        \end{align*}
+        $\mathcal{A}v$ 在基 $(\eta^1,\eta^2,\dots,\eta^n)$ 下的坐标为 $AX$.
+ 
+    \section{矩阵迹的几何解释}
+        给定一个矩阵 $A = (a_{ij})_{n\times n}$, 在高代中我们定义了矩阵的迹为:
+        \begin{equation*}
+            {\rm tr}(A) = \sum_{i = 1}^{n}a_{ii}
+        \end{equation*}
+        下面我们从比较几何的角度给出矩阵迹的一个定义, 并用这个定义重新证明关于迹的一些性质.
+
+    \subsection{用矩阵定义的向量场}
+        设矩阵  $A$ 如上, 定义 $\mathbb{R}^n$ 上的向量场 $F_A(X) := AX,\,\forall X\in\mathbb{R}^n$.
+        则可证明向量场 $F_A$ 的散度 ${\rm div}(F_A)$ 是常数, 且经计算恰好是我们所熟知的 $A$ 的迹, 我们就把这个值作为矩阵迹的定义, 即
+        \begin{equation*}
+            {\rm div}F_A := {\rm tr}A
+        \end{equation*}
+        \begin{remark}
+            矩阵 $A$ 对应某个线性变换 $\mathcal{A}\in\mathrm{End}(\mathbb{R}^n)$, 从函数角度来看,   $X\mapsto AX$ 是一个从 $\mathbb{R}^n$ 到 $\mathbb{R}^n$ 的向量值函数.
+            因为每个 $\mathbb{R}^n$ 上的函数都可视作 $\mathbb{R}^n$ 的向量丛的截面, 也即 $\mathbb{R}^n$ 上的光滑向量场, 这也解释了为什么这么定义 $F_A$.
+        \end{remark}
+        \begin{remark}
+            我们可以从多变量微积分的角度验证新定义的合理性,
+            \begin{equation*}
+                F_A(x^1,\dots,x^n) = (\sum_{i=1}^{n}a_{1i}x^i,\dots,\sum_{i=1}^{n}a_{ni}x^i).
+            \end{equation*}
+            则
+            \begin{equation*}
+                (\mathrm{div} F_A)(p) = \sum_{i=1}^{n}\frac{\partial F_A^i}{\partial x^i}\Bigg|_p = \sum_{i=1}^{n}a_{ii}
+            \end{equation*}
+            结果是一个常数且取值就是我们熟知的迹.
+        \end{remark}
+        因为上述求散度计算中仍有取主对角线元素相加的操作, 形式上和最原始的定义没有本质区别, 所以下面用微分形式的语言重新计算散度.
+
+        取 $\mathbb{R}^n$ 中的平坦度量, 并取自然坐标系 $(x^1,\dots,x^n)$, 则体积形式为
+        \begin{equation*}
+            \Omega = \md x^1\wedge\cdots\wedge\md x^n
+        \end{equation*}
+        向量场 $F_A$ 的表达式为
+        \begin{equation*}
+            F_A(x^1,\dots,x^n) = \sum_{i,\,j}a_{ij}x^j\frac{\partial}{\partial x^i}\Bigg|_{(x^1,\dots,x^n)}
+        \end{equation*}
+        向量场 $F_A$ 的散度定义为
+        \begin{equation}\label{div}
+            (\mathrm{div}F_A)\Omega = L_{F_A}\Omega
+        \end{equation}
+        因为
+        \begin{equation*}
+            L_{F_A}\md x^i = \md L_{F_A}x^i
+            = \md (F_Ax^i)
+            = \md \sum_{k=1}^{n}a_{ik}x^k
+            = \sum_{k=1}^{n}a_{ik}\md x^k
+        \end{equation*}
+        所以
+        \begin{align*}
+            L_{F_A}\Omega &= L_{F_A}(\md x^1\wedge\cdots\wedge\md x^n) \\
+            &= \sum_{i=1}^{n}\md x^1\wedge\cdots\wedge L_{F_A}\md x^i \wedge\cdots\wedge\md x^n \\
+            &= \sum_{i=1}^{n}\md x^1\wedge\cdots\wedge\left(\sum_{k=1}^{n}a_{ik}\md x^k\right)\wedge\cdots\wedge\md x^n \\
+            &= \left(\sum_{i=1}^{n}a_{ii}\right)\md x^1\wedge\cdots\wedge\md x^n \\
+            &= \left(\sum_{i=1}^{n}a_{ii}\right)\Omega
+        \end{align*}
+        经过一通计算我们再次验证了这么定义矩阵迹的合理性, 更进一步地, 我们可以用外微分的语言重新证明迹的几个性质, 比如, $\mathrm{tr}AB = \mathrm{tr}BA$.
+        
+        \subsection{迹的性质}
+        我们知道关于李导数和李括号有等式
+        \begin{equation*}
+            [L_X, L_Y] = L_{[X,Y]}, \quad\forall X,\,Y\in C^{\infty}(\mathbb{R}^n,T\mathbb{R}^n)
+        \end{equation*}
+        设矩阵 $A = (a_{ij}),\,B = (b_{ij})$, 对应的向量场为 $F_A,\,F_B$, 因为
+        \begin{equation*}
+            \mathrm{ent}_{ij}[A,B] = \sum_{k=1}^{n}a_{ik}b_{kj}-b_{ik}a_{kj}
+        \end{equation*}
+        所以
+        \begin{align*}
+            [F_A,F_B] &= \sum_{i=1}^{n}\left(\sum_{j=1}^{n}F_A^j\frac{\partial F_B^i}{\partial x^j}-F_B^j\frac{\partial F_A^i}{\partial x^j}\right)\frac{\partial}{\partial x^i} \\
+            &= \sum_{i=1}^{n}\left(\sum_{j=1}^{n}\sum_{k=1}^{n}a_{jk}b_{ij}x^k-b_{jk}a_{ij}x^k\right)\frac{\partial}{\partial x^i} \\
+            &= \sum_{i=1}^{n}\left(\sum_{k=1}^{n}\left(\sum_{j=1}^{n}b_{ij}a_{jk}-a_{ij}b_{jk}\right)x^k\right)\frac{\partial}{\partial x^i} \\
+            &= \sum_{i=1}^{n}\left(\sum_{k=1}^{n}\mathrm{ent}_{ik}[B,A]x^k\right)\frac{\partial}{\partial x^i} \\
+            &= F_{[B,A]}
+        \end{align*}
+        因此
+        \begin{align*}
+            \mathrm{div}(F_{[B,A]})\Omega &= L_{F_{[B,A]}}\Omega \\
+            &= L_{[F_A,F_B]}\Omega \\
+            &= [L_{F_A},L_{F_B}]\Omega \\
+            &= (L_{F_A}L_{F_B}-L_{F_B}L_{F_A})\Omega \\
+            &= (\mathrm{div}F_A)(\mathrm{div}F_B)\Omega - (\mathrm{div}F_B)(\mathrm{div}F_A)\Omega \\
+            &= 0
+        \end{align*}
+        从而推出
+        \begin{equation*}
+            \mathrm{tr}(BA-AB) = \mathrm{tr}[B,A] = \mathrm{div}F_{[B,A]} = 0
+        \end{equation*}
+        也即
+        \begin{equation*}
+            \mathrm{tr}(AB) = \mathrm{tr}(BA)
+        \end{equation*}
+        若 $A,\,B$ 不是 $n$ 阶方阵, 不妨设 $A = (a_{ij})_{m\times n},\,B = (b_{ij})_{n\times m}$, 其中 $m<n$,
+        令 $A_1 = \begin{pmatrix}
+            A_{m\times n} \\ O_{(n-m)\times n}
+        \end{pmatrix},\,B_1 = \begin{pmatrix}
+            B_{n\times m},\,O_{n\times(n-m)}
+        \end{pmatrix}$
+        于是有
+        \begin{equation*}
+            \mathrm{tr}(AB) = \mathrm{tr}(A_1B_1) = \mathrm{tr}(B_1A_1) = \mathrm{tr}(BA)
+        \end{equation*}
+
+    \section{外代数与Lie代数}
+        设 $V$ 是 $n$ 维线性空间, 我们有 $V$ 对应的外代数 $(E(V),\,\wedge)$, 也即
+        \begin{equation*}
+            E(V) = \bigoplus_{k=1}^{n}\bigwedge^{k}V
+        \end{equation*}
+        在 $E(V)$ 中我们可以定义 “微分” $\md$, 它满足:
+        \begin{itemize}
+            \item $\md\in{\rm End}(\bigwedge^{k}V,\,\bigwedge^{k+1}V),\quad k=0,\,1,\dots,\,n-1.$
+            \item $\md(u_1\wedge\cdots\wedge u_s) = \sum\limits_{i = 1}^{s}(-1)^{i-1}u_1\wedge\cdots\wedge \md u_i\wedge\cdots\wedge u_s.$
+            \item $\md\md u = 0\quad \forall u\in V.$
+        \end{itemize}
+        实际上我们只需定义线性映射
+        \begin{align*}
+            \md:V&\rightarrow\bigwedge^2V\\
+            v&\mapsto\md v
+        \end{align*}
+        使其满足
+        \begin{itemize}
+            \item $\md(u\wedge v) = \md u\wedge v-u\wedge\md v$
+        \end{itemize}
+        再用线性性和外积使其扩充为 $E(V)$ 到自身的线性映射, 这样再加上 $\md^2 = 0$ 就可以定义一个微分运算了.
+
+        接着上面的讨论, 我们考虑线性空间的对偶:
+        \begin{align*}
+            \md^*:\bigwedge^2V^*&\rightarrow V^*\\
+            u\wedge v&\mapsto \md(u\wedge v)=:[u,v]
+        \end{align*}
+        我们有意把 $\md(u\wedge v)$ 记为 $[u,v]$ 是有考量的, 因为我们有如下定理:
+        \begin{theorem}\label{lie}
+            $\md$ 满足 $\md^2 = 0$ 当且仅当 $\md^*$ 满足 {\rm Jacobi} 恒等式, 此时 $(\mathfrak{g} = V,\,[\cdot,\cdot])$ 构成一个 {\rm Lie} 代数
+        \end{theorem}
+        \begin{proof}
+            对 $\forall u\in V$, 设 
+            \begin{align*}
+                &\md u=\sum\limits_{i=1}^{r}v_i\wedge w_i \\
+                &\md v_i=\sum\limits_{j=1}^{s}a_{ij}\wedge b_{ij} \\
+                &\md w_i=\sum\limits_{k=1}^{t}c_{ik}\wedge d_{ik}
+            \end{align*}
+            于是
+            \begin{align*}
+                &[[\alpha,\beta],\gamma](u) \\
+                =&\md^*(\md^*(\alpha\wedge\beta)\wedge\gamma)(u) \\
+                =&(\md^*(\alpha\wedge\beta)\wedge\gamma)(\md u) \\
+                =&(\md^*(\alpha\wedge\beta)\wedge\gamma)(\sum_{i=1}^{r}v_i\wedge w_i) \\
+                =&\sum_{i=1}^{r}(\md^*(\alpha\wedge\beta)(v_i)\gamma(w_i)-(\md^*(\alpha\wedge\beta))(w_i)\gamma(v_i)) \\
+                =&\sum_{i=1}^{r}\left((\alpha\wedge\beta)(\md v_i)\gamma(w_i)-(\alpha\wedge\beta)(\md w_i)\gamma(v_i)\right) \\
+                =&\sum_{i=1}^{r}\left((\alpha\wedge\beta)\left(\sum_{j=1}^{s}a_{ij}\wedge b_{ij}\right)\gamma(w_i)-(\alpha\wedge\beta)\left(\sum_{k=1}^{t}c_{ik}\wedge d_{ik}\right)\gamma(v_i)\right) \\
+                =&\sum_{i=1}^{r}\sum_{j=1}^{s}\alpha(a_{ij})\beta(b_{ij})\gamma(w_i)-\alpha(b_{ij})\beta(a_{ij})\gamma(w_i) \\
+                &-\sum_{i=1}^{r}\sum_{k=1}^{t}\alpha(c_{ik})\beta(d_{ik})\gamma(v_i)-\alpha(d_{ik})\beta(c_{ik})\gamma(v_i) \\
+            \end{align*}
+            于是
+            \begin{align*}
+                &\left([[\alpha,\beta],\gamma]+[[\beta,\gamma],\alpha]+[[\gamma,\alpha],\beta]\right)(u) \\
+                =&\sum_{i=1}^{r}\sum_{j=1}^{s}\alpha(a_{ij})\beta(b_{ij})\gamma(w_i)-\alpha(b_{ij})\beta(a_{ij})\gamma(w_i)+\beta(a_{ij})\gamma(b_{ij})\alpha(w_i) \\
+                &\quad-\beta(b_{ij})\gamma(a_{ij})\alpha(w_i)+\gamma(a_{ij})\alpha(b_{ij})\beta(w_i)-\gamma(b_{ij})\alpha(a_{ij})\beta(w_i) \\
+                &-\sum_{i=1}^{r}\sum_{k=1}^{t}\alpha(c_{ik})\beta(d_{ik})\gamma(v_i)-\alpha(d_{ik})\beta(c_{ik})\gamma(v_i)+\beta(c_{ik})\gamma(d_{ik})\alpha(v_i) \\
+                &\quad-\beta(d_{ik})\gamma(c_{ik})\alpha(v_i)+\gamma(c_{ik})\alpha(d_{ik})\beta(v_i)-\gamma(d_{ik})\alpha(c_{ik})\beta(v_i) \\
+                =&\sum_{i=1}^{r}\sum_{j=1}^{s}(\alpha\wedge\beta\wedge\gamma)(a_{ij}\wedge b_{ij}\wedge w_i)-\sum_{i=1}^{r}\sum_{k=1}^{t}(\alpha\wedge\beta\wedge\gamma)(c_{ik}\wedge d_{ik}\wedge v_i) \\
+                =&(\alpha\wedge\beta\wedge\gamma)\left(\sum_{i=1}^{r}\sum_{j=1}^{s}a_{ij}\wedge b_{ij}\wedge w_i-\sum_{i=1}^{r}\sum_{k=1}^{t}c_{ik}\wedge d_{ik}\wedge v_i\right) \\
+                =&(\alpha\wedge\beta\wedge\gamma)(\md^2 u)
+            \end{align*}
+            因此对 $\forall\,u\in V$,
+            \begin{gather*}
+                \md^2 u = 0 \\
+                \Longleftrightarrow \left([[\alpha,\beta],\gamma]+[[\beta,\gamma],\alpha]+[[\gamma,\alpha],\beta]\right)(u) = 0
+            \end{gather*}
+            从而定理得证.
+        \end{proof}
+        定理 \ref{lie} 表明一个{\rm Lie}代数 $\mathfrak{g}$ 可对应一个带有微分映射的外代数 $E(V)$, 而在 $E(V)$ 上我们可以做上同调,
+        这个上同调就叫{\rm Lie}代数 $\mathfrak{g}$ 的上同调.
+
+    \chapter{黎曼几何}
+    \section{仿射联络}
+        在局部坐标 $\left(U;x^i\right)$ 下有
+        \begin{equation*}
+            D_{\pd{}{x^i}}\pd{}{x^j}=\Gamma^{k}_{ji}\pd{}{x^k}
+        \end{equation*}
+        其中 $\Gamma^{k}_{ji}$ 称为 $D$ 在局部坐标下的\textbf{联络系数}.
+
+        我们进一步定义任意 $(r,s)$ 型张量的协变导数, 首先定义1阶微分形式 $\alpha$ 的协变导数:
+        \begin{align*}
+            \left(D_{X}\alpha\right)(Y) &= C^1_1\left((D_X\alpha)\otimes Y\right) \\
+            &= C^1_1\left(D_X(\alpha\otimes Y)-\alpha\otimes(D_XY)\right) \\
+            &= X(\alpha(Y))-\alpha(D_XY)
+        \end{align*}
+        特别地,
+        \begin{equation*}
+            D_{\pd{}{x^i}}{\md x^j} = -\Gamma_{ki}^j{\md x^k}
+        \end{equation*}
+
+        对于一般的 $(r,s)$ 型张量 $\tau\in\mathcal{T}^r_s(M)$, 定义它沿向量场 $X$ 的协变导数为
+        \begin{align*}
+            &(D_X\tau)(\alpha^1,\dots,\alpha^r,X_1,\dots,X_s) \\
+            =& X\left(\tau(\alpha^1,\dots,\alpha^r,X_1,\dots,X_s)\right) \\
+            &-\sum_{a=1}^{r}\tau\left(\alpha^1,\dots,D_X\alpha^a,\dots,\alpha^r,X_1,\dots,X_s\right) \\
+            &-\sum_{b=1}^{s}\tau\left(\alpha^1,\dots,\alpha^r,X_1,\dots,D_X{X^b},\dots,X_s\right)
+        \end{align*}
+
+        定义一个 $(r,s)$ 型张量场 $\tau$ 沿向量场 $X$ 的协变微分为
+        \begin{equation*}
+            (D\tau)(\alpha^1,\dots,\alpha^r,X_1,\dots,X_s,X):=(D_X\tau)(\alpha^1,\dots,\alpha^r,X_1,\dots,X_s)
+        \end{equation*}
+        可以看到 $D$ 把 $\tau$ 变为一个 $(r,s+1)$ 型张量. 在局部坐标 $\left(U;x^i\right)$ 下的分量表达式为
+        \begin{align*}
+            \tau^{i_1\cdots i_r,i}_{j_1\cdots j_s} =& \pd{\tau^{i_1\cdots i_r}_{j_1\cdots j_s}}{x^i} + \sum_{a=1}^{r}\tau^{i_1\cdots i_{a-1}k i_{a+1}\cdots i_r}_{j_1\cdots j_s}\Gamma^{i_a}_{ki} \\
+            & -\sum_{b=1}^{s}\tau^{i_1\cdots i_r}_{j_i\cdots j_{b-1}k j_{b+1}\cdots j_s}\Gamma^{k}_{j_b i}
+        \end{align*}
+    \section{黎曼联络}
+        定义挠率张量 $T$ 为
+        \begin{equation*}
+            T(X,Y)=D_XY-D_XY-[X,Y]
+        \end{equation*}
+        在局部坐标 $\left(U;x^i\right)$ 下 $T$ 的表达式为
+        \begin{equation*}
+            T = \left(\Gamma^{k}_{ji}-\Gamma^{k}_{ij}\right)\pd{}{x^k}\otimes\md x^i\otimes\md x^j
+        \end{equation*}
+        若由联络定义的挠率张量 $T$ 恒等于零, 则称该联络是\textbf{无挠联络}. 由局部坐标表达式可知无挠联络的联络系数满足 $\Gamma^{k}_{ji}=\Gamma^{k}_{ij}$.
+
+        若联络 $D$ 和 度量 $g$ 满足 $g$ 的协变微分 $Dg\equiv0$, 则称联络和度量是\textbf{相容的}. 该条件等价于 $(D_Zg)(X,Y)=0,\;\forall X,Y,Z\in\mathfrak{X}(M)$ 因为
+        \begin{equation*}
+            (D_Zg)(X,Y) = Z\left\langle X,Y\right\rangle - \left\langle D_ZX,Y\right\rangle - \left\langle X,D_ZY\right\rangle
+        \end{equation*}
+        所以联络和度量相容当且仅当
+        \begin{equation*}
+            Z\left\langle X,Y\right\rangle = \left\langle D_ZX,Y\right\rangle + \left\langle X,D_ZY\right\rangle
+        \end{equation*}
+
+        \subsection{黎曼几何基本定理}
+        \begin{theorem}
+            设 $(M,g)$ 是黎曼流形, 则 $M$ 上存在唯一一个与 $g$ 相容的无挠联络 $D$, 我们称之为\textbf{黎曼联络}.
+        \end{theorem}
+
+        \begin{theorem}[Koszul公式]
+            若联络 $D$ 满足无挠且与度量 $\left\langle \cdot,\cdot\right\rangle$ 相容, 则有公式
+            \begin{align} \label{eq:koszul}
+                2\left\langle D_XY,Z\right\rangle =& X\left\langle Y,Z\right\rangle+ Y\left\langle X,Z\right\rangle -Z\left\langle X,Y\right\rangle \nonumber \\
+                & +\left\langle [X,Y],Z\right\rangle -\left\langle X,[Y,Z]\right\rangle -\left\langle Y,[X,Z]\right\rangle
+            \end{align}
+        \end{theorem}
+        利用Koszul公式可以很容易证明黎曼几何基本定理.
+
+    \section{黎曼联络系数的坐标变换}
+        \begin{equation*}
+            \Gamma_{ij}^{k}=\tilde{\Gamma}_{pq}^{r}\frac{\partial\tilde{x}^p}{\partial x^i}\frac{\partial\tilde{x}^q}{\partial x^j}\frac{\partial x^k}{\partial\tilde{x}^r}+\frac{\partial^2\tilde{x}^r}{\partial x^i \partial x^j}\frac{\partial x^k}{\partial\tilde{x}^r}
+        \end{equation*}
+        因为
+        \begin{align*}
+            0 =& \frac{\partial}{\partial x^i}\left(\frac{\partial x^k}{\partial\tilde{x}^r}\frac{\partial\tilde{x}^r}{\partial x^j}\right) \\
+            =& \frac{\partial}{\partial x^i}\left(\frac{\partial x^k}{\partial\tilde{x}^r}\right)\frac{\partial\tilde{x}^r}{\partial x^j} + \frac{\partial x^k}{\partial\tilde{x}^r}\frac{\partial^2\tilde{x}^r}{\partial x^i\partial x^j} \\
+            =& \frac{\partial\tilde{x}^s}{\partial x^i}\frac{\partial}{\partial\tilde{x}^s}\left(\frac{\partial x^k}{\partial\tilde{x}^r}\right)\frac{\partial\tilde{x}^r}{\partial x^j} + \frac{\partial x^k}{\partial\tilde{x}^r}\frac{\partial^2\tilde{x}^r}{\partial x^i\partial x^j} \\
+            =& \frac{\partial\tilde{x}^s}{\partial x^i}\frac{\partial^2 x^k}{\partial\tilde{x}^r\partial\tilde{x}^s}\frac{\partial\tilde{x}^r}{\partial x^j} + \frac{\partial x^k}{\partial\tilde{x}^r}\frac{\partial^2\tilde{x}^r}{\partial x^i\partial x^j} \\
+        \end{align*}
+        故
+        \begin{equation*}
+            \frac{\partial^2 x^k}{\partial\tilde{x}^r\partial\tilde{x}^s}\frac{\partial\tilde{x}^s}{\partial x^i}\frac{\partial\tilde{x}^r}{\partial x^j} = -\frac{\partial^2\tilde{x}^r}{\partial x^i\partial x^j}\frac{\partial x^k}{\partial\tilde{x}^r}\Big(\text{一般而言}\neq0\Big)
+        \end{equation*}
+
+    \section{由联络定义的各种微分算子}
+        \begin{itemize}
+            \item \textbf{散度算子}div: $\mathrm{div}(X)=C_1^1(DX)$
+            \begin{equation*}
+                (\mathrm{div}X)|_U=X^i_{,i}=\pd{X^i}{x^i}+X^k\Gamma^i_{ki}=\frac{1}{\sqrt{G}}\pd{}{x^i}(\sqrt{G}X^i).
+            \end{equation*}
+            \item \textbf{梯度算子}$\nabla$: $\left\langle \nabla f,X\right\rangle:=\md{f}(X)=X(f)$ 
+            \begin{equation*}
+                (\nabla f)|_U = f^i\pd{}{x^i}=f_jg^{ij}\pd{}{x^i}=g^{ij}\pd{f}{x^j}\pd{}{x^i}
+            \end{equation*}
+            \item \textbf{Laplace算子} $\Delta$: $\Delta:=\mathrm{div}\circ\nabla$
+            \begin{equation*}
+                (\Delta f)|_U = \frac{1}{\sqrt{G}}\pd{}{x^i}\left(\sqrt{G}g^{ij}\pd{f}{x^j}\right)
+            \end{equation*}
+            \item \textbf{函数的Hessian算子} $\mathrm{Hess}(f):=D(Df)=D(\md f)$
+            \begin{equation*}
+                (\mathrm{Hess}(f))(X,Y)=Y(X(f))-(D_YX)(f)
+            \end{equation*}
+            分量的局部坐标表达式为
+            \begin{equation*}
+                \mathrm{Hess}(f)_{ij}=\pd{}{x^j}\left(\pd{f}{x^i}\right)-\Gamma^{k}_{ij}\pd{f}{x^k}=f_{i,j}
+            \end{equation*}
+            Hessian算子与Laplace算子的关系是
+            \begin{equation*}
+                \Delta f=\mathrm{tr}_g(\mathrm{Hess}(f))=\mathrm{tr}(\mathrm{Hess}(f))
+            \end{equation*}
+            用分量表示即
+            \begin{equation*}
+                \Delta f = g^{ij}f_{i,j}
+            \end{equation*}
+            \item \textbf{Hodge星 $*$ 算子}: 设 $\omega\in A^r(M)$ 且
+            \begin{equation*}
+                \omega|_U=\frac{1}{r!}\omega_{i_1}\md{x^{i_1}}\wedge\cdots\wedge\md{x^{i_r}}
+            \end{equation*}
+            命
+            \begin{equation*}
+                (*\omega)|_U=\frac{\sqrt{G}}{r!(m-r)!}\delta^{1\cdots m}_{i_1\cdots i_m}\omega^{i_1\cdots i_r}\md{x^{i_{r+1}}}\wedge\cdots\wedge\md{x^{i_m}}
+            \end{equation*}
+            \item \textbf{余微分算子}$\delta := (-1)^{mr+1}*\circ\md\circ*=\md^*$
+            \begin{equation*}
+                (\md{\varphi},\psi)=(\varphi, \delta\psi)
+            \end{equation*}
+            \item \textbf{Hodge-Laplace算子}$\bar{\Delta}:=\md\circ\delta+\delta\circ\md$
+            \begin{equation*}
+                \bar{\Delta}f=\Delta f
+            \end{equation*}
+        \end{itemize}
+    \section{不同双曲模型之间的等距同构}
+    \subsection{三种双曲模型}
+        \begin{itemize}
+            \item Poincare上半平面模型 $\mathbb{H}^n:=\left\{\left(x^1,\dots,x^n\right)\in\mathbb{R}^n\,\Big|\,x^n>0\right\}$  
+            
+            其上的度量定义为
+            \begin{equation*}
+                h=\frac{(\md x^1)^2+\cdots+(\md x^n)^2}{(x^n)^2}
+            \end{equation*}
+
+            \item Poincare球模型 $D^n:=\left\{\left(y^1,\dots,y^n\right)\in\mathbb{R}^n\,\Big|\,|y|<1\right\}$
+            
+            其上的度量定义为
+            \begin{equation*}
+                g_{-1}=\frac{(\md y^1)^2+\cdots+(\md y^n)^2}{(1-|y|^2)^2}
+            \end{equation*}
+
+            \item Minkowski模型: $\mathbb{R}^{n+1}$ 上定义Lorentz内积 $l=\langle\cdot,\cdot\rangle$
+            \begin{equation*}
+                l(x,y)=\langle x,y\rangle_1=\sum_{i=1}^{n}x^iy^i-x^{n+1}y^{n+1},\quad\forall x,\,y\in\mathbb{R}^n,
+            \end{equation*}
+            考虑 $\mathbb{R}^{n+1}$ 中双叶双曲面的上半叶
+            \begin{equation*}
+                M^n:=\left\{z=\left(z^1,\dots,z^{n+1}\right)\in\mathbb{R}^{n+1}\,\Big|\,\langle z,z\rangle=-1\,\text{且}\,z^{n+1}>0\right\},
+            \end{equation*}
+            其上的度量定义为嵌入映射 $i$ 诱导的拉回度量 $m=i^*l$.
+        \end{itemize}
+    \subsection{双曲模型间的等距同构}
+        \begin{itemize}
+            \item $M^n$ 与 $D^n$ 之间: 由球极投影给出
+            \begin{align*}
+                \varphi:M^n&\rightarrow D^n \\
+                \left(z^1,\dots,z^{n+1}\right)&\mapsto\left(y^1,\dots,y^n\right)=\left(\frac{z^1}{1+z^{n+1}},\dots,\frac{z^n}{1+z^{n+1}}\right) \\
+                \varphi^{-1}:D^n&\rightarrow M^n \\
+                \left(y^1,\dots,y^n\right)&\mapsto\left(z^1,\dots,z^{n+1}\right)=\left(\frac{2y^1}{1-|y|^2}\cdots\frac{2y^n}{1-|y|^2},\frac{1+|y|^2}{1-|y|^2}\right)
+            \end{align*}
+            \item $\mathbb{H}^n$ 与 $D^n$ 之间: 由分式线性变换的推广, Cayley变换给出
+            \begin{align*}
+                \psi:\mathbb{H}^n&\rightarrow D^n \\
+                \mathbb{R}^{n-1}\times\mathbb{R}\ni\left(\vec{x},x^n\right)&\mapsto\left(\vec{y},y^n\right)=\left(\frac{2\vec{x}}{|\vec{x}|^2+(x^n+1)^2},\frac{|\vec{x}|^2+(x^n)^2-1}{|\vec{x}|^2+(x^n+1)^2}\right) \\
+                \psi^{-1}:D^n&\rightarrow\mathbb{H}^n \\
+                \mathbb{R}^{n-1}\times\mathbb{R}\ni\left(\vec{y},y^n\right)&\mapsto\left(\vec{x},x^n\right)=\left(\frac{2\vec{y}}{|\vec{y}|^2+(y^n-1)^2},\frac{1-|\vec{y}|^2-(y^n)^2}{|\vec{y}|^2+(y^n-1)^2}\right)
+            \end{align*}
+        \end{itemize}
+        可以试着用它们之间的同构给出 $\mathrm{SO}(2,1)$ 到 $\mathrm{SL}(2,\mathbb{R})$ 的显式同构.
+    
+    \section{黎曼曲率张量的对称性}
+        设 $V$ 为 $n$ 维线性空间, 若 $R\in(V^*)^{\otimes4}$ 且满足:
+        \begin{enumerate}
+            \item $R(X,Y,Z,W) = -R(Y,X,Z,W) = -R(X,Y,W,Z) = R(Z,W,X,Y)$
+            \item $R(X,Y,Z,W) + R(Y,Z,X,W) + R(Z,X,Y,W) = 0$
+        \end{enumerate} 对 $\forall X,\,Y,\,Z,\,W\in V$ 均成立.
+        则称 $R$ 为代数黎曼曲率张量, 全体代数黎曼曲率张量构成的线性空间记为 $\mathcal{R}(V^*)$.
+
+        我们分别记 $\Sigma^n(V^*),\,\bigwedge^n(V^*)$ 为对偶空间 $V^*$ 的对称张量积和反对称张量积, 则由第一条可知 $\mathcal{R}(V^*)\subset\Sigma^2(\bigwedge^2V^*)$.
+        容易看出 $\bigwedge^4V^*$ 也为 $\Sigma^2(\bigwedge^2V^*)$ 的一个子空间, 而且若在 $V$ 上有度量 $\langle \cdot,\cdot\rangle_g$, 由第二条可推出
+        \begin{equation*}
+            \textstyle \Sigma^2(\bigwedge^2V^*) = \mathcal{R}(V^*)\oplus\bigwedge^4V^*
+        \end{equation*}
+        直和项互相正交.
+
+        我们分两步说明上述论断. 首先对 $\forall R\in\mathcal{R}(V^*),\,S\in\bigwedge^4V^*$, 设 $e_i$ 为 $V$ 的一组标准正交基, 则
+        \begin{align*}
+            & \langle R,S\rangle_g \\
+            = & \sum_{i,j,k,l}R(e_i,e_j,e_k,e_l)S(e_i,e_j,e_k,e_l) \\
+            = & \frac{1}{3}\sum_{i,j,k,l}\left(R(e_i,e_j,e_k,e_l) + R(e_j,e_k,e_i,e_l) + R(e_k,e_i,e_j,e_l)\right)S(e_i,e_j,e_k,e_l) \\
+            = & 0
+        \end{align*}
+
+        其次, 对每一个 $T\in\Sigma^2(\bigwedge^2V^*)\subset(V^*)^{\otimes4}$, 我们原本就有一个将一般(0,4)型张量化为反对称张量的算子 $\mathcal{A}$, 在附加的对称性下, 反对称算子在 $\Sigma^2(\bigwedge^2V^*)$ 上的作用可以写为
+        \begin{equation*}
+            \mathcal{A}(T)(X,Y,Z,W) = \frac{1}{3}\left(T(X,Y,Z,W) + T(Y,Z,X,W) + T(Z,X,Y,W)\right)
+        \end{equation*}
+        可以验证这样定义的 $\mathcal{A}(T)$ 确实为一个反对称张量:
+        \begin{align*}
+            & \mathcal{A}(T)(Y,Z,W,X) \\
+            =& \frac{1}{3}\left(T(Y,Z,W,X) + T(Z,W,Y,X) + T(W,Y,Z,X)\right) \\
+            =& -\frac{1}{3}\left(T(X,Y,Z,W) + T(Y,Z,X,W) + T(Z,X,Y,W)\right) \\
+            =& -\mathcal{A}(T)(X,Y,Z,W)
+        \end{align*}
+        \begin{remark}
+            因为 $S_4 = \langle(12),(1234)\rangle$ 而 $(12),\,(1234)$ 在 $\mathcal{A}(T)$ 上的作用均符合反对称张量符号变化规律, 所以 $\mathcal{A}(T)$ 是反对称张量.
+        \end{remark}
+
+        得到反对称张量的分量后就可以很容易得到代数黎曼曲率张量的分量了:
+        \begin{equation*}
+            T_R := T - \mathcal{A}(T)
+        \end{equation*}
+        可以验证 $T_R\in\mathcal{R}(V^*)$
+        \begin{align*}
+            & T_R(X,Y,Z,W) + T_R(Y,Z,X,W) + T_R(Z,X,Y,W) \\
+            =& T(X,Y,Z,W) + T(Y,Z,X,W) + T(Z,X,Y,W) - 3\mathcal{A}(T) \\
+            =& 0
+        \end{align*}
+
+        \begin{proposition}
+            $n$ 维线性空间 $V$ 上的代数黎曼曲率张量的维数为 $\displaystyle \frac{n^2(n^2-1)}{12}$
+        \end{proposition}
+        \begin{proof}
+            因为
+            \begin{equation*}
+                \textstyle \mathrm{dim}\,\mathcal{R}(V^*) = \mathrm{dim}\,\Sigma^2(\bigwedge^2V^*) - \mathrm{dim}\,\bigwedge^4V^*
+            \end{equation*}
+            所以
+            \begin{equation*}
+                \mathrm{dim}\,\mathcal{R}(V^*) = \frac{1}{2}\binom{n}{2}\left(\binom{n}{2} - 1\right)-\binom{n}{4} = \frac{n^2(n^2-1)}{12}
+            \end{equation*}
+        \end{proof}
+    \chapter{复分析、复几何}
+    \section{实线性空间与复线性空间}
+        流形 $\mathbb{C}^n$ 中每点的坐标为 $(z^1,\dots,z^n)$, 记 $z^j=x^j+iy^j$, 于是 $x^1,\dots,x^n$ 和 $y^1,\dots,y^n$ 是 $\mathbb{C}^n$ 的实坐标.
+        对 $\forall p\in\mathbb{C}^n$, 切空间 $T_p\mathbb{C}^n$ 有一组基 $\pd{}{x^1},\dots,\pd{}{x^n}$, $\pd{}{y^1},\dots,\pd{}{y^n}$; 余切空间 $T^*_p\mathbb{C}$
+        有一组基 $\md x^1,\dots,\md x^n$, $\md y^1,\dots,\md y^n$.
+
+        定义 $J_p:T_p\mathbb{C}^n\rightarrow T_p\mathbb{C}^n$
+        \begin{equation*}
+            J_p\left(\pd{}{x^j}\right)=\pd{}{y^j},\qquad J_p\left(\pd{}{y^j}\right)=-\pd{}{x^j}
+        \end{equation*}
+        它的对偶变换为 $J^*_p:T^*_p\mathbb{C}^n\rightarrow T^*_p\mathbb{C}^n$
+        \begin{equation*}
+            J^*_p\left(\md x^j\right)=-\md{y^j},\qquad J^*_p\left(\md{y^j}\right)=\md{x^j}
+        \end{equation*}
+        因为 $(J_p)^2=-\mathrm{id}$, 所以 $(J^*_p)^2=-\mathrm{id}$, 于是 $J_p$ 和 $J^*_p$ 均可对角化且特征值均为 $\pm i$.
+
+        计算可发现 $J^*_p$ 的属于 $i$ 的特征子空间的一组基为 $\md{z^1},\dots,\md{z^n}$, 属于 $-i$ 的特征子空间的一组基为 $\md{\bar{z}^1}\dots,\md{\bar{z}^n}$, 其中
+        \begin{equation*}
+            \md{z^j}=\md{x^j}+i\md{y^j},\qquad \md{\bar{z}^j}=\md{x^j}-i\md{y^j}
+        \end{equation*}
+        于是对应地它的对偶空间 $T_p\mathbb{C}^n\otimes\mathbb{C}$ 的属于 $i$ 的特征子空间的一组基为 $\pd{}{z^1},\dots\pd{}{z^n}$, 属于 $-i$ 的特征子空间的一组基为 $\pd{}{\bar{z}^1},\dots,\pd{}{\bar{z}^n}$, 其中
+        \begin{equation*}
+            \pd{}{z^j}=\frac{1}{2}\left(\pd{}{x^j}-i\pd{}{y^j}\right),\qquad \pd{}{\bar{z}^j}=\frac{1}{2}\left(\pd{}{x^j}+i\pd{}{y^j}\right)
+        \end{equation*}
+        
+        回顾 Cauchy-Riemann 方程: 设 $f=u+iv$ 是全纯函数, 则 $u(x,y),v(x,y)$ 关于 $x,y$ 的偏导数满足:
+        \begin{equation*}
+            \pd{u}{x}=\pd{v}{y},\qquad \pd{u}{y}=-\pd{v}{x}
+        \end{equation*}
+        代入 $\pd{f}{\bar{z}}$ 可得
+        \begin{equation*}
+            \pd{f}{\bar{z}}=\frac{1}{2}\left(\pd{f}{x}+i\pd{f}{y}\right)=\frac{1}{2}\left(\pd{u}{x}-\pd{v}{y}\right)+i\frac{1}{2}\left(\pd{v}{x}+i\pd{u}{y}\right)=0
+        \end{equation*}
+        于是 $f$ 全纯当且仅当 $\pd{f}{\bar{z}}\equiv0$, 推广到多元复变量即: $f(z^1,\dots,z^n)$ 是多元全纯函数当且仅当每个 $\pd{f}{\bar{z}^j}\equiv0$.
+        
+    \chapter{Lie群基础}
+    \section{Lie群同态}
+        \begin{theorem}
+            设 $G,\,H$ 为 $\mathrm{Lie}$ 群, 且 $G$ 连通, 它们的 $\mathrm{Lie}$ 代数分别为 $\mathfrak{g,\,h}$. 现有两个 $\mathrm{Lie}$ 群同态 $\varphi,\,\psi:G\rightarrow H$, 
+            若 $\varphi,\,\psi$ 诱导的 $\mathrm{Lie}$ 代数同态 $\varphi_*,\,\psi_*:\mathfrak{g}\rightarrow\mathfrak{h}$ 是相同的, 即 $\varphi_*=\psi_*$, 那么 $\varphi=\psi$.
+        \end{theorem}
+        \begin{proof}
+            设 $\omega_1,\dots,\omega_n$ 是 $\mathfrak{h}$ 的一组基, 也即 $H$ 上处处线性无关的一组左不变一次微分式.
+            并分别记 $\pi_1:G\times H\rightarrow G$, $\pi_2:G\times H\rightarrow H$ 为自然投影, 则可验证
+            \begin{equation*}
+                \left\{\pi_1^*\varphi^*\omega_i-\pi_2^*\omega_i\,\Big|\,i=1,\dots,n\right\} = \left\{\pi_1^*\psi^*\omega_i-\pi_2^*\omega_i\,\Big|\,i=1,\dots,n\right\}
+            \end{equation*}
+            张成的理想都是 $G\times H$ 上的左不变(暂时不知道有什么用)微分理想, 且 $\varphi(e) = \psi(e) = e$, 由微分理想的结果再加上 $G$ 是连通的可知 $\varphi = \psi$.
+        \end{proof}
+    \section{Lie子群}
+        \begin{definition}
+            若 $(H,\,\varphi)$ 满足:
+            \begin{itemize}
+                \item $H$ 是一个 $\mathrm{Lie}$ 群.
+                \item $\varphi:H\rightarrow G$ 是微分流形的浸入
+                \item $\varphi:H\rightarrow G$ 是群同态
+            \end{itemize}
+            则称 $(H,\,\varphi)$ 为 $\mathrm{Lie}$ 群 $G$ 的 $\mathrm{Lie}$ 子群.
+        \end{definition}
+        \begin{remark}
+            我们可以定义 $\mathrm{Lie}$ 子群之间的等价(就像浸入子流形的等价一样),
+            并且可以在每个等价类中选取 $(H,\,i)$ 使得 $H\subset G$ 是 $G$ 的子集(但 $H$ 的拓扑不一定是 $G$ 的相对拓扑), 含入映射 $i:H\hookrightarrow G$ 是微分流形的浸入.
+            此时 $\mathfrak{h}$ 也可自然看成 $\mathfrak{g}$ 的子集.
+        \end{remark}
+        \begin{theorem}[Lie子代数与连通Lie子群的一一对应]
+            设 $G$ 为 $\mathrm{Lie}$ 群, 它的 $\mathrm{Lie}$ 代数为 $\mathfrak{g}$. 设 $\mathfrak{h}\subset\mathfrak{g}$ 为 $\mathrm{Lie}$ 子代数,
+            则存在唯一的连通 $\mathrm{Lie}$ 子群 $H$ 使得 $H$ 的 $\mathrm{Lie}$ 代数就是 $\mathfrak{h}$.
+        \end{theorem}
+        \begin{proof}
+            $\mathfrak{h}$ 对应 $G$ 上一个对合分布 $\mathcal{D}$, 记 $(H,\,\varphi)$ 为 $\mathcal{D}$ 的经过单位元 $e$ 的极大积分子流形, 则 $(H,\,\varphi)$ 即为所求.
+            
+            任取 $\sigma\in H$, 则 $(H,\,l_{\sigma^{-1}}\circ\varphi)$ 仍为 $\mathcal{D}$ 的积分子流形(因为 $\mathcal{D}$ 左平移不变), 再由 $(H,\varphi)$ 的极大性, 可以推出 $H$ 是抽象子群.
+            
+            证明 $H$ 的群结构与微分结构相容(即 $(\sigma,\tau)\mapsto\sigma\tau$ 是 $H\times H$ 到 $H$ 的光滑映射) 和 $H$ 的唯一性则需要极大积分子流形的相关结果.
+        \end{proof}
+        \begin{theorem}[闭Lie子群与正则子流形的关系]
+            设 $(H,\,\varphi)$ 是 $G$ 的 $\mathrm{Lie}$ 子群, 则以下两条
+            \begin{itemize}
+                \item $\varphi$ 是嵌入, 即 $\varphi$ 是 $H$ 到 $\varphi(H)$(取关于 $G$ 的相对拓扑)的同胚.
+                \item $(H,\,\varphi)$ 是 $G$ 的闭 $\mathrm{Lie}$ 子群($\varphi(H)$ 是 $G$ 的闭子集).
+            \end{itemize}
+            是等价的.
+        \end{theorem}
+        \begin{proof}
+            证明暂时没看懂
+        \end{proof}
+
+    \section{覆叠映射}
+
+        若 $\pi:\tilde{M}\rightarrow M$ 是连通局部道路联通空间 $\tilde{M}$ 到 $M$ 的覆叠映射, 则 $\tilde{M}$ $\mathrm{Hausdorff}$、第二可数且局部同胚于欧式空间。
+        而且 $\tilde{M}$ 上存在唯一的微分结构使得 $\pi$ 是光滑且局部同胚映射。
+
+        若 $G$ 为 $\mathrm{Lie}$ 群, 则存在单连通空间 $\tilde{G}$ 以及覆叠映射 $\pi:\tilde{G}\rightarrow G$, 由上述结果可知能在 $\tilde{G}$ 上定义合适的光滑结构,
+        更进一步地, 能在 $\tilde{G}$ 上定义群结构使得其成为 $\mathrm{Lie}$ 群, 且 $\pi$ 成为 $\mathrm{Lie}$ 群同态.
+
+        \begin{proposition}[Lie群同态与覆叠映射]
+            设 $G$ 和 $H$ 为连通 $\mathrm{Lie}$ 群, 且有 $\mathrm{Lie}$ 群同态 $\varphi:G\rightarrow H$.
+            则 $\varphi$ 为覆叠映射当且仅当切映射 $\varphi_*:G_e\rightarrow H_e$ 是线性同构.
+        \end{proposition}
+
+    \section{单连通Lie群}
+        \begin{theorem}
+            敬请期待.
+        \end{theorem}
+
+\end{document}
+
