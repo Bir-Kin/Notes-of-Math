@@ -485,7 +485,7 @@
             Z\left\langle X,Y\right\rangle = \left\langle D_ZX,Y\right\rangle + \left\langle X,D_ZY\right\rangle
         \end{equation*}
 
-        \subsection{黎曼几何基本定理}
+    \subsection{黎曼几何基本定理}
         \begin{theorem}
             设 $(M,g)$ 是黎曼流形, 则 $M$ 上存在唯一一个与 $g$ 相容的无挠联络 $D$, 我们称之为\textbf{黎曼联络}.
         \end{theorem}
@@ -670,6 +670,35 @@
                 \mathrm{dim}\,\mathcal{R}(V^*) = \frac{1}{2}\binom{n}{2}\left(\binom{n}{2} - 1\right)-\binom{n}{4} = \frac{n^2(n^2-1)}{12}
             \end{equation*}
         \end{proof}
+
+    \section{黎曼几何中的各种曲率}
+    \subsection{曲率张量}
+    \subsubsection{缘起}
+        在协变微分中我们引进记号
+        \begin{equation*}
+            \nabla Z(X) :=\nabla_X{Z}
+        \end{equation*}
+        于是可以考虑多次协变微分是否可换序的问题, 即
+        \begin{equation*}
+            \nabla^2Z(X,Y) \stackrel{?}{=} \nabla^2Z(Y,X)
+        \end{equation*}
+        我们仔细地将等号两侧的式子展开
+        \begin{align*}
+            \nabla^2Z(X,Y) &= (\nabla_Y\nabla Z)(X) \\
+            &= \nabla_Y((\nabla Z)(X)) - (\nabla Z)(\nabla_Y{X}) \\
+            &= \nabla_Y\nabla_X{Z}-\nabla_{\nabla_Y{X}}Z
+        \end{align*}
+        若该仿射联络是无挠联络, 则有
+        \begin{align*}
+            & \nabla^2Z(X,Y) - \nabla^2Z(Y,X) \\
+            =& \nabla_Y\nabla_X{Z}-\nabla_X\nabla_Y{Z}-\nabla_{\nabla_Y{X}-\nabla_X{Y}}Z \\
+            =& \nabla_Y\nabla_X{Z}-\nabla_X\nabla_Y{Z}-\nabla_{[Y,X]}Z
+        \end{align*}
+        受此启发, 我们定义曲率张量 $\mathcal{R}(\cdot,\cdot)\cdot:\mathfrak{X}(M)\times\mathfrak{X}(M)\times\mathfrak{X}(M)\rightarrow\mathfrak{X}(M)$ 为:
+        \begin{definition}
+            $\mathcal{R}(X,Y)Z := \nabla_X\nabla_Y{Z} - \nabla_Y\nabla_X{Z} - \nabla_{[X,Y]}Z$
+        \end{definition}
+        
     \chapter{复分析、复几何}
     \section{实线性空间与复线性空间}
         流形 $\mathbb{C}^n$ 中每点的坐标为 $(z^1,\dots,z^n)$, 记 $z^j=x^j+iy^j$, 于是 $x^1,\dots,x^n$ 和 $y^1,\dots,y^n$ 是 $\mathbb{C}^n$ 的实坐标.
