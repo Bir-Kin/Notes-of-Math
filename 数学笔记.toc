@@ -20,6 +20,7 @@
 \contentsline {section}{\numberline {2.7}黎曼几何中的各种曲率}{17}{section.2.7}%
 \contentsline {subsection}{\numberline {2.7.1}曲率张量}{17}{subsection.2.7.1}%
 \contentsline {subsubsection}{缘起}{17}{section*.2}%
+\contentsline {subsubsection}{Ricci恒等式}{17}{section*.3}%
 \contentsline {chapter}{\numberline {3}复分析、复几何}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}实线性空间与复线性空间}{19}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Lie群基础}{21}{chapter.4}%

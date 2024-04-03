@@ -703,6 +703,45 @@
             仿射联络空间 $(M,D)$ 的挠率张量和曲率张量实际上是判断它偏离仿射空间的量度.
         \end{remark}
 
+    \subsubsection{Ricci恒等式}
+    回顾 \textbf{缘起} 中的内容, $Z$ 作为一个(1,0)型张量场可自然与一个(1,0)型张量场(即一次微分式) $\omega$ 做配合. 因为两次协变微分后 $\nabla2{Z}$ 为一个(1,2)型张量. 
+    那么一方面我们有
+    \begin{equation*}
+        \nabla^2Z(\omega,Y,X) - \nabla^2Z(\omega,X,Y)
+    \end{equation*}
+    另一方面我们有
+    \begin{equation*}
+        (\mathcal{R}(X,Y)Z)(\omega) = (\nabla_X\nabla_Y{Z} - \nabla_Y\nabla_X{Z}-\nabla_{[X,Y]}{Z})(\omega)
+    \end{equation*}
+    经过一番激烈地运算会发现
+    
+    \begin{gather*}
+        \nabla^2Z(\omega,Y,X) - \nabla^2Z(\omega,X,Y) = Z(\mathcal{R}(Y,X)\omega) \\
+        (\mathcal{R}(X,Y)Z)(\omega) = -Z(\mathcal{R}(X,Y)\omega) = Z(\mathcal{R}(Y,X)\omega)
+    \end{gather*}
+    在这个角度下它们确实是一样的.
+    \begin{definition}[曲率算子作用在张量场]
+        我们先推导出曲率算子 $\mathcal{R}(X,Y)$ 作用在 $(0,0)$ 型(即光滑函数)、$(1,0)$ 型(即光滑向量场)、$(0,1)$ 型(即一次微分式)张量上是怎么样的. 然后设曲率算子满足:
+        \begin{itemize}
+            \item 与张量积运算满足Leibniz法则
+            \item 与缩并运算可交换
+        \end{itemize}
+        以此定义曲率算子在一般 $(r,s)$ 型张量上 $\tau$ 的作用.
+    \end{definition}
+    \begin{proposition}[Ricci恒等式]
+        设 $\tau$ 为 $(r,s)$ 型张量场, $\omega^1,\dots,\omega^r$ 是 $r$ 个光滑1形式, $X_1,\dots,X_s$ 是 $s$ 个光滑向量场, 设 $Y,\,Z$ 为两个光滑向量场, 则
+        \begin{align*}
+            & \nabla^2\tau(\cdots,\omega^i,\cdots;\cdots,X_j,\cdots;Z,Y) - \nabla^2\tau(\cdots,\omega^i,\cdots;\cdots,X_j,\cdots;Y,Z) \\
+            =& \tau(\cdots,\mathcal{R}(Z,Y)\omega^i,\cdots;\cdots,X_j,\cdots) + \tau(\cdots,\omega^i,\cdots;\cdots,\mathcal{R}(Z,Y)X_j,\cdots) \\
+            & \text{注意}Y,Z\text{顺序}
+        \end{align*}
+        同时
+        \begin{align*}
+            &(\mathcal{R}(Y,Z)\tau)(\cdots,\omega^i,\cdots;\cdots,X_j,\cdots) \\
+            =& \tau(\cdots,\mathcal{R}(Z,Y)\omega^i,\cdots;\cdots,X_j,\cdots) + \tau(\cdots,\omega^i,\cdots;\cdots,\mathcal{R}(Z,Y)X_j,\cdots) \\
+            & \text{注意}Y,Z\text{顺序}
+        \end{align*}
+    \end{proposition}
     \chapter{复分析、复几何}
     \section{实线性空间与复线性空间}
         流形 $\mathbb{C}^n$ 中每点的坐标为 $(z^1,\dots,z^n)$, 记 $z^j=x^j+iy^j$, 于是 $x^1,\dots,x^n$ 和 $y^1,\dots,y^n$ 是 $\mathbb{C}^n$ 的实坐标.
