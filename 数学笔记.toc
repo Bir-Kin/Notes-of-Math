@@ -16,15 +16,21 @@
 \contentsline {section}{\numberline {2.5}不同双曲模型之间的等距同构}{14}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}三种双曲模型}{14}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}双曲模型间的等距同构}{15}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}黎曼曲率张量的对称性}{15}{section.2.6}%
-\contentsline {section}{\numberline {2.7}黎曼几何中的各种曲率}{17}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}曲率张量}{17}{subsection.2.7.1}%
-\contentsline {subsubsection}{缘起}{17}{section*.2}%
-\contentsline {subsubsection}{Ricci恒等式}{17}{section*.3}%
-\contentsline {chapter}{\numberline {3}复分析、复几何}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}实线性空间与复线性空间}{19}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Lie群基础}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Lie群同态}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Lie子群}{21}{section.4.2}%
-\contentsline {section}{\numberline {4.3}覆叠映射}{22}{section.4.3}%
-\contentsline {section}{\numberline {4.4}单连通Lie群}{22}{section.4.4}%
+\contentsline {section}{\numberline {2.6}黎曼几何中的各种曲率}{15}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}曲率张量}{15}{subsection.2.6.1}%
+\contentsline {subsubsection}{缘起}{15}{section*.2}%
+\contentsline {subsubsection}{Ricci恒等式}{16}{section*.3}%
+\contentsline {subsection}{\numberline {2.6.2}黎曼曲率张量的代数性质}{17}{subsection.2.6.2}%
+\contentsline {subsubsection}{对称性}{17}{section*.4}%
+\contentsline {subsection}{\numberline {2.6.3}相配二次型}{18}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}曲率张量、挠率张量的坐标分量表示}{18}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}联络形式、挠率形式、曲率形式}{20}{subsection.2.6.5}%
+\contentsline {subsubsection}{各个形式的定义}{20}{section*.5}%
+\contentsline {subsubsection}{坐标变换下各个形式的变换}{21}{section*.6}%
+\contentsline {chapter}{\numberline {3}复分析、复几何}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}实线性空间与复线性空间}{23}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Lie群基础}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Lie群同态}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Lie子群}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}覆叠映射}{26}{section.4.3}%
+\contentsline {section}{\numberline {4.4}单连通Lie群}{26}{section.4.4}%
