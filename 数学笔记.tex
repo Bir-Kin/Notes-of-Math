@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{cases}
 % \usepackage{times}
 % \usepackage{mathptmx}
 % \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
@@ -30,6 +31,13 @@
 %如何在等号上加文字或记号
 %通过 \stackrel{?}{=}
 
+% 如何实现大括号多编号
+% \usepackage{cases}
+% \begin{numcases}{}
+% 	x_1&=eq1 \label{eqsystem1} \\
+% 	x_2+1&=eq2 \label{eqsystem2}
+% \end{numcases}
+
 \newtheorem{theorem}{\indent 定理}[section]
 \newtheorem{definition}[theorem]{\indent 定义}
 \newtheorem{proposition}[theorem]{\indent 命题}
@@ -42,7 +50,7 @@
 \newcommand{\md}{{\rm d}}
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\npd}[3]{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}}
-\newcommand{\cd}[2]{\nabla_{#1}{#2}}
+\newcommand{\lc}[2]{\nabla_{#1}{#2}}
 
 
 % \graphicspath{{Figures/}}
@@ -749,29 +757,29 @@
         设 $(M,g)$ 为黎曼流形, $\mathrm{Levi-Civita}$ 联络为 $\nabla$, $(U,\,x^i)$ 为一个局部坐标邻域,
         记 $g_{ij} = g\left(\pd{}{x^i},\pd{}{x^j}\right)$ 则:
         \begin{itemize}
-            \item 挠率张量 $T(X,Y) = \cd{X}{Y}-\cd{Y}{X}-[X,Y]$
+            \item 挠率张量 $T(X,Y) = \lc{X}{Y}-\lc{Y}{X}-[X,Y]$
             \begin{equation*}
                 T\big|_U = T_{ij}^{k}\pd{}{x^k}\otimes\md{x^i}\otimes\md{x^j}
             \end{equation*}
             其中
             \begin{align*}
                 T_{ij}^{k} &= \md{x^k}\left(T\left(\pd{}{x^i},\pd{}{x^j}\right)\right) \\
-                &= \md{x^k}\left(\cd{\pd{}{x^i}}{\pd{}{x^j}}-\cd{\pd{}{x^j}}{\pd{}{x^i}}\right) \\
+                &= \md{x^k}\left(\lc{\pd{}{x^i}}{\pd{}{x^j}}-\lc{\pd{}{x^j}}{\pd{}{x^i}}\right) \\
                 &= \Gamma_{ji}^{k}-\Gamma_{ij}^{k}
             \end{align*}
             于是
             \begin{equation*}
                 T\big|_U = (\Gamma_{ji}^{k}-\Gamma_{ij}^{k})\pd{}{x^k}\otimes\md{x^i}\otimes\md{x^j}
             \end{equation*}
-            \item 曲率张量 $\mathcal{R}(X,Y)Z = \cd{X}{\cd{Y}{Z}} - \cd{Y}{\cd{X}{Z}} - \cd{[X,Y]}{Z}$
+            \item 曲率张量 $\mathcal{R}(X,Y)Z = \lc{X}{\lc{Y}{Z}} - \lc{Y}{\lc{X}{Z}} - \lc{[X,Y]}{Z}$
             \begin{equation*}
                 \mathcal{R}\big|_U = R_{ijk}^{l}\pd{}{x^l}\otimes\md{x^i}\otimes\md{x^j}\otimes\md{x^k}
             \end{equation*}
             其中
             \begin{align*}
                 R_{ijk}^{l} &= \md{x^l}\left(\mathcal{R}\left(\pd{}{x^i},\pd{}{x^j}\right)\pd{}{x^k}\right) \\
-                &= \md{x^l}\left(\cd{\pd{}{x^i}}{\cd{\pd{}{x^j}}{\pd{}{x^k}}} - \cd{\pd{}{x^j}}{\cd{\pd{}{x^i}}{\pd{}{x^k}}}\right) \\
-                &= \md{x^l}\left(\cd{\pd{}{x^i}}{\left(\pd{}{x^p}\right)} - \cd{\pd{}{x^j}}{\left(\Gamma_{ki}^{p}\pd{}{x^p}\right)}\right) \\
+                &= \md{x^l}\left(\lc{\pd{}{x^i}}{\lc{\pd{}{x^j}}{\pd{}{x^k}}} - \lc{\pd{}{x^j}}{\lc{\pd{}{x^i}}{\pd{}{x^k}}}\right) \\
+                &= \md{x^l}\left(\lc{\pd{}{x^i}}{\left(\pd{}{x^p}\right)} - \lc{\pd{}{x^j}}{\left(\Gamma_{ki}^{p}\pd{}{x^p}\right)}\right) \\
                 &= \md{x^l}\left(\pd{\Gamma_{kj}^{p}}{x^i}\pd{}{x^p} + \Gamma_{kj}^{p}\Gamma_{pi}^{q}\pd{}{x^q} - \pd{\Gamma_{ki}^{p}}{x^j}\pd{}{x^p} - \Gamma_{ki}^{p}\Gamma_{pj}^{q}\pd{}{x^q}\right) \\
                 &= \pd{\Gamma_{kj}^{l}}{x^i} - \pd{\Gamma_{ki}^{l}}{x^j} + \Gamma_{kj}^{h}\Gamma_{hi}^{l} - \Gamma_{ki}^{h}\Gamma_{hj}^{l}
             \end{align*}
@@ -791,12 +799,12 @@
             \begin{align*}
                 & R_{ijkl} \\
                 =& \left<\mathcal{R}\left(\pd{}{x^i},\pd{}{x^j}\right)\pd{}{x^k},\pd{}{x^l}\right> \\
-                =& \left<\cd{\pd{}{x^i}}{\cd{\pd{}{x^j}}{\pd{}{x^k}}} - \cd{\pd{}{x^j}}{\cd{\pd{}{x^i}}{\pd{}{x^k}}},\pd{}{x^l}\right> \\
-                =& \pd{}{x^i}\left<\cd{\pd{}{x^j}}{\pd{}{x^k}},\pd{}{x^l}\right> - \left<\cd{\pd{}{x^j}}{\pd{}{x^k}},\cd{\pd{}{x^i}}{\pd{}{x^l}}\right> \\
-                & -\pd{}{x^j}\left<\cd{\pd{}{x^i}}{\pd{}{x^k}},\pd{}{x^l}\right> + \left<\cd{\pd{}{x^i}}{\pd{}{x^k}},\cd{\pd{}{x^j}}{\pd{}{x^l}}\right> \\
+                =& \left<\lc{\pd{}{x^i}}{\lc{\pd{}{x^j}}{\pd{}{x^k}}} - \lc{\pd{}{x^j}}{\lc{\pd{}{x^i}}{\pd{}{x^k}}},\pd{}{x^l}\right> \\
+                =& \pd{}{x^i}\left<\lc{\pd{}{x^j}}{\pd{}{x^k}},\pd{}{x^l}\right> - \left<\lc{\pd{}{x^j}}{\pd{}{x^k}},\lc{\pd{}{x^i}}{\pd{}{x^l}}\right> \\
+                & -\pd{}{x^j}\left<\lc{\pd{}{x^i}}{\pd{}{x^k}},\pd{}{x^l}\right> + \left<\lc{\pd{}{x^i}}{\pd{}{x^k}},\lc{\pd{}{x^j}}{\pd{}{x^l}}\right> \\
                 =& \frac{1}{2}\pd{}{x^i}\left(\pd{}{x^j}\left<\pd{}{x^k},\pd{}{x^l}\right>+\pd{}{x^k}\left<\pd{}{x^j},\pd{}{x^l}\right>-\pd{}{x^l}\left<\pd{}{x^j},\pd{}{x^k}\right>\right) \\
                 & -\frac{1}{2}\pd{}{x^j}\left(\pd{}{x^i}\left<\pd{}{x^k},\pd{}{x^l}\right>+\pd{}{x^k}\left<\pd{}{x^i},\pd{}{x^l}\right>-\pd{}{x^l}\left<\pd{}{x^i},\pd{}{x^k}\right>\right) \\
-                & +\left<\cd{\pd{}{x^i}}{\pd{}{x^k}},\cd{\pd{}{x^j}}{\pd{}{x^l}}\right>-\left<\cd{\pd{}{x^j}}{\pd{}{x^k}},\cd{\pd{}{x^i}}{\pd{}{x^l}}\right> \\
+                & +\left<\lc{\pd{}{x^i}}{\pd{}{x^k}},\lc{\pd{}{x^j}}{\pd{}{x^l}}\right>-\left<\lc{\pd{}{x^j}}{\pd{}{x^k}},\lc{\pd{}{x^i}}{\pd{}{x^l}}\right> \\
                 =& \frac{1}{2}\left(\npd{2}{g_{ik}}{x^{jl}}+\npd{2}{g_{jl}}{x^{ik}}-\npd{2}{g_{il}}{x^{jk}}-\npd{2}{g_{jk}}{x^{il}}\right) \\
                 & +g_{pq}\Gamma_{ki}^{p}\Gamma_{lj}^{q}-g_{pq}\Gamma_{kj}^{p}\Gamma_{li}^{q}
             \end{align*}
@@ -810,11 +818,11 @@
         \end{remark}
         在这种一般的标架场下, 仍可以写出坐标分量表示, 设
         \begin{equation*}
-            \cd{e_i}{e_j} = \Gamma_{ji}^{k}e_k
+            \lc{e_i}{e_j} = \Gamma_{ji}^{k}e_k
         \end{equation*}
         则
         \begin{equation*}
-            \cd{}{e_j} = \Gamma_{ji}^{k}\omega^i\otimes e_k
+            \lc{}{e_j} = \Gamma_{ji}^{k}\omega^i\otimes e_k
         \end{equation*}
         \subsubsection{各个形式的定义}
             \begin{itemize}
@@ -826,7 +834,7 @@
                 \end{equation*}
                 于是
                 \begin{equation*}
-                    \cd{}{e_j} = \omega_{j}^{k}\otimes e_k
+                    \lc{}{e_j} = \omega_{j}^{k}\otimes e_k
                 \end{equation*}
                 我们称 $\{\omega_{j}^{k}\}$ 为黎曼流形的联络形式.
                 \item 挠率形式:
@@ -915,10 +923,8 @@
 
             设 $e_1,\dots,e_n$ 为局部标架场, 
             \begin{equation}\label{eq:De_i}
-                \cd{}{e_j} = \Gamma_{ji}^{k}e_k\otimes\omega^i = 
-                \begin{pmatrix}
-                    e_1 & \cdots & e_n
-                \end{pmatrix}
+                \lc{}{e_j} = \Gamma_{ji}^{k}e_k\otimes\omega^i = 
+                (e_1,\cdots,e_n)
                 \begin{pmatrix}
                     \Gamma_{j1}^{1} & \cdots & \Gamma_{jn}^{1} \\
                     \vdots & & \vdots \\
@@ -931,17 +937,186 @@
             令
             \begin{equation*}
                 \omega^i_j = 
-                \begin{pmatrix}
-                    \Gamma_{j1}^{i} & \cdots & \Gamma_{jn}^{i}
-                \end{pmatrix}
+                (\Gamma_{j1}^{i},\cdots,\Gamma_{jn}^{i})
                 \begin{pmatrix}
                     \omega_1 \\ \vdots \\ \omega_n
                 \end{pmatrix}
             \end{equation*}
-            则式(\ref{eq:De_i})可写为
-            \begin{equation*}
-                \cd{}{}
-            \end{equation*}
+            代入式(\ref{eq:De_i})并打包整理可得到
+            \begin{equation}\label{df:connection-form}
+                \lc{}{(e_1,\cdots,e_n)} = 
+                (e_1,\cdots,e_n)
+                \begin{pmatrix}
+                    \omega^1_1 & \cdots & \omega^1_n \\
+                    \vdots & & \vdots \\
+                    \omega^n_1 & \cdots & \omega^n_n
+                \end{pmatrix}
+            \end{equation}
+            记 $w := (\omega^1,\cdots,\omega^n)'$, $W := (\omega^i_j)$,  它们分别是余切标架场构成的列向量和联络形式构成的矩阵.
+
+            定义挠率形式
+            \begin{equation}\label{df:torsion-form}
+                \begin{pmatrix}
+                    \Omega^1 \\ \vdots \\ \Omega^n
+                \end{pmatrix} = 
+                \md\begin{pmatrix}
+                    \omega^1 \\ \vdots \\ \omega^n
+                \end{pmatrix} + 
+                \begin{pmatrix}
+                    \omega^1_1 & \cdots & \omega^1_n \\
+                    \vdots & & \vdots \\
+                    \omega^n_1 & \cdots & \omega^n_n
+                \end{pmatrix}\wedge
+                \begin{pmatrix}
+                    \omega^1 \\ \vdots \\ \omega^n
+                \end{pmatrix}
+            \end{equation}
+            定义曲率形式
+            \begin{equation}\label{df:curvature-form}
+                \begin{pmatrix}
+                    \Omega^1_1 & \cdots & \Omega^1_n \\ 
+                    \vdots & & \vdots \\ 
+                    \Omega^n_1 & \cdots & \Omega^n_n
+                \end{pmatrix} = 
+                \md\begin{pmatrix}
+                    \omega^1_1 & \cdots & \omega^1_n \\
+                    \vdots & & \vdots \\
+                    \omega^n_1 & \cdots & \omega^n_n
+                \end{pmatrix} + 
+                \begin{pmatrix}
+                    \omega^1_1 & \cdots & \omega^1_n \\
+                    \vdots & & \vdots \\
+                    \omega^n_1 & \cdots & \omega^n_n
+                \end{pmatrix}\wedge
+                \begin{pmatrix}
+                    \omega^1_1 & \cdots & \omega^1_n \\
+                    \vdots & & \vdots \\
+                    \omega^n_1 & \cdots & \omega^n_n
+                \end{pmatrix}
+            \end{equation}
+            记 $\omega := (\Omega^1,\cdots,\Omega^n)'$, $\Omega := (\Omega^i_j)$, 则式(\ref{df:torsion-form})和(\ref{df:curvature-form})可写为
+            \begin{numcases}{}
+                \omega = \md w + W\wedge w \label{df:matrix-torsion-form}\\
+                \Omega = \md W + W\wedge W \label{df:matrix-curvature-form}
+            \end{numcases}
+            \begin{remark}
+                注意挠率形式向量 $\omega$ 和余切标架向量 $w$ 长得很像, 暂时没想到更好的记号, 注意区分.
+            \end{remark}
+            \begin{proposition}[第一、第二Bianchi恒等式]
+                \begin{numcases}{}
+                \md\omega = \Omega\wedge w - W\wedge w \label{eq:matrix-Bianchi1}\\
+                \md\Omega = \Omega\wedge W - W\wedge\Omega \label{eq:matrix-Bianchi2}
+            \end{numcases}
+            \end{proposition}
+            \begin{proof}
+                第一Bianchi恒等式:
+                \begin{align*}
+                    \md\omega &= \md(\md w + W\wedge w) = \md W\wedge w - W\wedge\md w \\
+                    &= (\Omega-W\wedge W)\wedge w - W\wedge(\omega-W\wedge w) \\
+                    &= \Omega\wedge w - W\wedge\omega 
+                \end{align*}
+                第二Bianchi恒等式:
+                \begin{align*}
+                    \md\Omega &= \md(\md W + W\wedge W) = \md W\wedge W - W\wedge\md W \\
+                    &= (\Omega - W\wedge W)\wedge W - W\wedge(\Omega - W\wedge W) \\
+                    &= \Omega\wedge W - W\wedge\Omega
+                \end{align*}
+            \end{proof}
+            \begin{proposition}[坐标变换]
+                设 $\{e_i\}$、$\{\tilde{e_i}\}$ 是两个局部标架场, $\{\omega^i\}$、$\{\tilde{\omega^i}\}$ 分别对应它们的对偶1-形式, 它们之间的坐标变换为
+                \begin{equation*}
+                    (e_1,\cdots,e_n) = (\tilde{e}_1,\cdots,\tilde{e}_n)
+                    \begin{pmatrix}
+                        a^1_1 & \cdots & a^1_n \\
+                        \vdots & & \vdots \\
+                        a^n_1 & \cdots & a^n_n
+                    \end{pmatrix}
+                \end{equation*}
+                则对偶1-形式之间的变换为
+                \begin{equation*}
+                    \begin{pmatrix}
+                        \omega^1 \\ \vdots \\ \omega^n
+                    \end{pmatrix} = 
+                    \begin{pmatrix}
+                        a^1_1 & \cdots & a^1_n \\
+                        \vdots & & \vdots \\
+                        a^n_1 & \cdots & a^n_n
+                    \end{pmatrix}^{-1}
+                    \begin{pmatrix}
+                        \tilde{\omega}^1 \\ \vdots \\ \tilde{\omega}^n
+                    \end{pmatrix}
+                \end{equation*}
+                记过渡矩阵 $a := (a^i_j)$, 则上述式子可改写为
+                \begin{equation}
+                    (e_1,\cdots,e_n) = (\tilde{e}_1,\cdots,\tilde{e}_n)a
+                \end{equation}
+                和
+                \begin{equation}
+                    \begin{pmatrix}
+                        \omega^1 \\ \vdots \\ \omega^n
+                    \end{pmatrix} = a^{-1}
+                    \begin{pmatrix}
+                        \tilde{\omega}^1 \\ \vdots \\ \tilde{\omega}^n
+                    \end{pmatrix}
+                \end{equation}
+                此时联络形式之间的变换为
+                \begin{equation}\label{eq:Transformation-connection-form}
+                    \tilde{w} = a^{-1}\md a + a^{-1}wa
+                \end{equation}
+                挠率形式之间的变换为
+                \begin{equation}\label{eq:Transformation-torsion-form}
+                    \tilde{\omega} = a^{-1}\omega
+                \end{equation}
+                曲率形式之间的变换为
+                \begin{equation}\label{eq:Transformation-curvature-form}
+                    \tilde{\Omega} = a^{-1}\Omega a
+                \end{equation}
+            \end{proposition}
+            \begin{proof}
+                对于式(\ref{eq:Transformation-connection-form}), 因为
+                \begin{align*}
+                    \lc{}{(\tilde{e}_1,\cdots,\tilde{e}_n)} =& \lc{}{\left((e_1,\cdots,e_n)a\right)} \\
+                    =& \left(\lc{}{(e_1,\cdots,e_n)}\right)a + (e_1,\cdots,e_n)\lc{}{a} \\
+                    =& (e_1,\cdots,e_n)wa + (e_1,\cdots,e_n)\md a \\
+                    =& (\tilde{e}_1,\cdots,\tilde{e}_n)a^{-1}(wa + \md a) \\
+                    =& (\tilde{e}_1,\cdots,\tilde{e}_n)\tilde{w}
+                \end{align*}
+                故
+                \begin{equation*}
+                    \tilde{w} = a^{-1}wa + a^{-1}\md a
+                \end{equation*}
+                对于式(\ref{eq:Transformation-torsion-form}), 因为
+                \begin{align*}
+                    \tilde{\omega} =& \md\tilde{w} + \tilde{W}\wedge\tilde{w} \\
+                    =& \md(a^{-1}w) + (a^{-1}\md a + a^{-1}Wa)\wedge a^{-1}w \\
+                    =& \md a^{-1}w + a^{-1}\md w + a^{-1}(\md a)a^{-1}\wedge w + a^{-1}W\wedge w
+                \end{align*}
+                由
+                \begin{equation*}
+                    0 = \md(a^{-1}a) = (\md a^{-1})a + a^{-1}\md a
+                \end{equation*}
+                所以
+                \begin{equation}\label{eq:da^-1}
+                    \md a^{-1} = -a^{-1}(\md a)a^{-1}
+                \end{equation}
+                代入可得
+                \begin{equation*}
+                    \tilde{\omega} = a^{-1}\md w + a^{-1}W\wedge w = a^{-1}\omega
+                \end{equation*}
+                对于式(\ref{eq:Transformation-curvature-form}), 因为
+                \begin{align*}
+                    \tilde{\Omega} =& \md\tilde{W} + \tilde{W}\wedge\tilde{W} \\
+                    =& \md(a^{-1}\md a + a^{-1}Wa) + (a^{-1}\md a + a^{-1}Wa)\wedge(a^{-1}\md a + a^{-1}Wa) \\
+                    =& \md a^{-1}\wedge\md a + \md a^{-1}\wedge Wa + a^{-1}\md Wa - a^{-1}W\wedge\md a \\
+                    &+ a^{-1}(\md a)a^{-1}\wedge\md a + a^{-1}(\md a)a^{-1}\wedge Wa + a^{-1}W\wedge\md a + a^{-1}W\wedge Wa \\
+                    =& a^{-1}(\md W + W\wedge W)a
+                \end{align*}
+                其中第四个等式用到了式(\ref{eq:da^-1}), 所以
+                \begin{equation*}
+                    \tilde{\Omega} = a^{-1}\Omega a
+                \end{equation*}
+            \end{proof}
+            
     \chapter{复分析、复几何}
     \section{实线性空间与复线性空间}
         流形 $\mathbb{C}^n$ 中每点的坐标为 $(z^1,\dots,z^n)$, 记 $z^j=x^j+iy^j$, 于是 $x^1,\dots,x^n$ 和 $y^1,\dots,y^n$ 是 $\mathbb{C}^n$ 的实坐标.
