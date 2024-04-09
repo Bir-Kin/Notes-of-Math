@@ -42,7 +42,7 @@
 \newcommand{\md}{{\rm d}}
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\npd}[3]{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}}
-\newcommand{\lc}[2]{\nabla_{#1}{#2}}
+\newcommand{\cd}[2]{\nabla_{#1}{#2}}
 
 
 % \graphicspath{{Figures/}}
@@ -749,29 +749,29 @@
         设 $(M,g)$ 为黎曼流形, $\mathrm{Levi-Civita}$ 联络为 $\nabla$, $(U,\,x^i)$ 为一个局部坐标邻域,
         记 $g_{ij} = g\left(\pd{}{x^i},\pd{}{x^j}\right)$ 则:
         \begin{itemize}
-            \item 挠率张量 $T(X,Y) = \lc{X}{Y}-\lc{Y}{X}-[X,Y]$
+            \item 挠率张量 $T(X,Y) = \cd{X}{Y}-\cd{Y}{X}-[X,Y]$
             \begin{equation*}
                 T\big|_U = T_{ij}^{k}\pd{}{x^k}\otimes\md{x^i}\otimes\md{x^j}
             \end{equation*}
             其中
             \begin{align*}
                 T_{ij}^{k} &= \md{x^k}\left(T\left(\pd{}{x^i},\pd{}{x^j}\right)\right) \\
-                &= \md{x^k}\left(\lc{\pd{}{x^i}}{\pd{}{x^j}}-\lc{\pd{}{x^j}}{\pd{}{x^i}}\right) \\
+                &= \md{x^k}\left(\cd{\pd{}{x^i}}{\pd{}{x^j}}-\cd{\pd{}{x^j}}{\pd{}{x^i}}\right) \\
                 &= \Gamma_{ji}^{k}-\Gamma_{ij}^{k}
             \end{align*}
             于是
             \begin{equation*}
                 T\big|_U = (\Gamma_{ji}^{k}-\Gamma_{ij}^{k})\pd{}{x^k}\otimes\md{x^i}\otimes\md{x^j}
             \end{equation*}
-            \item 曲率张量 $\mathcal{R}(X,Y)Z = \lc{X}{\lc{Y}{Z}} - \lc{Y}{\lc{X}{Z}} - \lc{[X,Y]}{Z}$
+            \item 曲率张量 $\mathcal{R}(X,Y)Z = \cd{X}{\cd{Y}{Z}} - \cd{Y}{\cd{X}{Z}} - \cd{[X,Y]}{Z}$
             \begin{equation*}
                 \mathcal{R}\big|_U = R_{ijk}^{l}\pd{}{x^l}\otimes\md{x^i}\otimes\md{x^j}\otimes\md{x^k}
             \end{equation*}
             其中
             \begin{align*}
                 R_{ijk}^{l} &= \md{x^l}\left(\mathcal{R}\left(\pd{}{x^i},\pd{}{x^j}\right)\pd{}{x^k}\right) \\
-                &= \md{x^l}\left(\lc{\pd{}{x^i}}{\lc{\pd{}{x^j}}{\pd{}{x^k}}} - \lc{\pd{}{x^j}}{\lc{\pd{}{x^i}}{\pd{}{x^k}}}\right) \\
-                &= \md{x^l}\left(\lc{\pd{}{x^i}}{\left(\pd{}{x^p}\right)} - \lc{\pd{}{x^j}}{\left(\Gamma_{ki}^{p}\pd{}{x^p}\right)}\right) \\
+                &= \md{x^l}\left(\cd{\pd{}{x^i}}{\cd{\pd{}{x^j}}{\pd{}{x^k}}} - \cd{\pd{}{x^j}}{\cd{\pd{}{x^i}}{\pd{}{x^k}}}\right) \\
+                &= \md{x^l}\left(\cd{\pd{}{x^i}}{\left(\pd{}{x^p}\right)} - \cd{\pd{}{x^j}}{\left(\Gamma_{ki}^{p}\pd{}{x^p}\right)}\right) \\
                 &= \md{x^l}\left(\pd{\Gamma_{kj}^{p}}{x^i}\pd{}{x^p} + \Gamma_{kj}^{p}\Gamma_{pi}^{q}\pd{}{x^q} - \pd{\Gamma_{ki}^{p}}{x^j}\pd{}{x^p} - \Gamma_{ki}^{p}\Gamma_{pj}^{q}\pd{}{x^q}\right) \\
                 &= \pd{\Gamma_{kj}^{l}}{x^i} - \pd{\Gamma_{ki}^{l}}{x^j} + \Gamma_{kj}^{h}\Gamma_{hi}^{l} - \Gamma_{ki}^{h}\Gamma_{hj}^{l}
             \end{align*}
@@ -791,12 +791,12 @@
             \begin{align*}
                 & R_{ijkl} \\
                 =& \left<\mathcal{R}\left(\pd{}{x^i},\pd{}{x^j}\right)\pd{}{x^k},\pd{}{x^l}\right> \\
-                =& \left<\lc{\pd{}{x^i}}{\lc{\pd{}{x^j}}{\pd{}{x^k}}} - \lc{\pd{}{x^j}}{\lc{\pd{}{x^i}}{\pd{}{x^k}}},\pd{}{x^l}\right> \\
-                =& \pd{}{x^i}\left<\lc{\pd{}{x^j}}{\pd{}{x^k}},\pd{}{x^l}\right> - \left<\lc{\pd{}{x^j}}{\pd{}{x^k}},\lc{\pd{}{x^i}}{\pd{}{x^l}}\right> \\
-                & -\pd{}{x^j}\left<\lc{\pd{}{x^i}}{\pd{}{x^k}},\pd{}{x^l}\right> + \left<\lc{\pd{}{x^i}}{\pd{}{x^k}},\lc{\pd{}{x^j}}{\pd{}{x^l}}\right> \\
+                =& \left<\cd{\pd{}{x^i}}{\cd{\pd{}{x^j}}{\pd{}{x^k}}} - \cd{\pd{}{x^j}}{\cd{\pd{}{x^i}}{\pd{}{x^k}}},\pd{}{x^l}\right> \\
+                =& \pd{}{x^i}\left<\cd{\pd{}{x^j}}{\pd{}{x^k}},\pd{}{x^l}\right> - \left<\cd{\pd{}{x^j}}{\pd{}{x^k}},\cd{\pd{}{x^i}}{\pd{}{x^l}}\right> \\
+                & -\pd{}{x^j}\left<\cd{\pd{}{x^i}}{\pd{}{x^k}},\pd{}{x^l}\right> + \left<\cd{\pd{}{x^i}}{\pd{}{x^k}},\cd{\pd{}{x^j}}{\pd{}{x^l}}\right> \\
                 =& \frac{1}{2}\pd{}{x^i}\left(\pd{}{x^j}\left<\pd{}{x^k},\pd{}{x^l}\right>+\pd{}{x^k}\left<\pd{}{x^j},\pd{}{x^l}\right>-\pd{}{x^l}\left<\pd{}{x^j},\pd{}{x^k}\right>\right) \\
                 & -\frac{1}{2}\pd{}{x^j}\left(\pd{}{x^i}\left<\pd{}{x^k},\pd{}{x^l}\right>+\pd{}{x^k}\left<\pd{}{x^i},\pd{}{x^l}\right>-\pd{}{x^l}\left<\pd{}{x^i},\pd{}{x^k}\right>\right) \\
-                & +\left<\lc{\pd{}{x^i}}{\pd{}{x^k}},\lc{\pd{}{x^j}}{\pd{}{x^l}}\right>-\left<\lc{\pd{}{x^j}}{\pd{}{x^k}},\lc{\pd{}{x^i}}{\pd{}{x^l}}\right> \\
+                & +\left<\cd{\pd{}{x^i}}{\pd{}{x^k}},\cd{\pd{}{x^j}}{\pd{}{x^l}}\right>-\left<\cd{\pd{}{x^j}}{\pd{}{x^k}},\cd{\pd{}{x^i}}{\pd{}{x^l}}\right> \\
                 =& \frac{1}{2}\left(\npd{2}{g_{ik}}{x^{jl}}+\npd{2}{g_{jl}}{x^{ik}}-\npd{2}{g_{il}}{x^{jk}}-\npd{2}{g_{jk}}{x^{il}}\right) \\
                 & +g_{pq}\Gamma_{ki}^{p}\Gamma_{lj}^{q}-g_{pq}\Gamma_{kj}^{p}\Gamma_{li}^{q}
             \end{align*}
@@ -810,11 +810,11 @@
         \end{remark}
         在这种一般的标架场下, 仍可以写出坐标分量表示, 设
         \begin{equation*}
-            \lc{e_i}{e_j} = \Gamma_{ji}^{k}e_k
+            \cd{e_i}{e_j} = \Gamma_{ji}^{k}e_k
         \end{equation*}
         则
         \begin{equation*}
-            \lc{}{e_j} = \Gamma_{ji}^{k}\omega^i\otimes e_k
+            \cd{}{e_j} = \Gamma_{ji}^{k}\omega^i\otimes e_k
         \end{equation*}
         \subsubsection{各个形式的定义}
             \begin{itemize}
@@ -826,7 +826,7 @@
                 \end{equation*}
                 于是
                 \begin{equation*}
-                    \lc{}{e_j} = \omega_{j}^{k}\otimes e_k
+                    \cd{}{e_j} = \omega_{j}^{k}\otimes e_k
                 \end{equation*}
                 我们称 $\{\omega_{j}^{k}\}$ 为黎曼流形的联络形式.
                 \item 挠率形式:
@@ -907,7 +907,41 @@
             \begin{equation*}
                 \tilde{\omega} = a^{-1}\md a + a^{-1}\omega a \qquad \tilde{\Omega} = a^{-1}\Omega a
             \end{equation*}
+        \subsubsection{用矩阵的语言重新表示联络形式}
+            用分量表示以上微分式, 且用Einstein求和约定简写求和式总是不那么让人习惯, 这里用矩阵的语言重新封装一下, 能把一些复杂的计算看得更清楚.
+            
+            形式上我们可以写出以向量、微分形式为元素的矩阵, 并定义这种矩阵之间的乘法、张量积、外积以及求外微分. 为了快速进入主题, 我们省略了这些运算的定义、性质等内容, 
+            下面直接进入正题:
 
+            设 $e_1,\dots,e_n$ 为局部标架场, 
+            \begin{equation}\label{eq:De_i}
+                \cd{}{e_j} = \Gamma_{ji}^{k}e_k\otimes\omega^i = 
+                \begin{pmatrix}
+                    e_1 & \cdots & e_n
+                \end{pmatrix}
+                \begin{pmatrix}
+                    \Gamma_{j1}^{1} & \cdots & \Gamma_{jn}^{1} \\
+                    \vdots & & \vdots \\
+                    \Gamma_{j1}^{n} & \cdots & \Gamma_{jn}^{n}
+                \end{pmatrix}
+                \begin{pmatrix}
+                    \omega^1 \\ \vdots \\ \omega^n
+                \end{pmatrix}
+            \end{equation}
+            令
+            \begin{equation*}
+                \omega^i_j = 
+                \begin{pmatrix}
+                    \Gamma_{j1}^{i} & \cdots & \Gamma_{jn}^{i}
+                \end{pmatrix}
+                \begin{pmatrix}
+                    \omega_1 \\ \vdots \\ \omega_n
+                \end{pmatrix}
+            \end{equation*}
+            则式(\ref{eq:De_i})可写为
+            \begin{equation*}
+                \cd{}{}
+            \end{equation*}
     \chapter{复分析、复几何}
     \section{实线性空间与复线性空间}
         流形 $\mathbb{C}^n$ 中每点的坐标为 $(z^1,\dots,z^n)$, 记 $z^j=x^j+iy^j$, 于是 $x^1,\dots,x^n$ 和 $y^1,\dots,y^n$ 是 $\mathbb{C}^n$ 的实坐标.

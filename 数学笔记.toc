@@ -27,6 +27,7 @@
 \contentsline {subsection}{\numberline {2.6.5}联络形式、挠率形式、曲率形式}{20}{subsection.2.6.5}%
 \contentsline {subsubsection}{各个形式的定义}{20}{section*.5}%
 \contentsline {subsubsection}{坐标变换下各个形式的变换}{21}{section*.6}%
+\contentsline {subsubsection}{用矩阵的语言重新表示联络形式}{22}{section*.7}%
 \contentsline {chapter}{\numberline {3}复分析、复几何}{23}{chapter.3}%
 \contentsline {section}{\numberline {3.1}实线性空间与复线性空间}{23}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Lie群基础}{25}{chapter.4}%
