@@ -1,0 +1,379 @@
+\chapter{高等代数}
+\section{线性空间、对偶空间}
+    \subsection{对偶空间}
+
+    \subsection{协变张量与反变张量}
+
+    “The general formulation of covariance and contravariance refers to 
+    how the components of a coordinate vector transform under a change of basis.”
+    协变张量与反变张量描述了向量的坐标分量是如何随基向量的变化而变化的.
+
+    设线性空间 $V$ 有两组基:
+    \begin{align*}
+        &\{e_i\}:\quad e_1,\dots,e_n \\
+        &\{{e}'_i\}:\quad {e'}_1,\dots,{e'}_n
+    \end{align*}
+    它们的对偶基分别为
+    \begin{align*}
+        &\{{e^*}_i\}:\quad {e^*}_1,\dots,{e*}_n \\
+        &\{{e^*}'_i\}:\quad {e^*}'_1,\dots,{e^*}'_n
+    \end{align*}
+    并且 $\{e_i\}$ 到 $\{{e}'_i\}$ 的过渡矩阵为 $P = (a_{ij})$, 即
+    \begin{equation*}
+        ({e'}_1,\dots,{e'}_n) = (e_1,\dots,e_n)P = (e_1,\dots,e_n)
+        \begin{pmatrix}
+            a_{11} & \cdots & a_{1n} \\
+            \vdots & & \vdots \\
+            a_{n1} & \cdots & a_{nn}
+        \end{pmatrix}
+    \end{equation*}
+
+    \textbf{反变张量: }设 $v$ 是 $V$ 中的某个向量, 它在基 $\{e_i\},\,\{{e'}_i\}$ 下的坐标 $v[e_i],\,v[{e'}_i]$ 分别为 $\{X_i\}$ 和 $\{{X'}_i\}$, 即
+    \begin{equation*}
+        v = 
+        \begin{pmatrix}
+            e_1,\dots,e_n
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_1 \\ \vdots \\ x_n
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            {e'}_1,\dots,{e'}_n
+        \end{pmatrix}
+        \begin{pmatrix}
+            {x'}_1 \\ \vdots \\ {x'}_n
+        \end{pmatrix}
+    \end{equation*}
+    则由
+    \begin{equation*}
+        v = 
+        \begin{pmatrix}
+            {e'}_1,\dots,{e'}_n
+        \end{pmatrix}
+        \begin{pmatrix}
+            {x'}_1 \\ \vdots \\ {x'}_n
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            e_1,\dots,e_n
+        \end{pmatrix}
+        P
+        % \begin{pmatrix}
+        %     a_{11} & \cdots & a_{1n} \\
+        %     \vdots & & \vdots \\
+        %     a_{n1} & \cdots & a_{nn}
+        % \end{pmatrix}
+        \begin{pmatrix}
+            {x'}_1 \\ \vdots \\ {x'}_n
+        \end{pmatrix}
+    \end{equation*}
+    知
+    \begin{equation*}
+        \begin{pmatrix}
+            x_1 \\ \vdots \\ x_n
+        \end{pmatrix} = 
+        P
+        % \begin{pmatrix}
+        %     a_{11} & \cdots & a_{1n} \\
+        %     \vdots & & \vdots \\
+        %     a_{n1} & \cdots & a_{nn}
+        % \end{pmatrix}
+        \begin{pmatrix}
+            {x'}_1 \\ \vdots \\ {x'}_n
+        \end{pmatrix}
+    \end{equation*}
+    于是
+    \begin{equation*}
+        \begin{pmatrix}
+            {x'}_1 \\ \vdots \\ {x'}_n
+        \end{pmatrix} = 
+        P^{-1}
+        % \begin{pmatrix}
+        %     a_{11} & \cdots & a_{1n} \\
+        %     \vdots & & \vdots \\
+        %     a_{n1} & \cdots & a_{nn}
+        % \end{pmatrix}^{-1}
+        \begin{pmatrix}
+            x_1 \\ \vdots \\ x_n
+        \end{pmatrix}
+    \end{equation*}
+    从表达式可以看出 $v$ 坐标分量的变化与基向量的变化是相反的, 也可以这么理解: $v$ 本就是不随基底改变的一个固有对象, 为了保持不变, 
+    它坐标分量的变化必须与基底变化相反, 才能抵消基变换带来的影响, 用式子表示即为
+    \begin{align*}
+        v &= 
+        \begin{pmatrix}
+            e_1,\dots,e_n
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_1 \\ \vdots \\ x_n
+        \end{pmatrix} \\ &= 
+        \begin{pmatrix}
+            e_1,\dots,e_n
+        \end{pmatrix}PP^{-1}
+        \begin{pmatrix}
+            x_1 \\ \vdots \\ x_n
+        \end{pmatrix} \\ &= 
+        \begin{pmatrix}
+            {e'}_1,\dots,{e'}_n
+        \end{pmatrix}
+        \begin{pmatrix}
+            {x'}_1 \\ \vdots \\ {x'}_n
+        \end{pmatrix}
+    \end{align*}
+
+    \textbf{共变张量:}设 $f$ 是对偶空间 $V^*$ 中的元素, 即 $f$ 是 $V$ 上的线性函数, $\{y_i\} = \{f[e_i]\},\,\{{y'}_i\} = \{f[{e'}_i]\}$ 为它在这两组基下的坐标, 即
+    \begin{align*}
+        f &= \sum_{i=1}^{n}y_i e^*_i = \sum_{i=1}^{n}f(e_i)e^*_i \\
+        &= \sum_{i=1}^{n}y'_i {e^*}'_i = \sum_{i=1}^{n}f(e'_i){e^*}'_i
+    \end{align*}
+    而
+    \begin{align*}
+        \begin{pmatrix}
+            y'_1, \dots, y'_n
+        \end{pmatrix} &= 
+        \begin{pmatrix}
+            f(e'_1), \dots, f(e'_n)
+        \end{pmatrix} \\
+        &= f\left(
+            \begin{pmatrix}
+                {e'}_1,\dots,{e'}_n
+            \end{pmatrix}
+        \right) \\
+        &= f\left(
+            \begin{pmatrix}
+                e_1,\dots,e_n
+            \end{pmatrix} P
+        \right) \\
+        &= \begin{pmatrix}
+            f(e_1), \dots, f(e_n)
+        \end{pmatrix}P \\
+        &= \begin{pmatrix}
+            y_1, \dots, y_n
+        \end{pmatrix}P
+    \end{align*}
+    所以 $f$ 的坐标的变化与基底的变化保持一致.
+
+\section{线性映射、线性变换的矩阵表示}
+
+    设线性映射 $\mathcal{A}:V\rightarrow W$, $(\xi^1,\xi^2,\dots,\xi^m)$ 是 $V$ 的一组基, $(\eta^1,\eta^2,\dots,\eta^n)$ 是 $W$ 的一组基, 那么 $\mathcal{A}$ 在这两组基下的矩阵为,
+    \begin{equation*}
+        \mathcal{A}(\xi^1,\dots,\xi^m)=(\mathcal{A}\xi^1,\dots,\mathcal{A}\xi^m)=(\eta^1,\dots,\eta^n)
+        \begin{pmatrix}
+            a_{11} & \cdots & a_{1m} \\
+            \vdots &        & \vdots \\
+            a_{n1} & \cdots & a_{nm}
+        \end{pmatrix} = (\eta^1,\dots,\eta^n)A
+    \end{equation*}
+
+    设 $v$ 是 $V$ 中的向量, 并设
+    \begin{equation*}
+        v=x_1\xi^1+\cdots+x_m\xi^m=(\xi^1,\dots,\xi^m)
+        \begin{pmatrix}
+            x_1 \\
+            \vdots \\
+            x_m
+        \end{pmatrix}=(\xi^1,\dots,\xi^m)X
+    \end{equation*}
+    其中 $X$ 是 $v$ 在基 $(\xi^1,\dots,\xi^m)$ 下的坐标, 那么由于
+    \begin{align*}
+        \mathcal{A}v &=\mathcal{A}(x_1\xi^1+\cdots+x_m\xi^m) \\
+        &=\mathcal{A}(\xi^1,\dots,\xi^m)
+        \begin{pmatrix}
+            x_1 \\
+            \vdots \\
+            x_m
+        \end{pmatrix} \\
+        &=(\mathcal{A}\xi^1,\dots,\mathcal{A}\xi^m)
+        \begin{pmatrix}
+            x_1 \\
+            \vdots \\
+            x_m
+        \end{pmatrix} \\
+        & = (\eta^1,\dots,\eta^n)
+        \begin{pmatrix}
+            a_{11} & \cdots & a_{1m} \\
+            \vdots &        & \vdots \\
+            a_{n1} & \cdots & a_{nm}
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_1 \\
+            \vdots \\
+            x_m
+        \end{pmatrix} \\
+        & = (\eta^1,\dots,\eta^n)AX
+    \end{align*}
+    $\mathcal{A}v$ 在基 $(\eta^1,\eta^2,\dots,\eta^n)$ 下的坐标为 $AX$.
+
+\section{矩阵迹的几何解释}
+    给定一个矩阵 $A = (a_{ij})_{n\times n}$, 在高代中我们定义了矩阵的迹为:
+    \begin{equation*}
+        {\rm tr}(A) = \sum_{i = 1}^{n}a_{ii}
+    \end{equation*}
+    下面我们从比较几何的角度给出矩阵迹的一个定义, 并用这个定义重新证明关于迹的一些性质.
+
+\subsection{用矩阵定义的向量场}
+    设矩阵  $A$ 如上, 定义 $\mathbb{R}^n$ 上的向量场 $F_A(X) := AX,\,\forall X\in\mathbb{R}^n$.
+    则可证明向量场 $F_A$ 的散度 ${\rm div}(F_A)$ 是常数, 且经计算恰好是我们所熟知的 $A$ 的迹, 我们就把这个值作为矩阵迹的定义, 即
+    \begin{equation*}
+        {\rm div}F_A := {\rm tr}A
+    \end{equation*}
+    \begin{remark}
+        矩阵 $A$ 对应某个线性变换 $\mathcal{A}\in\mathrm{End}(\mathbb{R}^n)$, 从函数角度来看,   $X\mapsto AX$ 是一个从 $\mathbb{R}^n$ 到 $\mathbb{R}^n$ 的向量值函数.
+        因为每个 $\mathbb{R}^n$ 上的函数都可视作 $\mathbb{R}^n$ 的向量丛的截面, 也即 $\mathbb{R}^n$ 上的光滑向量场, 这也解释了为什么这么定义 $F_A$.
+    \end{remark}
+    \begin{remark}
+        我们可以从多变量微积分的角度验证新定义的合理性,
+        \begin{equation*}
+            F_A(x^1,\dots,x^n) = (\sum_{i=1}^{n}a_{1i}x^i,\dots,\sum_{i=1}^{n}a_{ni}x^i).
+        \end{equation*}
+        则
+        \begin{equation*}
+            (\mathrm{div} F_A)(p) = \sum_{i=1}^{n}\frac{\partial F_A^i}{\partial x^i}\Bigg|_p = \sum_{i=1}^{n}a_{ii}
+        \end{equation*}
+        结果是一个常数且取值就是我们熟知的迹.
+    \end{remark}
+    因为上述求散度计算中仍有取主对角线元素相加的操作, 形式上和最原始的定义没有本质区别, 所以下面用微分形式的语言重新计算散度.
+
+    取 $\mathbb{R}^n$ 中的平坦度量, 并取自然坐标系 $(x^1,\dots,x^n)$, 则体积形式为
+    \begin{equation*}
+        \Omega = \md x^1\wedge\cdots\wedge\md x^n
+    \end{equation*}
+    向量场 $F_A$ 的表达式为
+    \begin{equation*}
+        F_A(x^1,\dots,x^n) = \sum_{i,\,j}a_{ij}x^j\frac{\partial}{\partial x^i}\Bigg|_{(x^1,\dots,x^n)}
+    \end{equation*}
+    向量场 $F_A$ 的散度定义为
+    \begin{equation}\label{div}
+        (\mathrm{div}F_A)\Omega = L_{F_A}\Omega
+    \end{equation}
+    因为
+    \begin{equation*}
+        L_{F_A}\md x^i = \md L_{F_A}x^i
+        = \md (F_Ax^i)
+        = \md \sum_{k=1}^{n}a_{ik}x^k
+        = \sum_{k=1}^{n}a_{ik}\md x^k
+    \end{equation*}
+    所以
+    \begin{align*}
+        L_{F_A}\Omega &= L_{F_A}(\md x^1\wedge\cdots\wedge\md x^n) \\
+        &= \sum_{i=1}^{n}\md x^1\wedge\cdots\wedge L_{F_A}\md x^i \wedge\cdots\wedge\md x^n \\
+        &= \sum_{i=1}^{n}\md x^1\wedge\cdots\wedge\left(\sum_{k=1}^{n}a_{ik}\md x^k\right)\wedge\cdots\wedge\md x^n \\
+        &= \left(\sum_{i=1}^{n}a_{ii}\right)\md x^1\wedge\cdots\wedge\md x^n \\
+        &= \left(\sum_{i=1}^{n}a_{ii}\right)\Omega
+    \end{align*}
+    经过一通计算我们再次验证了这么定义矩阵迹的合理性, 更进一步地, 我们可以用外微分的语言重新证明迹的几个性质, 比如, $\mathrm{tr}AB = \mathrm{tr}BA$.
+    
+    \subsection{迹的性质}
+    我们知道关于李导数和李括号有等式
+    \begin{equation*}
+        [L_X, L_Y] = L_{[X,Y]}, \quad\forall X,\,Y\in C^{\infty}(\mathbb{R}^n,T\mathbb{R}^n)
+    \end{equation*}
+    设矩阵 $A = (a_{ij}),\,B = (b_{ij})$, 对应的向量场为 $F_A,\,F_B$, 因为
+    \begin{equation*}
+        \mathrm{ent}_{ij}[A,B] = \sum_{k=1}^{n}a_{ik}b_{kj}-b_{ik}a_{kj}
+    \end{equation*}
+    所以
+    \begin{align*}
+        [F_A,F_B] &= \sum_{i=1}^{n}\left(\sum_{j=1}^{n}F_A^j\frac{\partial F_B^i}{\partial x^j}-F_B^j\frac{\partial F_A^i}{\partial x^j}\right)\frac{\partial}{\partial x^i} \\
+        &= \sum_{i=1}^{n}\left(\sum_{j=1}^{n}\sum_{k=1}^{n}a_{jk}b_{ij}x^k-b_{jk}a_{ij}x^k\right)\frac{\partial}{\partial x^i} \\
+        &= \sum_{i=1}^{n}\left(\sum_{k=1}^{n}\left(\sum_{j=1}^{n}b_{ij}a_{jk}-a_{ij}b_{jk}\right)x^k\right)\frac{\partial}{\partial x^i} \\
+        &= \sum_{i=1}^{n}\left(\sum_{k=1}^{n}\mathrm{ent}_{ik}[B,A]x^k\right)\frac{\partial}{\partial x^i} \\
+        &= F_{[B,A]}
+    \end{align*}
+    因此
+    \begin{align*}
+        \mathrm{div}(F_{[B,A]})\Omega &= L_{F_{[B,A]}}\Omega \\
+        &= L_{[F_A,F_B]}\Omega \\
+        &= [L_{F_A},L_{F_B}]\Omega \\
+        &= (L_{F_A}L_{F_B}-L_{F_B}L_{F_A})\Omega \\
+        &= (\mathrm{div}F_A)(\mathrm{div}F_B)\Omega - (\mathrm{div}F_B)(\mathrm{div}F_A)\Omega \\
+        &= 0
+    \end{align*}
+    从而推出
+    \begin{equation*}
+        \mathrm{tr}(BA-AB) = \mathrm{tr}[B,A] = \mathrm{div}F_{[B,A]} = 0
+    \end{equation*}
+    也即
+    \begin{equation*}
+        \mathrm{tr}(AB) = \mathrm{tr}(BA)
+    \end{equation*}
+    若 $A,\,B$ 不是 $n$ 阶方阵, 不妨设 $A = (a_{ij})_{m\times n},\,B = (b_{ij})_{n\times m}$, 其中 $m<n$,
+    令 $A_1 = \begin{pmatrix}
+        A_{m\times n} \\ O_{(n-m)\times n}
+    \end{pmatrix},\,B_1 = \begin{pmatrix}
+        B_{n\times m},\,O_{n\times(n-m)}
+    \end{pmatrix}$
+    于是有
+    \begin{equation*}
+        \mathrm{tr}(AB) = \mathrm{tr}(A_1B_1) = \mathrm{tr}(B_1A_1) = \mathrm{tr}(BA)
+    \end{equation*}
+
+\section{外代数与Lie代数}
+    设 $V$ 是 $n$ 维线性空间, 我们有 $V$ 对应的外代数 $(E(V),\,\wedge)$, 也即
+    \begin{equation*}
+        E(V) = \bigoplus_{k=1}^{n}\bigwedge^{k}V
+    \end{equation*}
+    在 $E(V)$ 中我们可以定义 “微分” $\md$, 它满足:
+    \begin{itemize}
+        \item $\md\in{\rm End}(\bigwedge^{k}V,\,\bigwedge^{k+1}V),\quad k=0,\,1,\dots,\,n-1.$
+        \item $\md(u_1\wedge\cdots\wedge u_s) = \sum\limits_{i = 1}^{s}(-1)^{i-1}u_1\wedge\cdots\wedge \md u_i\wedge\cdots\wedge u_s.$
+        \item $\md\md u = 0\quad \forall u\in V.$
+    \end{itemize}
+    实际上我们只需定义线性映射
+    \begin{align*}
+        \md:V&\rightarrow\bigwedge^2V\\
+        v&\mapsto\md v
+    \end{align*}
+    使其满足
+    \begin{itemize}
+        \item $\md(u\wedge v) = \md u\wedge v-u\wedge\md v$
+    \end{itemize}
+    再用线性性和外积使其扩充为 $E(V)$ 到自身的线性映射, 这样再加上 $\md^2 = 0$ 就可以定义一个微分运算了.
+
+    接着上面的讨论, 我们考虑线性空间的对偶:
+    \begin{align*}
+        \md^*:\bigwedge^2V^*&\rightarrow V^*\\
+        u\wedge v&\mapsto \md(u\wedge v)=:[u,v]
+    \end{align*}
+    我们有意把 $\md(u\wedge v)$ 记为 $[u,v]$ 是有考量的, 因为我们有如下定理:
+    \begin{theorem}\label{lie}
+        $\md$ 满足 $\md^2 = 0$ 当且仅当 $\md^*$ 满足 {\rm Jacobi} 恒等式, 此时 $(\mathfrak{g} = V,\,[\cdot,\cdot])$ 构成一个 {\rm Lie} 代数
+    \end{theorem}
+    \begin{proof}
+        对 $\forall u\in V$, 设 
+        \begin{align*}
+            &\md u=\sum\limits_{i=1}^{r}v_i\wedge w_i \\
+            &\md v_i=\sum\limits_{j=1}^{s}a_{ij}\wedge b_{ij} \\
+            &\md w_i=\sum\limits_{k=1}^{t}c_{ik}\wedge d_{ik}
+        \end{align*}
+        于是
+        \begin{align*}
+            &[[\alpha,\beta],\gamma](u) \\
+            =&\md^*(\md^*(\alpha\wedge\beta)\wedge\gamma)(u) \\
+            =&(\md^*(\alpha\wedge\beta)\wedge\gamma)(\md u) \\
+            =&(\md^*(\alpha\wedge\beta)\wedge\gamma)(\sum_{i=1}^{r}v_i\wedge w_i) \\
+            =&\sum_{i=1}^{r}(\md^*(\alpha\wedge\beta)(v_i)\gamma(w_i)-(\md^*(\alpha\wedge\beta))(w_i)\gamma(v_i)) \\
+            =&\sum_{i=1}^{r}\left((\alpha\wedge\beta)(\md v_i)\gamma(w_i)-(\alpha\wedge\beta)(\md w_i)\gamma(v_i)\right) \\
+            =&\sum_{i=1}^{r}\left((\alpha\wedge\beta)\left(\sum_{j=1}^{s}a_{ij}\wedge b_{ij}\right)\gamma(w_i)-(\alpha\wedge\beta)\left(\sum_{k=1}^{t}c_{ik}\wedge d_{ik}\right)\gamma(v_i)\right) \\
+            =&\sum_{i=1}^{r}\sum_{j=1}^{s}\alpha(a_{ij})\beta(b_{ij})\gamma(w_i)-\alpha(b_{ij})\beta(a_{ij})\gamma(w_i) \\
+            &-\sum_{i=1}^{r}\sum_{k=1}^{t}\alpha(c_{ik})\beta(d_{ik})\gamma(v_i)-\alpha(d_{ik})\beta(c_{ik})\gamma(v_i) \\
+        \end{align*}
+        于是
+        \begin{align*}
+            &\left([[\alpha,\beta],\gamma]+[[\beta,\gamma],\alpha]+[[\gamma,\alpha],\beta]\right)(u) \\
+            =&\sum_{i=1}^{r}\sum_{j=1}^{s}\alpha(a_{ij})\beta(b_{ij})\gamma(w_i)-\alpha(b_{ij})\beta(a_{ij})\gamma(w_i)+\beta(a_{ij})\gamma(b_{ij})\alpha(w_i) \\
+            &\quad-\beta(b_{ij})\gamma(a_{ij})\alpha(w_i)+\gamma(a_{ij})\alpha(b_{ij})\beta(w_i)-\gamma(b_{ij})\alpha(a_{ij})\beta(w_i) \\
+            &-\sum_{i=1}^{r}\sum_{k=1}^{t}\alpha(c_{ik})\beta(d_{ik})\gamma(v_i)-\alpha(d_{ik})\beta(c_{ik})\gamma(v_i)+\beta(c_{ik})\gamma(d_{ik})\alpha(v_i) \\
+            &\quad-\beta(d_{ik})\gamma(c_{ik})\alpha(v_i)+\gamma(c_{ik})\alpha(d_{ik})\beta(v_i)-\gamma(d_{ik})\alpha(c_{ik})\beta(v_i) \\
+            =&\sum_{i=1}^{r}\sum_{j=1}^{s}(\alpha\wedge\beta\wedge\gamma)(a_{ij}\wedge b_{ij}\wedge w_i)-\sum_{i=1}^{r}\sum_{k=1}^{t}(\alpha\wedge\beta\wedge\gamma)(c_{ik}\wedge d_{ik}\wedge v_i) \\
+            =&(\alpha\wedge\beta\wedge\gamma)\left(\sum_{i=1}^{r}\sum_{j=1}^{s}a_{ij}\wedge b_{ij}\wedge w_i-\sum_{i=1}^{r}\sum_{k=1}^{t}c_{ik}\wedge d_{ik}\wedge v_i\right) \\
+            =&(\alpha\wedge\beta\wedge\gamma)(\md^2 u)
+        \end{align*}
+        因此对 $\forall\,u\in V$,
+        \begin{gather*}
+            \md^2 u = 0 \\
+            \Longleftrightarrow \left([[\alpha,\beta],\gamma]+[[\beta,\gamma],\alpha]+[[\gamma,\alpha],\beta]\right)(u) = 0
+        \end{gather*}
+        从而定理得证.
+    \end{proof}
+    定理 \ref{lie} 表明一个{\rm Lie}代数 $\mathfrak{g}$ 可对应一个带有微分映射的外代数 $E(V)$, 而在 $E(V)$ 上我们可以做上同调,
+    这个上同调就叫{\rm Lie}代数 $\mathfrak{g}$ 的上同调.

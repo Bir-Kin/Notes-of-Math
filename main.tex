@@ -1,0 +1,76 @@
+% 注释的快捷键: Ctrl + /
+
+% \documentclass[a4paper]{ctexart}
+\documentclass{book}
+
+\usepackage{xeCJK}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{cases}
+% \usepackage{times}
+% \usepackage{mathptmx}
+% \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+% \DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+
+% \usepackage{unicode-math}
+% \setmathfont{XITS Math}
+% \setmathfont{XITS Math}[StylisticSet=1,range=cal]
+
+%下面是引用前文定理的代码
+% \usepackage{hyperref}
+% \begin{lemma}[test]\label{test}
+	%     test
+	%   \end{lemma}
+
+%   number: \ref{test}, name: \nameref{test}
+
+%如何在等号上加文字或记号
+%通过 \stackrel{?}{=}
+
+% 如何实现大括号多编号
+% \usepackage{cases}
+% \begin{numcases}{}
+% 	x_1&=eq1 \label{eqsystem1} \\
+% 	x_2+1&=eq2 \label{eqsystem2}
+% \end{numcases}
+
+\newtheorem{theorem}{\indent 定理}[section]
+\newtheorem{definition}[theorem]{\indent 定义}
+\newtheorem{proposition}[theorem]{\indent 命题}
+\newtheorem{lemma}[theorem]{\indent 引理}
+\newtheorem{corollary}[theorem]{\indent 推论}
+\newtheorem{example}[theorem]{\indent 例}
+\newtheorem*{remark}{\indent 注}
+\renewcommand{\proofname}{\indent \bf 证明}
+\newcommand{\me}{{\rm e}}
+\newcommand{\md}{{\rm d}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\npd}[3]{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}}
+\newcommand{\lc}[2]{\nabla_{#1}{#2}}
+
+
+% \graphicspath{{Figures/}}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+    \title{数学笔记}
+    \author{BeBop}
+    \maketitle
+    \newpage
+
+    \tableofcontents
+    \newpage
+    
+    \include{chapters/LinearAlgebra} %引用高等代数章节
+    \include{chapters/RiemannianGeometry} %引用黎曼几何章节
+    \include{chapters/ComplexGeometry} %引用复分析、复几何章节
+    \include{chapters/LieGroup} %引用李群章节
+    \include{chapters/Manifolds} %引用微分流形章节
+\end{document}
+

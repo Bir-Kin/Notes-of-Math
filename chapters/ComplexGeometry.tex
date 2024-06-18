@@ -1,0 +1,34 @@
+\chapter{复分析、复几何}
+\section{实线性空间与复线性空间}
+    流形 $\mathbb{C}^n$ 中每点的坐标为 $(z^1,\dots,z^n)$, 记 $z^j=x^j+iy^j$, 于是 $x^1,\dots,x^n$ 和 $y^1,\dots,y^n$ 是 $\mathbb{C}^n$ 的实坐标.
+    对 $\forall p\in\mathbb{C}^n$, 切空间 $T_p\mathbb{C}^n$ 有一组基 $\pd{}{x^1},\dots,\pd{}{x^n}$, $\pd{}{y^1},\dots,\pd{}{y^n}$; 余切空间 $T^*_p\mathbb{C}$
+    有一组基 $\md x^1,\dots,\md x^n$, $\md y^1,\dots,\md y^n$.
+
+    定义 $J_p:T_p\mathbb{C}^n\rightarrow T_p\mathbb{C}^n$
+    \begin{equation*}
+        J_p\left(\pd{}{x^j}\right)=\pd{}{y^j},\qquad J_p\left(\pd{}{y^j}\right)=-\pd{}{x^j}
+    \end{equation*}
+    它的对偶变换为 $J^*_p:T^*_p\mathbb{C}^n\rightarrow T^*_p\mathbb{C}^n$
+    \begin{equation*}
+        J^*_p\left(\md x^j\right)=-\md{y^j},\qquad J^*_p\left(\md{y^j}\right)=\md{x^j}
+    \end{equation*}
+    因为 $(J_p)^2=-\mathrm{id}$, 所以 $(J^*_p)^2=-\mathrm{id}$, 于是 $J_p$ 和 $J^*_p$ 均可对角化且特征值均为 $\pm i$.
+
+    计算可发现 $J^*_p$ 的属于 $i$ 的特征子空间的一组基为 $\md{z^1},\dots,\md{z^n}$, 属于 $-i$ 的特征子空间的一组基为 $\md{\bar{z}^1}\dots,\md{\bar{z}^n}$, 其中
+    \begin{equation*}
+        \md{z^j}=\md{x^j}+i\md{y^j},\qquad \md{\bar{z}^j}=\md{x^j}-i\md{y^j}
+    \end{equation*}
+    于是对应地它的对偶空间 $T_p\mathbb{C}^n\otimes\mathbb{C}$ 的属于 $i$ 的特征子空间的一组基为 $\pd{}{z^1},\dots\pd{}{z^n}$, 属于 $-i$ 的特征子空间的一组基为 $\pd{}{\bar{z}^1},\dots,\pd{}{\bar{z}^n}$, 其中
+    \begin{equation*}
+        \pd{}{z^j}=\frac{1}{2}\left(\pd{}{x^j}-i\pd{}{y^j}\right),\qquad \pd{}{\bar{z}^j}=\frac{1}{2}\left(\pd{}{x^j}+i\pd{}{y^j}\right)
+    \end{equation*}
+    
+    回顾 Cauchy-Riemann 方程: 设 $f=u+iv$ 是全纯函数, 则 $u(x,y),v(x,y)$ 关于 $x,y$ 的偏导数满足:
+    \begin{equation*}
+        \pd{u}{x}=\pd{v}{y},\qquad \pd{u}{y}=-\pd{v}{x}
+    \end{equation*}
+    代入 $\pd{f}{\bar{z}}$ 可得
+    \begin{equation*}
+        \pd{f}{\bar{z}}=\frac{1}{2}\left(\pd{f}{x}+i\pd{f}{y}\right)=\frac{1}{2}\left(\pd{u}{x}-\pd{v}{y}\right)+i\frac{1}{2}\left(\pd{v}{x}+i\pd{u}{y}\right)=0
+    \end{equation*}
+    于是 $f$ 全纯当且仅当 $\pd{f}{\bar{z}}\equiv0$, 推广到多元复变量即: $f(z^1,\dots,z^n)$ 是多元全纯函数当且仅当每个 $\pd{f}{\bar{z}^j}\equiv0$.
