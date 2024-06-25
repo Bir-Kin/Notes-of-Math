@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  25 JUN 2024 01:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  25 JUN 2024 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -523,7 +523,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 33.
 
-[5])
+[5]
+Overfull \hbox (1.87437pt too wide) in paragraph at lines 37--39
+[]$\OT1/cmr/m/n/10 1[]\OML/cmm/m/it/10 :$ \TU/FandolSong-Regular(0)/m/n/10 设 $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M; g\OT1/cmr/m/n/10 )$ \TU/FandolSong-Regular(0)/m/n/10 为 一 个 黎 曼 流 形\TU/lmr/m/n/10 , \TU/FandolSong-Regular(0)/m/n/10 取 $\OML/cmm/m/it/10 M$ \TU/FandolSong-Regular(0)/m/n/10 的 一 个 局 部 坐 标 覆 盖 $\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 x[]; [] ; x[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\TU/lmr/m/n/10 ,
+ []
+
+)
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10> not available
 (Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 74.
  [6] (./main.aux (./chapters/Manifolds.aux))
@@ -533,7 +538,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  13632 strings out of 476683
  288437 string characters out of 5807575
- 1859012 words of memory out of 5000000
+ 1860012 words of memory out of 5000000
  33672 multiletter control sequences out of 15000+600000
  520762 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

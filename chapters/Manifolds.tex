@@ -34,7 +34,7 @@
     流形 $M$ 上的黎曼度量是指光滑 $(0,2)$-张量场 $g$, $g$ 在每个点的切空间处都是内积.
     下面就来说明 $n$ 维流形 $M$ 上存在黎曼结构与切丛 $TM$ 的结构群可约化至正交群 $O(n)$ 是等价的.
 
-    \noindent $1^{\circ}.$ 设 $(M,g)$ 为一个黎曼流形, 取 $M$ 的一个局部坐标覆盖 $\{(U_{\alpha};x^1_{\alpha},\dots,x^n_{\alpha})\}$, 于是 $\pd{}{x^1_{\alpha}},\dots,\pd{}{x^n_{\alpha}}$ 成为 $U_{\alpha}$ 上的一组标架, 因为 $U_{\alpha}$ 上有度量结构, 
+    $1^{\circ}.$ 设 $(M,g)$ 为一个黎曼流形, 取 $M$ 的一个局部坐标覆盖 $\{(U_{\alpha};x^1_{\alpha},\dots,x^n_{\alpha})\}$, 于是 $\pd{}{x^1_{\alpha}},\dots,\pd{}{x^n_{\alpha}}$ 成为 $U_{\alpha}$ 上的一组标架, 因为 $U_{\alpha}$ 上有度量结构, 
     我们可对标架做 Gram-Schmidt 正交化得到单位正交标架 $e_{1\alpha},\dots,e_{n\alpha}$, 令局部平凡化映射为
     \begin{align*}
         \psi_{\alpha}:TU_{\alpha}&\rightarrow U_{\alpha}\times\mathbb{R}^n \\
@@ -43,4 +43,15 @@
     其中 $e_1,\dots,e_n$ 表示 $\mathbb{R}^n$ 上的自然基底. 当 $U_{\alpha}\cap U_{\beta}\neq\emptyset$ 时, 对每个点 $p\in U_{\alpha}\cap U_{\beta}$, 因为 $\{e_{i\alpha}|_p\}$ 和 $\{e_{i\beta}|_p\}$ 都是 $T_pM$ 的一组标准正交基, 
     所以转移函数 $g_{\beta\alpha}(p)$ 是正交矩阵, 因此结构群可被约化至 $O(n)$.
 
-    \noindent $2^{\circ}.$ 假设 $TM$ 的结构群可约化至正交群, 设 $\{(U_{\alpha},\psi_{\alpha})\}$ 是对应的平凡化, 
+    $2^{\circ}.$ 假设 $TM$ 的结构群可约化至正交群, 设 $\{(U_{\alpha},\psi_{\alpha})\}$ 是对应的平凡化, 即 $\psi_{\alpha}$ 是从 $TU_{\alpha}$ 到 $U_{\alpha}\times\mathbb{R}^n$ 的微分同胚, 
+    令 $e_{i\alpha} = \psi^{-1}(U_{\alpha}\times \{e_i\})$, 其中 $\{e_i\}$ 为 $\mathbb{R}^n$ 的自然基底. 我们得到了 $TU_{\alpha}$ 上处处线性无关的一组向量场 $\{e_{i\alpha}\}$, 命这组向量场构成 $TU_{\alpha}$ 的一个单位正交标架场, 这能唯一确定 $TU_{\alpha}$ 上的黎曼度量.
+    若 $U_{\alpha}\cap U_{\beta}\neq\emptyset$, 对 $\forall\,p\in U_{\alpha}\cap U_{\beta}$, 
+    \begin{align*}
+        \langle e_{i\alpha},e_{j\alpha}\rangle_p &= \langle\psi_{\alpha}(e_{i\alpha}|_p),\psi_{\alpha}(e_{j\alpha}|_p)\rangle \\
+        &= \langle g_{\alpha\beta}(p)\psi_{\beta}(e_{i\beta}|_p),g_{\alpha\beta}(p)\psi_{\beta}(e_{j\beta}|_p)\rangle \\
+        &= \langle\psi_{\beta}(e_{i\beta}|_p),\psi_{\beta}(e_{j\beta}|_p)\rangle \\
+        &= \langle e_{i\beta},e_{j\beta}\rangle_p
+    \end{align*}
+    所以不同平凡化定义的黎曼结构是相容的, 因此能定义一个整体的黎曼度量 $g$.
+
+    注意到我们能用单位分解在任意微分流形上构造黎曼度量, 这表明任意微分流形切丛的结构群都能约化到正交群.
