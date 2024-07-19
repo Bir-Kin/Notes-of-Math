@@ -1,0 +1,57 @@
+\chapter{图论与组合论}
+    \section{图论}
+    \subsection{一个关于二部图的小问题}
+    \begin{problem}
+        设有二部图 $(U,V)$, $U$ 的顶点数为 $12$, 且对任意 $U$ 的 $10$ 顶点子集 $X$, 集合 $\{v\,\big|\,v\verb|与某个|u\verb|相邻|,\;u\in X\}$ 大小为 $20$; 
+        对任意 $U$ 的 $8$ 顶点子集 $Y$, 集合 $\{v\,\big|\,v\verb|与某个|u\verb|相邻|,\;u\in Y\}$ 大小为 $16$. 证明: 集合 $\{v\,\big|\,v\verb|与某个|u\verb|相邻|,\;u\in U\}$ 大小为 $24$.
+    \end{problem}
+    \begin{proof}
+        对 $U$ 的任意子集 $X$, 记 $V_X = \{v\,\big|\,v\verb|与某个|u\verb|相邻|,\;u\in X\}$, 并记 $n(X) = |V_X|$, 特别地, 当 $X$ 仅有一个元素, 即 $X=\{u\}$ 时, $n(X)$ 写为 $n(u)={\rm deg}(u)$.
+        继续记 $U_n$ 为 $U$ 的某个顶点数为 $n$ 的子集, 则题设可写为: 
+        \begin{gather*}
+            n(U_{10})=20,\quad\forall U_{10}\subset U \\
+            n(U_8)=16,\quad\forall U_8\subset U
+        \end{gather*}
+        对 $U$ 的任意子集 $X,\,Y$, 
+        \begin{align*}
+            n(X\cup Y) &= |V_X\cup V_Y| = |V_X| + |V_Y| - |V_X\cap V_Y| \\
+            &\leqslant |V_X| + |V_Y| - |V_{X\cap Y}| = n(X) + n(Y) - n(X\cap Y)
+        \end{align*} 
+        于是
+        \begin{equation*}
+            n(X) + n(Y) \geqslant n(X\cup Y) + n(X\cap Y)
+        \end{equation*}
+        我们将反复使用这个不等式推导出结论.
+
+        对 $\forall\, U_6$, 存在 $U_8,U_8'$ 使得 $U_8\cap U_8'=U_6$, 则 $|U_8\cup U_8'| = 10$, 于是
+        \begin{equation*}
+            32 = n(U_8)+n(U_8') \geqslant n(U_8\cup U_8') + n(U_6) = 32 + n(U_6)
+        \end{equation*}
+        即 $n(U_6)\leqslant12$.
+
+        对 $\forall\, U_4$, 存在 $U_6,U_6'$ 使得 $U_6\cap U_6'=U_4$, 则 $|U_6\cup U_6'| = 8$, 于是
+        \begin{equation*}
+            24 \geqslant n(U_6)+n(U_6') \geqslant n(U_6\cup U_6') + n(U_4) = 16 + n(U_4)
+        \end{equation*}
+        即 $n(U_4)\leqslant8$.
+
+        对 $\forall\, U_2$, 存在 $U_4,U_6$ 使得 $U_4\cap U_6=U_2$, 则 $|U_4\cup U_6| = 6$, 于是
+        \begin{equation*}
+            20 \geqslant n(U_4)+n(U_6) \geqslant n(U_4\cup U_6) + n(U_2) = 16 + n(U_2)
+        \end{equation*}
+        即 $n(U_2)\leqslant4$. 
+
+        另一方面对 $\forall\, U_2$, 存在 $U_8$ 使得 $U_2\cap U_8=\emptyset$, 则 $|U_2\cup U_8| = 10$, 于是
+        \begin{equation*}
+            16+n(U_2)=n(U_8)+n(U_2)\geqslant n(U_10)=20
+        \end{equation*}
+        即 $n(U_2)\geqslant4$. 于是 $n(U_2)=4$, 从而前面的不等式全为等式, 进而 $n(U_4) = 8$, $n(U_6) = 12$.
+        对任意不相交的 $U_2,U_2'$, 
+        \begin{equation*}
+            8 = n(U_2\cup U_2') = n(U_2)+n(U_2')-|V_{U_2}\cap V_{U_2'}| = 8 - |V_{U_2}\cap V_{U_2'}|
+        \end{equation*}
+        推出 $|V_{U_2}\cap V_{U_2'}| = 0$, 也即 $V_{U_2}\cap V_{U_2'}=\emptyset$, 到此就能推出 $n(U) = 24$ 了.
+
+        进一步研究二部图 $(U,V)$, 由上述不相交性质可知对任意不同两点 $u,u'$, $V_u\cap V_{u'}=\emptyset$, 于是 $n(u)+n(u') = n(\{u,u'\}) = 4$, 可推出所有的 $n(u) = 2$.
+        设 $U = \{u_1,\dots,u_{12}\}$, 二部图的连接情况为 $E = \{(u_i,v_{2i-1}),\,(u_i,v_{2i})\}_{1\leqslant i\leqslant12}$. 
+    \end{proof}
