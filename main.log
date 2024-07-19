@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  19 JUL 2024 22:13
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  20 JUL 2024 00:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -376,7 +376,7 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./main.aux (./chapters/AlgebraicTopology.aux) (./chapters/Graphs&Combinatorics.aux))
+(./main.aux (./chapters/AlgebraicTopology.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -503,46 +503,22 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ]
 Chapter 1.
-) [5]
-\openout2 = `chapters/Graphs&Combinatorics.aux'.
-
- (./chapters/Graphs&Combinatorics.tex
+File: Figures/SpernerLemma.jpg Graphic file (type bmp)
+<Figures/SpernerLemma.jpg>
+[5])
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 1.
- [6
-
-
-
-
-]
-Chapter 2.
-
-Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
-(fontspec)                Script "CJK".
-
-
-Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
-(fontspec)             'FandolFang-Regular' with options
-(fontspec)             [Script={CJK},Extension={.otf}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-[7]) [8] (./main.aux (./chapters/AlgebraicTopology.aux) (./chapters/Graphs&Combinatorics.aux))
+(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 76.
+ [6] (./main.aux (./chapters/AlgebraicTopology.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FB23D27F0F031C3B59347F637CA04FC0;514.
+(rerunfilecheck)             Checksum: C2CC731C39FF54D76DB7BBFB02B22DBB;263.
  ) 
 Here is how much of TeX's memory you used:
- 13675 strings out of 476683
- 290437 string characters out of 5807575
- 1856012 words of memory out of 5000000
- 33701 multiletter control sequences out of 15000+600000
- 520802 words of font info for 100 fonts, out of 8000000 for 9000
+ 13636 strings out of 476683
+ 288710 string characters out of 5807575
+ 1851012 words of memory out of 5000000
+ 33674 multiletter control sequences out of 15000+600000
+ 520746 words of font info for 93 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,8n,81p,340b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,8n,81p,340b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (8 pages).
+Output written on main.pdf (6 pages).
