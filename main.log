@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  20 JUL 2024 00:03
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  22 JUL 2024 12:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -505,20 +505,36 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 Chapter 1.
 File: Figures/SpernerLemma.jpg Graphic file (type bmp)
 <Figures/SpernerLemma.jpg>
-[5])
+[5]
+
+Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
+(fontspec)                Script "CJK".
+
+
+Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Script={CJK},Extension={.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 76.
- [6] (./main.aux (./chapters/AlgebraicTopology.aux))
+(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 62.
+[6]) [7] (./main.aux (./chapters/AlgebraicTopology.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C2CC731C39FF54D76DB7BBFB02B22DBB;263.
+(rerunfilecheck)             Checksum: 65A0AE692E406D9B84E5EA9F40C5F8AB;495.
  ) 
 Here is how much of TeX's memory you used:
- 13636 strings out of 476683
- 288710 string characters out of 5807575
- 1851012 words of memory out of 5000000
- 33674 multiletter control sequences out of 15000+600000
- 520746 words of font info for 93 fonts, out of 8000000 for 9000
+ 13653 strings out of 476683
+ 289204 string characters out of 5807575
+ 1871012 words of memory out of 5000000
+ 33684 multiletter control sequences out of 15000+600000
+ 520786 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,8n,81p,340b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,8n,81p,340b,408s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (6 pages).
+Output written on main.pdf (7 pages).

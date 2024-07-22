@@ -1,2 +1,3 @@
 \contentsline {chapter}{\numberline {1}代数拓扑}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Brouwer不动点定理与Sperner引理}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}区域不变性定理(Invariance of domain)}{7}{section.1.2}%
