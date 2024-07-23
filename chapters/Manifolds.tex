@@ -55,3 +55,34 @@
     所以不同平凡化定义的黎曼结构是相容的, 因此能定义一个整体的黎曼度量 $g$.
 
     注意到我们能用单位分解在任意微分流形上构造黎曼度量, 这表明任意微分流形切丛的结构群都能约化到正交群.
+
+    \section{向量丛分类定理}
+    \subsection{同伦的映射拉回同构的向量丛(纤维丛)}
+    \begin{definition}[拉回丛的定义]
+        设 $f:X\rightarrow Y$, 且有向量丛 $p:E\rightarrow Y$, 则可以定义 $X$ 上的拉回丛 $p':f^*E\rightarrow X$, 其中 
+        \begin{equation*}
+            f^*E:=\{(x,e)\in X\times E\,\big|\,f(x)=p(e)\}
+        \end{equation*}
+        为 $X\times E$ 的子集, 且赋予子拓扑结构. 丛投影为映射到第一个分量的投影映射. 每根纤维的线性结构由 $E$ 上每根纤维的线性结构给出.(有模糊的地方)
+    \end{definition}
+    \begin{proposition}[同伦的映射拉回同构的向量丛]
+        现有向量丛 $p:E\rightarrow Y$, 设 $f\simeq g:X\rightarrow Y$ 为同伦的光滑映射, 则拉回丛 $f^*E$ 与 $g^*E$ 丛同构.
+    \end{proposition}
+
+    在证明之前, 我们先分析一下命题. 设 $H:X\times[0,1]\rightarrow Y$ 是从 $f$ 到 $g$ 的光滑伦移, 即 $H|_{X\times\{0\}}=f$, $H|_{X\times\{1\}}=g$. 则有 $X\times[0,1]$ 上的拉回丛 $H^*E$, 
+    且 $H^*E|_{X\times\{0\}}=f^*E,\,H^*E|_{X\times\{1\}}=g^*E$. 因此为了证明 $f^*E\cong g^*E$, 只需证明:
+
+    \begin{proposition}[向量丛在柱空间的上下底的限制是同构的]
+        当 $X$ 仿紧时, 对任意 $X\times[0,1]$ 上的向量丛 $E$, $E|_{X\times\{0\}}\cong E|_{X\times\{1\}}$.
+    \end{proposition}
+    \begin{proof}
+        我们需要两个关于向量丛的事实:
+
+        $(1):$ 若 $p:E\rightarrow X\times[a,b]$ 在 $X\times[a,c]$ 和 $X\times[c,b]$ 上分别是平凡的, 则 $E$ 在整个 $X\times[a,b]$ 上平凡. 只需分别写出在 $X\times[a,c]$ 和 $X\times[c,b]$ 
+        上的平凡化 $h_1$ 和 $h_2$, 并修改 $h_2$ 使得它们在 $p^{-1}(X\times\{c\})$ 上匹配, 则 $h_1$ 和修改后的 $h_2$ 合并成整个 $X\times[a,b]$ 上的平凡化.
+
+        $(2):$ 对于向量丛 $p:E\rightarrow X\times[0,1]$, 存在 $X$ 的开覆盖 $\{U_{\alpha}\}$ 使得 $E$ 在每个 $U_{\alpha}\times[0,1]$ 上都是平凡的. 对任意 $x\in X$, 存在 $U_{x,1},\dots,U_{x,k}$ 
+        以及 $0=t_0<t_1<\cdots<t_k=1$ 使得 $E$ 在 $U_{x,i}\times[t_{i-1},t_i]$ 上平凡, 令 $U_x=U_{x,1}\cap\cdots\cap U_{x,k}$, 则由 $(1)$ 知 $E$ 在 $U_x\times[0,1]$ 上平凡.
+
+        下面我们来证明该命题, 
+    \end{proof}
