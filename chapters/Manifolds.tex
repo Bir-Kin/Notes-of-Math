@@ -26,9 +26,10 @@
     \begin{equation*}
         (p,v_{\alpha})\sim(q,v_{\beta})\Leftrightarrow p=q,\;v_{\beta}=g_{\beta\alpha}(p)v_{\alpha}.
     \end{equation*}
-    $E$ 的拓扑由商拓扑给出, 记 $[p,v]$ 为 $(p,v)$ 的等价类, 定义 $\pi:E\rightarrow M$, $\pi([p,v])=p$. 则 $E$ 在投影映射 $\pi$ 下成为 $M$ 上的秩 $k$ 的向量丛.
+    $E$ 的拓扑由商拓扑给出, 记 $[p,v]$ 为 $(p,v)$ 的等价类, 定义 $\pi:E\rightarrow M$, $\pi([p,v])=p$. 则 $E$ 在投影映射 $\pi$ 下成为 $M$ 上的秩 $k$ 的向量丛. 
 
     \subsection{流形可定向与结构群可约化至 ${\rm GL^+(k,\mathbb{R})}$}
+    略
 
     \subsection{黎曼度量与结构群可约化至正交群 $O(k)$}
     流形 $M$ 上的黎曼度量是指光滑 $(0,2)$-张量场 $g$, $g$ 在每个点的切空间处都是内积.
@@ -55,6 +56,45 @@
     所以不同平凡化定义的黎曼结构是相容的, 因此能定义一个整体的黎曼度量 $g$.
 
     注意到我们能用单位分解在任意微分流形上构造黎曼度量, 这表明任意微分流形切丛的结构群都能约化到正交群.
+
+    \subsection{复向量丛与近复结构, 与结构群可约化至 ${\rm GL}(k,\mathbb{C})$}
+    设 $M$ 是 $m$ 维流形, $M$ 上的复向量丛 $E$ 在定义上仅需要把纤维 $\mathbb{R}^k$ 改为 $\mathbb{C}^k$、结构群改为 ${\rm GL}(k,\mathbb{C})$. 
+
+    但如果把 $\mathbb{C}^k$ 视为 $\mathbb{R}^{2k}$, 则结构群可约化至 ${\rm GL}(2k,\mathbb{R})$ 的子群 
+    \begin{equation*}
+        \left\{\begin{pmatrix}
+            A & -B \\
+            B & A
+        \end{pmatrix}\,\bigg|\,|A|^2+|B|^2>0\right\}
+    \end{equation*}
+    我们仍把这个子群记为 ${\rm GL}(k,\mathbb{C})$. 可以证明实的秩为 $2k$ 的向量丛 $E$ 为复的秩为 $k$ 的向量丛当且仅当结构群可约化至 ${\rm GL}(k,\mathbb{C})$.
+
+    我们也可以从近复结构的视角理解复向量丛, 若实的秩为 $2k$ 的向量丛 $E$ 上存在自同构 $J$ (即 $\pi\circ J = \pi$), 使得 $J^2 = -{\rm id}$, 则称 $J$ 为 $M$ 的近复结构. 可以证明 $M$ 为复向量丛当且仅当 $M$ 上存在近复结构.
+    
+    一方面若 $M$ 为复向量丛, 则可以逐点定义 $J_p(p,v)=(p,\sqrt{-1}v)$, 因为转移映射是复线性变换, 所以 $J_p$ 良定, 且 $J_p^2 = -\id$; 另一方面我们可以适当修改平凡化 $\psi_{\alpha}$ 使得 $J$ 可局部表示为 
+    \begin{equation*}
+        J_{\alpha}(p,v_{\alpha}) = \left(p,
+        \begin{pmatrix}
+            & -I_k \\
+            I_k & 
+        \end{pmatrix}v_{\alpha}\right)
+    \end{equation*}
+    因为 $g_{\alpha\beta}\cdot J_{\beta} = J_{\alpha}\cdot g_{\alpha\beta}$, 所以
+    \begin{equation*}
+        \begin{pmatrix}
+            & -I_k \\
+            I_k & 
+        \end{pmatrix}\cdot g_{\alpha\beta}(p) = g_{\alpha\beta}(p)\cdot
+        \begin{pmatrix}
+            & -I_k \\
+            I_k & 
+        \end{pmatrix}\Rightarrow g_{\alpha\beta}(p) = 
+        \begin{pmatrix}
+            A & -B \\
+            B & A
+        \end{pmatrix}
+    \end{equation*}
+    从而结构群可约化至 $\GL(k,\mC)$.
 
     \section{向量丛分类定理}
     \subsection{同伦的映射拉回同构的向量丛(纤维丛)}
