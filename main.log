@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  24 JUL 2024 02:08
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  24 JUL 2024 17:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -376,7 +376,7 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./main.aux (./chapters/Manifolds.aux))
+(./main.aux (./chapters/Manifolds.aux) (./problems/Combinatorics.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -495,13 +495,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [3]
+ [3] [4
+
+] [5] [6]
 \openout2 = `chapters/Manifolds.aux'.
 
- (./chapters/Manifolds.tex [4
-
-
-]
+ (./chapters/Manifolds.tex
 Chapter 1.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -523,7 +522,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 34.
 
-[5]
+[7
+
+
+]
 Overfull \hbox (1.87437pt too wide) in paragraph at lines 38--40
 []$\OT1/cmr/m/n/10 1[]\OML/cmm/m/it/10 :$ \TU/FandolSong-Regular(0)/m/n/10 设 $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M; g\OT1/cmr/m/n/10 )$ \TU/FandolSong-Regular(0)/m/n/10 为 一 个 黎 曼 流 形\TU/lmr/m/n/10 , \TU/FandolSong-Regular(0)/m/n/10 取 $\OML/cmm/m/it/10 M$ \TU/FandolSong-Regular(0)/m/n/10 的 一 个 局 部 坐 标 覆 盖 $\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 x[]; [] ; x[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\TU/lmr/m/n/10 ,
  []
@@ -538,17 +540,45 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10> not available
 (Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 75.
-[6]) [7] (./main.aux (./chapters/Manifolds.aux))
+[8]) [9] [10
+
+
+
+] [11] [12]
+\openout2 = `problems/Combinatorics.aux'.
+
+ (./problems/Combinatorics.tex
+Chapter 2.
+
+Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
+(fontspec)                Script "CJK".
+
+
+Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Script={CJK},Extension={.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+[13
+
+
+]) [14] (./main.aux (./chapters/Manifolds.aux) (./problems/Combinatorics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E89FED4FF594985C1B49952F65577D25;1209.
+(rerunfilecheck)             Checksum: BA8FAB48EF09A1588B7CF15AD62FF95E;1687.
  ) 
 Here is how much of TeX's memory you used:
- 13653 strings out of 476683
- 289359 string characters out of 5807575
+ 13702 strings out of 476683
+ 291009 string characters out of 5807575
  1867012 words of memory out of 5000000
- 33693 multiletter control sequences out of 15000+600000
- 520762 words of font info for 95 fonts, out of 8000000 for 9000
+ 33727 multiletter control sequences out of 15000+600000
+ 520802 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,8n,81p,353b,352s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,8n,81p,353b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (7 pages).
+Output written on main.pdf (14 pages).
