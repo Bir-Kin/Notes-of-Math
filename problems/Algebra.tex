@@ -1,0 +1,20 @@
+\chapter{高等代数}
+    \begin{problem}
+        假设 $n$ 维欧氏空间 $V$ 中有 $m$ 个向量两两成钝角, 证明: $m\leqslant n+1$.
+    \end{problem}
+
+    \begin{proof}
+        当 $\mathrm{dim}V = 1$, 命题显然成立.
+
+        假设当维数为 $n-1$ 时命题成立, 现证明命题在 $n$ 维时仍成立. 设 $\ft{v}{1}{m}$ 为 $V$ 中两两成钝角的向量, 
+        令 $W$ 为 $Lv_m$ 的正交补空间, 并记 $P:V\rightarrow W$ 为正交投影映射, 令 $w_1=Pv_1,\dots,w_{m-1}=Pv_{m-1}$, 则当 $i\neq j$ 时, 
+        \begin{align*}
+            <w_i, w_j> &= <Pv_i,Pv_j> = \left<v_i-\frac{<v_i,v_m>}{<v_m,v_m>}v_m, v_j-\frac{<v_j,v_m>}{<v_m,v_m>}v_m\right> \\
+            &=<v_i,v_j> - \frac{<v_i,v_m>\cdot<v_j,v_m>}{<v_m,v_m>} \\
+            &<0
+        \end{align*}
+        因此 $\ft{w}{1}{m-1}$ 是 $n-1$ 维空间 $W$ 中两两成钝角的向量, 由归纳假设知 $m-1\leqslant n$, 即 $m\leqslant n+1$.
+    \end{proof}
+    \begin{remark}
+        我感觉这和 $n$ 维欧氏空间的拓扑性质有关系, 
+    \end{remark}
