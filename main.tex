@@ -11,6 +11,7 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{cases}
+\usepackage{color}
 % \usepackage{times}
 % \usepackage{mathptmx}
 % \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
@@ -57,6 +58,8 @@
 \newcommand{\mC}{\mathbb{C}}
 \newcommand{\GL}{{\rm GL}}
 \newcommand{\SL}{{\rm SL}}
+\newcommand{\ft}[3]{{#1}_{#2},\dots,{#1}_{#3}}
+\newcommand{\cft}[3]{{#1}_{#2},\cdots,{#1}_{#3}}
 
 
 % \graphicspath{{Figures/}}
@@ -78,12 +81,15 @@
     % \include{chapters/RiemannianGeometry} %引用黎曼几何章节
     % \include{chapters/ComplexGeometry} %引用复分析、复几何章节
     % \include{chapters/LieGroup} %引用李群章节
-    \include{chapters/Manifolds} %引用微分流形章节
+    % \include{chapters/Manifolds} %引用微分流形章节
     % \include{chapters/AlgebraicTopology} %引用代数拓扑章节
     % \include{chapters/Graphs&Combinatorics} %引用图论与组合论章节
 
     \part{杂题集萃}
-    \include{problems/Combinatorics} %引用组合问题
+    % \include{problems/Combinatorics} %引用组合问题
+    % \include{problems/Algebra} %引用代数问题
 
+    \part{易错知识}
+    \include{fallible-point} %引用易错知识点
 \end{document}
 
