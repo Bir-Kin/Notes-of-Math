@@ -1,0 +1,32 @@
+\chapter{纤维丛}
+    \begin{problem}
+        Show that the fiber bundle
+        \begin{center}
+            \begin{tikzcd}
+                S^3 \arrow[r] & S^{4n+3} \arrow[d] \\
+                              & \mathbb{H}P^n                    
+            \end{tikzcd}
+        \end{center}
+        gives rise to a quotient fiber bundle 
+        \begin{center}
+            \begin{tikzcd}
+                S^2 \arrow[r] & \mathbb{C}P^{2n+1} \arrow[d] \\
+                              & \mathbb{H}P^n                   
+            \end{tikzcd}
+        \end{center}
+        by factoring out the action of $S^1$ on $S^{4n+3}$ by complex scalar multyplication.
+    \end{problem}
+    \begin{proof}
+        Identifying quaternionic $n$-space $\mathbb{H}^n$ with complex $2n$-space $\mathbb{C}^{2n}$ in the standard way. 
+        We get an identifycation of the unit spheres
+        \begin{equation*}
+            S^{4n-1}\cong S(\mathbb{C}^{2n})\cong S(\mathbb{H}^n),
+        \end{equation*}
+        especially we have
+        \begin{equation*}
+            S^3\cong S(\mathbb{C}^2)\cong S(\mathbb{H}).
+        \end{equation*}
+
+        By definition, $\mathbb{H}P^n$ is the orbit manifold of $\mathbb{H}^*$ acting on $(\mathbb{H}^{n+1})^*$ by scalar multyplication.
+        后面的很好看出来。
+    \end{proof}

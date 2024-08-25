@@ -118,11 +118,100 @@
     \begin{proof}
         我们需要两个关于向量丛的事实:
 
-        $(1):$ 若 $p:E\rightarrow X\times[a,b]$ 在 $X\times[a,c]$ 和 $X\times[c,b]$ 上分别是平凡的, 则 $E$ 在整个 $X\times[a,b]$ 上平凡. 只需分别写出在 $X\times[a,c]$ 和 $X\times[c,b]$ 
+        $(1):$ 若 $p:E\rightarrow X\times[a,b]$ 在 $X\times[a,c]$ 和 $X\times[c,b]$ 上分别是平凡的, 则 $E$ 在整个 $X\times[a,b]$ 上平凡. 
+        
+        只需分别写出在 $X\times[a,c]$ 和 $X\times[c,b]$ 
         上的平凡化 $h_1$ 和 $h_2$, 并修改 $h_2$ 使得它们在 $p^{-1}(X\times\{c\})$ 上匹配, 则 $h_1$ 和修改后的 $h_2$ 合并成整个 $X\times[a,b]$ 上的平凡化.
 
-        $(2):$ 对于向量丛 $p:E\rightarrow X\times[0,1]$, 存在 $X$ 的开覆盖 $\{U_{\alpha}\}$ 使得 $E$ 在每个 $U_{\alpha}\times[0,1]$ 上都是平凡的. 对任意 $x\in X$, 存在 $U_{x,1},\dots,U_{x,k}$ 
+        $(2):$ 对于向量丛 $p:E\rightarrow X\times[0,1]$, 存在 $X$ 的开覆盖 $\{U_{\alpha}\}$ 使得 $E$ 在每个 $U_{\alpha}\times[0,1]$ 上都是平凡的. 
+        
+        对任意 $x\in X$, 存在 $U_{x,1},\dots,U_{x,k}$ 
         以及 $0=t_0<t_1<\cdots<t_k=1$ 使得 $E$ 在 $U_{x,i}\times[t_{i-1},t_i]$ 上平凡, 令 $U_x=U_{x,1}\cap\cdots\cap U_{x,k}$, 则由 $(1)$ 知 $E$ 在 $U_x\times[0,1]$ 上平凡.
 
         下面我们来证明该命题, 
     \end{proof}
+
+    \section{Kunn\"{e}th 公式与 Leray-Hirsch 定理}
+    \begin{theorem}[Kunn\"{e}th 公式]
+        设流形 $M$ 有有限好覆盖, $F$ 是任意流形, 则
+        \begin{equation*}
+            H^*(M\times F)\cong H^*(M)\otimes H^*(F)
+        \end{equation*}
+    \end{theorem}
+
+    \begin{proof}[证明概要]
+        设 $\pi:M\times F\rightarrow M$, $\rho:M\times F\rightarrow F$ 为乘积流形到两个分量的投影, 则可以定义
+        \begin{align*}
+            \psi:H^*(M)\otimes H^*(F)&\rightarrow H^*(M\times F) \\
+            \omega\otimes\tau&\mapsto\pi^*\omega\wedge\rho^*\tau
+        \end{align*}
+        由 M-V 论证, 可以得到如下交换图:
+
+        \begin{tikzcd}[column sep = tiny]
+            \vdots \arrow[d]                                                                                                 & \vdots \arrow[d]                                          \\
+            \bigoplus\limits_{p+q=k}H^p(U\cup V)\otimes H^q(F) \arrow[d] \arrow[r, "\psi"]                                   & H^k\left((U\cup V)\times F\right) \arrow[d]               \\
+            \bigoplus\limits_{p+q=k}\left((H^p(U)\otimes H^q(F))\oplus (H^p(V)\otimes H^q(F))\right) \arrow[r, "\psi"] \arrow[d] &             H^k(U\times F)\oplus H^k(V\times F) \arrow[d] \\
+            \bigoplus\limits_{p+q=k}H^p(U\cap V)\otimes H^q(F) \arrow[r, "\psi"] \arrow[d, "\md^*"]                          & H^k((U\cap V)\times F) \arrow[d, "\md^*"]                 \\
+            \bigoplus\limits_{p+q=k+1}H^p(U\cup V)\otimes H^q(F) \arrow[d] \arrow[r, "\psi"]                                 & H^{k+1}\left((U\cup V)\times F\right) \arrow[d]           \\
+            \vdots                                                                                                           & \vdots                                                   
+        \end{tikzcd}
+
+        前两个圈的交换性显然, 第三个圈的交换性需要用到 $\md^*$ 的表达式. 由五引理能得到归纳递推, 归纳奠基是平凡的.
+    \end{proof}
+
+    \begin{theorem}[Leray-Hirsch 定理]
+        设 $\pi:E\rightarrow M$ 为纤维丛, 纤维为 $F$, 若存在 $E$ 上的微分形式 $\{\ft{e}{1}{n}\}$ 满足将它们限制在每个纤维 $F_x$ 上都能得到 $H^*(F_x)$ 的一组基, 
+        则
+        \begin{equation*}
+            H^*(E)\cong H^*(M)\otimes\{\ft{e}{1}{n}\}\cong H^*(M)\otimes H^*(F).
+        \end{equation*}
+    \end{theorem}
+    \begin{proof}[证明概要]
+        这里的关键在于不存在 $E$ 到 $F$ 的整体投影 $\rho$, 也就无法通过这个方式定义 $\rho^*:H^*(F)\rightarrow H^*(E)$ 了. 
+        但是借助 $\{\ft{e}{1}{n}\}$ 我们可以构造合适的映射 $\tilde{\rho^*}$, 做法如下:固定某个点 $x\in M$, 也即固定某个纤维 $F_x$, 
+        取 $H^*(F_x)$ 的一组基 $\{\ft{f}{1}{n}\}$, 定义:
+        \begin{align*}
+            \tilde{\rho^*}:H^*(F)&\rightarrow H^*(E) \\
+            \sum_{i}a_if_i&\mapsto\sum_{i}a_ie_i.
+        \end{align*} 
+
+        于是可以定义:
+        \begin{align*}
+            \tilde{\psi}:H^*(M)\otimes H^*(F)&\rightarrow H^*(E) \\
+            \omega\otimes\tau&\mapsto\pi^*\omega\wedge\tilde{\rho^*}\tau
+        \end{align*}
+        归纳递推仍由 M-V 论证给出; 
+        
+        \begin{tikzcd}[column sep = tiny]
+            \vdots \arrow[d]                                                                                                 & \vdots \arrow[d]                                          \\
+            \bigoplus\limits_{p+q=k}H^p(U\cup V)\otimes H^q(F) \arrow[d] \arrow[r, "\psi"]                                   & H^k\left(\pi^{-1}(U\cup V)\right) \arrow[d]               \\
+            \bigoplus\limits_{p+q=k}\left((H^p(U)\otimes H^q(F))\oplus (H^p(V)\otimes H^q(F))\right) \arrow[r, "\psi"] \arrow[d] &             H^k(\pi^{-1}(U))\oplus H^k(\pi^{-1}(V)) \arrow[d] \\
+            \bigoplus\limits_{p+q=k}H^p(U\cap V)\otimes H^q(F) \arrow[r, "\psi"] \arrow[d, "\md^*"]                          & H^k(\pi^{-1}(U\cap V)) \arrow[d, "\md^*"]                 \\
+            \bigoplus\limits_{p+q=k+1}H^p(U\cup V)\otimes H^q(F) \arrow[d] \arrow[r, "\psi"]                                 & H^{k+1}\left(\pi^{-1}(U\cup V)\right) \arrow[d]           \\
+            \vdots                                                                                                           & \vdots                                                   
+        \end{tikzcd}
+        
+        因为 good cover 中的每个开集都同伦于单点, 而同伦映射诱导同构的拉回丛(注意这里是纤维丛的版本), 因此 good cover 同时也是 locally trivialization.
+        故 $\pi^{-1}(U_\alpha)\cong U_{\alpha}\times F$, 从而 $H^*(\pi^{-1}(U_\alpha))\cong H^*(U_{\alpha})\otimes H^*(F)$, 这给出了归纳奠基.
+    \end{proof}
+    \begin{remark}
+        实际上当底空间 $M$ 连通时, 定理的条件可弱化为 $\{\ft{e}{1}{n}\}$ 限制在某个纤维 $F_x$ 上得到 $H^*(F_x)$ 的一组基. 
+        因为对不同的两点 $x,y$, 有道路 $\gamma:[0,1]\rightarrow M$ 将他们相连, 于是嵌入映射 $\iota_x:F_x\hookrightarrow E$ 和 $\iota_y:F_y\hookrightarrow E$ 同伦.
+        因此拉回映射 $\iota^*_x:H^*(E)\rightarrow H^*(F_x)$ 与 $\iota^*_y:H^*(E)\rightarrow H^*(F_y)$ 相等.
+    \end{remark}
+    \begin{remark}
+        这里的同构 $H^*(E)\cong H^*(M)\otimes H^*(F)$ 并不保持环结构(例如？)因此只能说 $H^*(E)$ 可看成 $H^*(M)$-模.
+    \end{remark}
+    \begin{remark}
+        存在不满足{\rm Leray-Hirsch}定理条件的纤维丛, 比如{\rm Hopf}纤维化:
+        \begin{center}
+            \begin{tikzcd}
+                S^1 \arrow[r] & S^3 \arrow[d] \\
+                              & S^2          
+            \end{tikzcd}    
+        \end{center}
+        其中
+        \begin{equation*}
+            H^*(S^3)\neq H^*(S^1)\otimes H^*(S^2)
+        \end{equation*}
+    \end{remark}
