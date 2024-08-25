@@ -128,7 +128,35 @@
         对任意 $x\in X$, 存在 $U_{x,1},\dots,U_{x,k}$ 
         以及 $0=t_0<t_1<\cdots<t_k=1$ 使得 $E$ 在 $U_{x,i}\times[t_{i-1},t_i]$ 上平凡, 令 $U_x=U_{x,1}\cap\cdots\cap U_{x,k}$, 则由 $(1)$ 知 $E$ 在 $U_x\times[0,1]$ 上平凡.
 
-        下面我们来证明该命题, 
+        下面我们来证明该命题, 由 $(2)$ 我们可以取 $X$ 的开覆盖 $\{U_{\alpha}\}$ 使得 $E$ 在每个 $U_{\alpha}\times[0,1]$ 上平凡. 
+        因为 $X$ 是第二可数空间, 不妨设 $\{U_{\alpha}\} = \{U_n\}_{n=1}^{\infty}$, 也即开覆盖为可数开覆盖. 
+        取从属于 $\{U_n\}$ 的单位分解 $\{\rho_n\}$ (这里为使下标一致我们牺牲了 ${\rm supp}\,\rho_n$ 的紧性). 记
+        \begin{equation*}
+            \varphi_n = \rho_1+\rho_2+\dots+\rho_n,
+        \end{equation*}
+        特别地令 $\varphi_0\equiv0,\, \varphi_{\infty}\equiv1$. 则每个 $\varphi_i$ 都能定义图流形
+        \begin{equation*}
+            X_i:=\{(x,\varphi_i(x))\,\big|\,x\in X\}\subset X\times[0,1]
+        \end{equation*}
+        每个含入 $\iota_i:X_i\hookrightarrow X\times[0,1]$ 都定义了一个拉回丛 $E_i:=\iota_i^*E = E|_{X_i}$. 
+        特别地 $X_0 = X\times\{0\},\,X_{\infty}=X\times\{1\},\,\iota_0^*E = E|_{X\times\{0\}},\,\iota_{\infty}^*E = E|_{X\times\{1\}}$. 
+        因为 $X_{j-1}$ 到 $X_{j}$ 仅改变了 $U_{j}$ 所对应的图像 (${\supp\,\rho_j\subset U_j}$).
+        而 $E$ 在 $U_j\times[0,1]$ 上是平凡的, 所以
+        \begin{align*}
+            E_{j-1}|_{X_{j-1}\cap(U_{j}\times[0,1])} & \cong \left(X_{j-1}\cap(U_{j}\times[0,1])\right)\times\mR^n \\
+                                                     & \cong \left(X_{j}\cap(U_{j}\times[0,1])\right)\times\mR^n \\
+                                                     & \cong E_{j}|_{X_{j}\cap(U_{j}\times[0,1])}
+        \end{align*}
+        且能取同构映射 $\psi_j$ 使得在 $\supp\,\rho_j$ 之外为恒等 (此处用空间 $X$ 中的集合指代图流形对应的集合), 因此 $\psi_j$ 能用恒同映射光滑延拓至整个向量丛, 于是
+        \begin{equation*}
+            \psi_j:E_{j-1}\cong E_j.
+        \end{equation*}
+        定义从 $E|_{X\times\{0\}}$ 到 $E|_{X\times\{1\}}$ 的映射:
+        \begin{equation*}
+            \psi:=\cdots\circ\psi_2\circ\psi_1\footnote{\text{终于知道为什么 Hatcher 上是递减定义的了.}}
+        \end{equation*}
+        因为对每个 $x\in X$ 存在 $x$ 的开领域 $V$ 使得仅有有限个 $\rho_n$ 在 $V$ 上非零, 因此在 $V$ 上 $\psi_1,\psi_2,\cdots$ 仅有有限项不是恒同映射, 从而良定义, 
+        而这给出了从 $E|_{X\times\{0\}}$ 到 $E|_{X\times\{1\}}$ 的同构.        
     \end{proof}
 
     \section{Kunn\"{e}th 公式与 Leray-Hirsch 定理}
