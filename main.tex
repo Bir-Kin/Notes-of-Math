@@ -52,19 +52,22 @@
 \newtheorem{problem}[theorem]{\indent 问题}
 \newtheorem*{remark}{\indent 注}
 \renewcommand{\proofname}{\indent \bf 证明}
-\newcommand{\me}{{\rm e}}
-\newcommand{\md}{{\rm d}}
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\npd}[3]{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} %一次偏导
+\newcommand{\npd}[3]{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}} %n次偏导, 也可以指代混合偏导
+\newcommand{\pD}[2]{\frac{{\rm D}(#1)}{{\rm D}(#2)}} %Jacobian
 \newcommand{\lc}[2]{\nabla_{#1}{#2}}
+\newcommand{\ft}[3]{{#1}_{#2},\dots,{#1}_{#3}}
+\newcommand{\cft}[3]{{#1}_{#2},\cdots,{#1}_{#3}}
 \newcommand{\id}{{\rm id}}
 \newcommand{\supp}{{\rm supp}}
+\newcommand{\mi}{\sqrt{-1}}
+\newcommand{\me}{{\rm e}}
+\newcommand{\md}{{\rm d}}
 \newcommand{\mR}{\mathbb{R}}
 \newcommand{\mC}{\mathbb{C}}
 \newcommand{\GL}{{\rm GL}}
 \newcommand{\SL}{{\rm SL}}
-\newcommand{\ft}[3]{{#1}_{#2},\dots,{#1}_{#3}}
-\newcommand{\cft}[3]{{#1}_{#2},\cdots,{#1}_{#3}}
+
 
 
 % \graphicspath{{Figures/}}
@@ -84,9 +87,9 @@
     \part{知识整理}
     % \include{chapters/LinearAlgebra} %引用高等代数章节
     % \include{chapters/RiemannianGeometry} %引用黎曼几何章节
-    % \include{chapters/ComplexGeometry} %引用复分析、复几何章节
+    \include{chapters/ComplexGeometry} %引用多复变、复几何章节
     % \include{chapters/LieGroup} %引用李群章节
-    \include{chapters/Manifolds} %引用微分流形章节
+    % \include{chapters/Manifolds} %引用微分流形章节
     % \include{chapters/AlgebraicTopology} %引用代数拓扑章节
     % \include{chapters/Graphs&Combinatorics} %引用图论与组合论章节
 

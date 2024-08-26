@@ -1,34 +1,300 @@
 \chapter{复分析、复几何}
-\section{实线性空间与复线性空间}
-    流形 $\mathbb{C}^n$ 中每点的坐标为 $(z^1,\dots,z^n)$, 记 $z^j=x^j+iy^j$, 于是 $x^1,\dots,x^n$ 和 $y^1,\dots,y^n$ 是 $\mathbb{C}^n$ 的实坐标.
-    对 $\forall p\in\mathbb{C}^n$, 切空间 $T_p\mathbb{C}^n$ 有一组基 $\pd{}{x^1},\dots,\pd{}{x^n}$, $\pd{}{y^1},\dots,\pd{}{y^n}$; 余切空间 $T^*_p\mathbb{C}$
-    有一组基 $\md x^1,\dots,\md x^n$, $\md y^1,\dots,\md y^n$.
+    \section{实线性空间与复线性空间}
+        流形 $\mathbb{C}^n$ 中每点的坐标为 $(z^1,\dots,z^n)$, 记 $z^j=x^j+iy^j$, 于是 $x^1,\dots,x^n$ 和 $y^1,\dots,y^n$ 是 $\mathbb{C}^n$ 的实坐标.
+        对 $\forall p\in\mathbb{C}^n$, 切空间 $T_p\mathbb{C}^n$ 有一组基 $\pd{}{x^1},\dots,\pd{}{x^n}$, $\pd{}{y^1},\dots,\pd{}{y^n}$; 余切空间 $T^*_p\mathbb{C}$
+        有一组基 $\md x^1,\dots,\md x^n$, $\md y^1,\dots,\md y^n$.
 
-    定义 $J_p:T_p\mathbb{C}^n\rightarrow T_p\mathbb{C}^n$
-    \begin{equation*}
-        J_p\left(\pd{}{x^j}\right)=\pd{}{y^j},\qquad J_p\left(\pd{}{y^j}\right)=-\pd{}{x^j}
-    \end{equation*}
-    它的对偶变换为 $J^*_p:T^*_p\mathbb{C}^n\rightarrow T^*_p\mathbb{C}^n$
-    \begin{equation*}
-        J^*_p\left(\md x^j\right)=-\md{y^j},\qquad J^*_p\left(\md{y^j}\right)=\md{x^j}
-    \end{equation*}
-    因为 $(J_p)^2=-\mathrm{id}$, 所以 $(J^*_p)^2=-\mathrm{id}$, 于是 $J_p$ 和 $J^*_p$ 均可对角化且特征值均为 $\pm i$.
+        定义 $J_p:T_p\mathbb{C}^n\rightarrow T_p\mathbb{C}^n$
+        \begin{equation*}
+            J_p\left(\pd{}{x^j}\right)=\pd{}{y^j},\qquad J_p\left(\pd{}{y^j}\right)=-\pd{}{x^j}
+        \end{equation*}
+        它的对偶变换为 $J^*_p:T^*_p\mathbb{C}^n\rightarrow T^*_p\mathbb{C}^n$
+        \begin{equation*}
+            J^*_p\left(\md x^j\right)=-\md{y^j},\qquad J^*_p\left(\md{y^j}\right)=\md{x^j}
+        \end{equation*}
+        因为 $(J_p)^2=-\mathrm{id}$, 所以 $(J^*_p)^2=-\mathrm{id}$, 于是 $J_p$ 和 $J^*_p$ 均可对角化且特征值均为 $\pm i$.
 
-    计算可发现 $J^*_p$ 的属于 $i$ 的特征子空间的一组基为 $\md{z^1},\dots,\md{z^n}$, 属于 $-i$ 的特征子空间的一组基为 $\md{\bar{z}^1}\dots,\md{\bar{z}^n}$, 其中
-    \begin{equation*}
-        \md{z^j}=\md{x^j}+i\md{y^j},\qquad \md{\bar{z}^j}=\md{x^j}-i\md{y^j}
-    \end{equation*}
-    于是对应地它的对偶空间 $T_p\mathbb{C}^n\otimes\mathbb{C}$ 的属于 $i$ 的特征子空间的一组基为 $\pd{}{z^1},\dots\pd{}{z^n}$, 属于 $-i$ 的特征子空间的一组基为 $\pd{}{\bar{z}^1},\dots,\pd{}{\bar{z}^n}$, 其中
-    \begin{equation*}
-        \pd{}{z^j}=\frac{1}{2}\left(\pd{}{x^j}-i\pd{}{y^j}\right),\qquad \pd{}{\bar{z}^j}=\frac{1}{2}\left(\pd{}{x^j}+i\pd{}{y^j}\right)
-    \end{equation*}
+        计算可发现 $J^*_p$ 的属于 $i$ 的特征子空间的一组基为 $\md{z^1},\dots,\md{z^n}$, 属于 $-i$ 的特征子空间的一组基为 $\md{\bar{z}^1}\dots,\md{\bar{z}^n}$, 其中
+        \begin{equation*}
+            \md{z^j}=\md{x^j}+i\md{y^j},\qquad \md{\bar{z}^j}=\md{x^j}-i\md{y^j}
+        \end{equation*}
+        于是对应地它的对偶空间 $T_p\mathbb{C}^n\otimes\mathbb{C}$ 的属于 $i$ 的特征子空间的一组基为 $\pd{}{z^1},\dots\pd{}{z^n}$, 属于 $-i$ 的特征子空间的一组基为 $\pd{}{\bar{z}^1},\dots,\pd{}{\bar{z}^n}$, 其中
+        \begin{equation}\label{partialz&partialbarz}
+            \pd{}{z^j}=\frac{1}{2}\left(\pd{}{x^j}-i\pd{}{y^j}\right),\qquad \pd{}{\bar{z}^j}=\frac{1}{2}\left(\pd{}{x^j}+i\pd{}{y^j}\right)
+        \end{equation}
+        
+        回顾 Cauchy-Riemann 方程: 设 $f=u+iv$ 是全纯函数, 则 $u(x,y),v(x,y)$ 关于 $x,y$ 的偏导数满足:
+        \begin{equation*}
+            \pd{u}{x}=\pd{v}{y},\qquad \pd{u}{y}=-\pd{v}{x}
+        \end{equation*}
+        代入 $\pd{f}{\bar{z}}$ 可得
+        \begin{equation*}
+            \pd{f}{\bar{z}}=\frac{1}{2}\left(\pd{f}{x}+i\pd{f}{y}\right)=\frac{1}{2}\left(\pd{u}{x}-\pd{v}{y}\right)+i\frac{1}{2}\left(\pd{v}{x}+i\pd{u}{y}\right)=0
+        \end{equation*}
+        于是 $f$ 全纯当且仅当 $\pd{f}{\bar{z}}\equiv0$, 推广到多元复变量即: $f(z^1,\dots,z^n)$ 是多元全纯函数当且仅当每个 $\pd{f}{\bar{z}^j}\equiv0$.
     
-    回顾 Cauchy-Riemann 方程: 设 $f=u+iv$ 是全纯函数, 则 $u(x,y),v(x,y)$ 关于 $x,y$ 的偏导数满足:
-    \begin{equation*}
-        \pd{u}{x}=\pd{v}{y},\qquad \pd{u}{y}=-\pd{v}{x}
-    \end{equation*}
-    代入 $\pd{f}{\bar{z}}$ 可得
-    \begin{equation*}
-        \pd{f}{\bar{z}}=\frac{1}{2}\left(\pd{f}{x}+i\pd{f}{y}\right)=\frac{1}{2}\left(\pd{u}{x}-\pd{v}{y}\right)+i\frac{1}{2}\left(\pd{v}{x}+i\pd{u}{y}\right)=0
-    \end{equation*}
-    于是 $f$ 全纯当且仅当 $\pd{f}{\bar{z}}\equiv0$, 推广到多元复变量即: $f(z^1,\dots,z^n)$ 是多元全纯函数当且仅当每个 $\pd{f}{\bar{z}^j}\equiv0$.
+    \section{实可微与复可微}
+        \subsection{一维情形: 复导数是复数}
+            我们知道一个复变量复值(连续)函数 $f(z)$ 可以视作一个实二元向量值(连续)函数, 即有 $1-1$ 对应 $\mathcal{C}(\mC,\mC)\leftrightarrow\mathcal{C}(\mR^2,\mR^2)$:
+            \begin{equation*}
+                f(z) = u(x+\mi y)+\mi v(x+\mi y) \leftrightarrow \begin{pmatrix} u(x,y) \\ v(x,y) \end{pmatrix}.
+            \end{equation*}
+            回顾向量值函数可微性的定义, 如果
+            \begin{equation}\label{R-differential}
+                \begin{pmatrix}
+                    u(x+\Delta x,y+\Delta y) \\ v(x+\Delta x,y+\Delta y)
+                \end{pmatrix} - 
+                \begin{pmatrix}
+                    u(x,y) \\ v(x,y)
+                \end{pmatrix} = 
+                \begin{pmatrix}
+                    a & b \\
+                    c & d
+                \end{pmatrix}\cdot
+                \begin{pmatrix}
+                    \Delta x \\ \Delta y 
+                \end{pmatrix}+
+                \begin{pmatrix}
+                    o(\sqrt{(\Delta x)^2+(\Delta y)^2}) \\ o(\sqrt{(\Delta x)^2+(\Delta y)^2})
+                \end{pmatrix},
+            \end{equation}
+            则称 $(u,v)'$ 在点 $(x,y)'$ 处可微, 
+            此时 $\begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} \pd{u}{x} & \pd{u}{y} \\ \pd{v}{x} & \pd{v}{y} \end{pmatrix}=:\frac{{\rm D}(u,v)}{{\rm D}(x,y)}$.
+
+            复变量函数可微性定义如下, 若
+            \begin{equation*}\label{C-differential}
+                f(z+\Delta z)-f(z) = w\cdot\Delta z+o(\Delta z),
+            \end{equation*}
+            其中 $w=p+\mi q\in\mC$, 则称 $f$ 在点 $z$ 处复可微.
+            
+            这里为什么要强调 $w$ 是一个复数呢? 这是为了提醒我们可以将Jacobi矩阵 $
+            \begin{pmatrix}
+                a & b \\
+                c & d
+            \end{pmatrix}$ 看成一个复数, 那什么时候能把一个实 $2\times2$ 矩阵看成一个复数呢?
+
+            事实上我们能很自然地给一个 $\mC$ 到 $\mR^{2\times2}$ 的嵌入:
+            \begin{equation*}
+                \begin{aligned}
+                    \iota:\mC &   \hookrightarrow\mR^{2\times2} \\
+                    z = a+\mi b &   \mapsto
+                    \begin{pmatrix}
+                        a & -b \\
+                        b & a
+                    \end{pmatrix}.
+                \end{aligned}
+            \end{equation*}
+            \begin{remark}
+                该嵌入是通过将数乘一个复数看成 $\mC(\cong\mR^2)$ 到自身的线性变换, 再取一组实线性无关的基 $1$、$\mi$, 
+                这个线性变换在这组基下的矩阵就是映射的像.
+            \end{remark}
+            因此能将 $\pD{u,v}{x,y}$ 视作一个复数当且仅当存在 $p,q\in\mC$ 使得
+            \begin{equation*}
+                \begin{pmatrix} \pd{u}{x} & \pd{u}{y} \\ \pd{v}{x} & \pd{v}{y} \end{pmatrix} = 
+                \begin{pmatrix} p & -q \\ q & p \end{pmatrix}
+            \end{equation*}
+            从而
+            \begin{equation*}
+                \left\{
+                    \begin{aligned}
+                        \pd{u}{x} &= \pd{v}{y} = p \\
+                        \pd{v}{x} &= -\pd{u}{y} = q
+                    \end{aligned}
+                \right.
+            \end{equation*}
+            此即 Cauchy-Riemann 方程.
+
+        \subsection{高维情形: 复微分是复线性变换}
+            一维情形下复线性变换只有数乘, 这种特殊性会让我们错失更一般的图景. 
+            设 $f(\ft{z}{1}{n}) = (f_1(\ft{z}{1}{n}),\dots,f_n(\ft{z}{1}{n}))'$ 为 $\mC^n$ 上的(连续)函数. 
+            设 $f_i = u_i+\mi v_i,\,z_j = x_j+\mi y_j$, 则 $f$ 和 $\mR^{2n}$ 到自身的(连续)映射一一对应:
+            \begin{equation*}
+                f(\ft{z}{1}{n})\leftrightarrow
+                \begin{pmatrix}
+                    u_1(\cft{x}{1}{n},\cft{y}{1}{n}) \\
+                    \vdots \\
+                    u_n(\cft{x}{1}{n},\cft{y}{1}{n}) \\
+                    v_1(\cft{x}{1}{n},\cft{y}{1}{n}) \\
+                    \vdots \\
+                    v_n(\cft{x}{1}{n},\cft{y}{1}{n}) \\
+                \end{pmatrix}
+            \end{equation*}
+            当这个映射可微时, 我们也有它的 Jacobi 矩阵:
+            \begin{equation*}
+                {\rm D}f := 
+                \begin{pmatrix}
+                    \pD{\cft{u}{1}{n}}{\cft{x}{1}{n}} & \pD{\cft{u}{1}{n}}{\cft{y}{1}{n}} \\ \\
+                    \pD{\cft{v}{1}{n}}{\cft{x}{1}{n}} & \pD{\cft{v}{1}{n}}{\cft{y}{1}{n}}
+                \end{pmatrix} = 
+                \begin{pmatrix}
+                    \pd{u_1}{x_1}   &   \cdots  &   \pd{u_1}{x_n}   &   \pd{u_1}{y_1}   &   \cdots  &   \pd{u_1}{y_n}   \\
+                    \vdots          &           &   \vdots          &   \vdots          &           &   \vdots          \\
+                    \pd{u_n}{x_1}   &   \cdots  &   \pd{u_n}{x_n}   &   \pd{u_n}{y_1}   &   \cdots  &   \pd{u_n}{y_n}   \\
+                    \pd{v_1}{x_1}   &   \cdots  &   \pd{v_1}{x_n}   &   \pd{v_1}{y_1}   &   \cdots  &   \pd{v_1}{y_n}   \\
+                    \vdots          &           &   \vdots          &   \vdots          &           &   \vdots          \\
+                    \pd{v_n}{x_1}   &   \cdots  &   \pd{v_n}{x_n}   &   \pd{v_n}{y_1}   &   \cdots  &   \pd{v_n}{y_n}   \\
+                \end{pmatrix}
+            \end{equation*}
+            $Df$ 是一个实线性变换, 我们将说明当 $f$ 复可微(等价于满足高维C-R方程)的时候 $Df$ 是复线性的.
+
+            我们先做一些线性代数的准备, $\mC^n$ 可看成 $\mR^{2n}$, 因此复线性变换能对应一个实线性变换:
+            \begin{equation}\label{CnintoR2n}
+                \begin{aligned}
+                    \iota:\mC^{n\times n}   &   \hookrightarrow\mR^{2n\times 2n} \\
+                    A + \mi B               &   \mapsto \begin{pmatrix} A & -B \\ B & A \end{pmatrix}
+                \end{aligned}
+            \end{equation}
+            特别地, 数乘一个复数 $w=p+\mi q$ (记为 $\lambda_w$) 对应的矩阵为
+            \begin{equation*}
+                \lambda_{w}\mapsto \begin{pmatrix} pI_n & -qI_n \\ qI_n & pI_n \end{pmatrix} =
+                p\begin{pmatrix} I_n & \\ & I_n \end{pmatrix} 
+                + q{\setlength{\arraycolsep}{0.8pt} \begin{pmatrix} & -I_n \\ I_n & \end{pmatrix}} =: 
+                pI_{2n} + qJ
+            \end{equation*}
+
+            反过来, 一个 $\mR^{2n}$ 上的线性变换 $\varphi$ 什么时候是复线性的呢? 将复线性的定义转化为实的语言即为:
+            \begin{equation*}
+                \varphi(\lambda_{w}(v)) = \lambda_{w}(\varphi(v)),\quad\forall\,v\in\mR^{2n},\,w\in\mC.
+            \end{equation*}
+            由 $\varphi$ 实线性, 实际上只需验证:
+            \begin{equation*}
+                \varphi(\lambda_{\mi}(v)) = \lambda_{\mi}(\varphi(v)),\quad\forall\,v\in\mR^{2n}.
+            \end{equation*}
+            写成矩阵形式即要求 $\varphi$ 对应的矩阵 $M_{\varphi}$ 满足:
+            \begin{equation}\label{C-linear}
+                M_{\varphi}\circ J = J\circ M_{\varphi}.
+            \end{equation}
+            设 $M_{\varphi} = \begin{pmatrix} A & C \\ B & D \end{pmatrix}$, 其中 $A,B,C,D\in\mR^{n\times n}$ 则
+            \begin{equation*}
+                \begin{pmatrix} A & C \\ B & D \end{pmatrix}\begin{pmatrix} & -I_n \\ I_n & \end{pmatrix} = 
+                \begin{pmatrix} & -I_n \\ I_n & \end{pmatrix}\begin{pmatrix} A & C \\ B & D \end{pmatrix} \Rightarrow
+                \left\{\begin{aligned} A &= D \\ B &= -C \end{aligned}\right. .
+            \end{equation*}
+
+            \begin{theorem}[复可微的含义]
+                设 $f$ 是 $\mC^n$ 到 $\mC^n$ 的连续映射, $f$ 作为 $\mR^{2n}$ 到 $\mR^{2n}$ 的映射是光滑的, 则 $f$ 复线性当且仅当其微分
+                ${\rm D}f$ 是复线性的.
+            \end{theorem}
+            \begin{proof}
+                由前文的讨论知 ${\rm D}f$ 复线性当且仅当它满足
+                \begin{equation*}
+                    {\rm D}f\circ J = J\circ{\rm D}f\Leftrightarrow
+                    \left\{
+                        \begin{aligned}
+                            \pD{\cft{u}{1}{n}}{\cft{x}{1}{n}} &= \pD{\cft{v}{1}{n}}{\cft{y}{1}{n}} \\
+                            \pD{\cft{v}{1}{n}}{\cft{x}{1}{n}} &= -\pD{\cft{u}{1}{n}}{\cft{y}{1}{n}}
+                        \end{aligned}
+                    \right.\Leftrightarrow{\rm D}f\text{满足C-R方程}
+                \end{equation*}
+            \end{proof}
+            \begin{remark}
+                由此可以看出复函数的全纯性确实比光滑性更强, 它要求函数的实 {\rm Jacobian} 有对称性 {\rm(\ref{C-linear})}.
+            \end{remark}
+        
+        \subsection{复导数存在与复线性}
+            回到 $1$ 维情形, 复函数 $w = f(z)$ 在点 $z$ 处的定义为
+            \begin{equation}\label{ComplexDerivative}
+                f'(z) := \lim_{\Delta z\rightarrow0}\frac{f(z+\Delta z) - f(z)}{\Delta z}
+            \end{equation}
+            现假设 $f$ 光滑(不一定全纯), 则在点 $z=x+\mi y$ 处有 (\ref{R-differential}) 成立, 
+            观察到在 (\ref{R-differential}) 两侧乘以行向量 
+            {\setlength{\arraycolsep}{0.8pt} $\begin{pmatrix} 1 & \mi \end{pmatrix}$} 能得到
+            \begin{equation*}
+                \Delta f = \Delta u+\mi\Delta v = {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix}  1 & \mi \end{pmatrix}}
+                \pD{u,v}{x,y}
+                \begin{pmatrix} \Delta x \\ \Delta y \end{pmatrix} + o\left(\sqrt{(\Delta x)^2+(\Delta y)^2}\right)
+            \end{equation*}
+            为了配出导数定义式 (\ref{ComplexDerivative}) 的除法我们需要存一个复数 $w=p+\mi q$ 使得
+            \begin{align*}
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                \pD{u,v}{x,y}
+                \begin{pmatrix} \Delta x \\ \Delta y \end{pmatrix} &= 
+                w\cdot\Delta z = (p+\mi q)(\Delta x+\mi\Delta y) \\
+                &={\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                \begin{pmatrix} p \\ q \end{pmatrix}
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                \begin{pmatrix} \Delta x \\ \Delta y \end{pmatrix}
+            \end{align*}
+            因此 
+            \begin{equation*}
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                \pD{u,v}{x,y} = 
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                \begin{pmatrix} p \\ q \end{pmatrix}
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+            \end{equation*}
+            因为此时 
+            \begin{equation*}
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}J 
+                = \begin{pmatrix} 1 & \mi \end{pmatrix}\begin{pmatrix} & -1 \\ 1 & \end{pmatrix} 
+                = \begin{pmatrix} \mi & -1 \end{pmatrix} = \mi\begin{pmatrix} 1 & \mi \end{pmatrix}}
+            \end{equation*}
+            所以
+            \begin{align*}
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}\pD{u,v}{x,y}J 
+                &= {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                \begin{pmatrix} p \\ q \end{pmatrix}
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}J \\
+                &= \mi\cdot{\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                \begin{pmatrix} p \\ q \end{pmatrix}
+                {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}} \\
+                &= \mi\cdot{\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}\pD{u,v}{x,y}J \\
+                &= {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}J\pD{u,v}{x,y}
+            \end{align*}
+            所以 Jacobian 需要满足
+            \begin{equation*}
+                \pD{u,v}{x,y}J = J\pD{u,v}{x,y}
+            \end{equation*}
+            这就与前面的复线性联系上了.
+            \begin{remark}
+                或许可以直接用
+                \begin{equation*}
+                    {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                    \pD{u,v}{x,y} = 
+                    {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                    \begin{pmatrix} p \\ q \end{pmatrix}
+                    {\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}} = 
+                    (p+\mi q)\cdot{\setlength{\arraycolsep}{0.8pt}\begin{pmatrix} 1 & \mi \end{pmatrix}}
+                \end{equation*}
+                说明 $\pD{u,v}{x,y}$ 是复线性的?
+            \end{remark}
+        
+        \subsection{全纯部分与反全纯部分} 
+            前面我们考虑了 $\mC^n$ 到 $\mR^{2n}$ 的嵌入 $\iota$ (详见(\ref{CnintoR2n})), 实 $2n$ 阶矩阵 $M\in{\rm Im}\,\iota$ 当且仅当 $MJ=JM$.
+            现在若 $MJ=-JM$, 可以算出 $M$ 形如 $\begin{pmatrix} A & B \\ B & -A \end{pmatrix}$, 定义
+            \begin{equation}\label{CnintoR2n-anti}
+                \begin{aligned}
+                    \bar{\iota}:\mC^{n\times n} &   \hookrightarrow\mR^{2n\times2n} \\
+                    A + \mi B                   &   \mapsto \begin{pmatrix} A & B \\ B & -A \end{pmatrix}
+                \end{aligned}
+            \end{equation}
+            \begin{proposition}
+                $\mR^{2n\times2n} = {\rm Im}\,\iota\oplus{\rm Im}\,\bar{\iota}$, 分别记 $\mR^{2n\times2n}$ 到两个分量的投影为 $\partial$、$\bar{\partial}$, 
+                (我想把它们分别称为全纯部分和反全纯部分)
+            \end{proposition}
+            \begin{proof}
+                ${\rm Im}\,\iota\cap{\rm Im}\,\bar{\iota}=\emptyset$ 显然, 仅需证 $\mR^{2n\times2n} = {\rm Im}\,\iota+{\rm Im}\,\bar{\iota}$,
+                当然可以待定系数
+                \begin{equation*}
+                    M =  \begin{pmatrix} M_{11} & M_{12} \\ M_{21} & M_{22} \end{pmatrix} = 
+                    \begin{pmatrix} A_1 & -B_1 \\ B_1 & A_1 \end{pmatrix} + 
+                    \begin{pmatrix} A_2 & B_2 \\ B_2 & -A_2 \end{pmatrix}
+                \end{equation*}
+                解出 $A_1,\,B_1,\,A_2,\,B_2$. 下面用 $J$ 给出一个具体表达式, 设 $M = \partial M + \bar{\partial}M$, 则
+                \begin{equation*}
+                    JMJ = J\partial MJ + J\bar{\partial}MJ = -\partial M + \bar{\partial}M
+                \end{equation*}
+                因此
+                \begin{equation}
+                    \begin{aligned}
+                        \partial M &= \frac{1}{2}(M - JMJ) \\
+                    \bar{\partial}M &= \frac{1}{2}(M + JMJ)
+                    \end{aligned}
+                \end{equation}
+            \end{proof}
+            \begin{remark}
+                最后算出来的表达式和 {\rm (\ref{partialz&partialbarz})} 很像.
+            \end{remark}
+            \begin{remark}
+                一般复光滑函数的实{\rm Jacobian}也可以分解成这两部分, 这与复几何的 $T_{\mR}X\otimes\mC = T^{1,0}X\oplus T^{0,1}X$ 有没有联系?
+            \end{remark}
