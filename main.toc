@@ -1,10 +1,4 @@
 \contentsline {part}{I\hspace {1em}知识整理}{5}{part.1}%
-\contentsline {chapter}{\numberline {1}复分析、复几何}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}实线性空间与复线性空间}{7}{section.1.1}%
-\contentsline {section}{\numberline {1.2}实可微与复可微}{8}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}一维情形: 复导数是复数}{8}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}高维情形: 复微分是复线性变换}{9}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}复导数存在与复线性}{10}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}全纯部分与反全纯部分}{11}{subsection.1.2.4}%
-\contentsline {part}{II\hspace {1em}杂题集萃}{13}{part.2}%
-\contentsline {part}{III\hspace {1em}易错知识}{15}{part.3}%
+\contentsline {part}{II\hspace {1em}杂题集萃}{7}{part.2}%
+\contentsline {chapter}{\numberline {1}尺规作图}{9}{chapter.1}%
+\contentsline {part}{III\hspace {1em}易错知识}{13}{part.3}%
