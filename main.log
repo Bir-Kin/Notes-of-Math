@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  28 AUG 2024 17:15
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  17 SEP 2024 22:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -591,7 +591,7 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./main.aux (./problems/Geometry.aux))
+(./main.aux (./chapters/AlgebraicTopology.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
@@ -712,47 +712,52 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [3] [4
 
-] [5] [6] [7
+] [5] [6]
+\openout2 = `chapters/AlgebraicTopology.aux'.
 
-] [8]
-\openout2 = `problems/Geometry.aux'.
-
- (./problems/Geometry.tex
+ (./chapters/AlgebraicTopology.tex
 Chapter 1.
-File: Figures/geo-in-D2.png Graphic file (type bmp)
-<Figures/geo-in-D2.png>
-File: Figures/geo-in-H2.png Graphic file (type bmp)
-<Figures/geo-in-H2.png>
-[9
+File: Figures/SpernerLemma.jpg Graphic file (type bmp)
+<Figures/SpernerLemma.jpg>
+[7
 
 
 ]
-File: Figures/怀新一题(1).png Graphic file (type bmp)
-<Figures/怀新一题(1).png>
-File: Figures/怀新一题(2).png Graphic file (type bmp)
-<Figures/怀新一题(2).png>
-File: Figures/怀新一题(3).png Graphic file (type bmp)
-<Figures/怀新一题(3).png>
-File: Figures/怀新一题(4).png Graphic file (type bmp)
-<Figures/怀新一题(4).png>
-)
+
+Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
+(fontspec)                Script "CJK".
+
+
+Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Script={CJK},Extension={.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 100.
- [10] [11] [12] [13
+(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 62.
+[8]) [9] [10
 
 
 
-] [14] (./main.aux (./problems/Geometry.aux))
+] [11] [12] [13
+
+] [14] (./main.aux (./chapters/AlgebraicTopology.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AEE817D2E9224FE1E16B90240A15F97C;354.
+(rerunfilecheck)             Checksum: 994D64EC7D7825FBC919E04AAEBABB21;832.
  ) 
 Here is how much of TeX's memory you used:
- 25091 strings out of 476683
- 546878 string characters out of 5807575
- 1858012 words of memory out of 5000000
- 44886 multiletter control sequences out of 15000+600000
- 520738 words of font info for 92 fonts, out of 8000000 for 9000
+ 25028 strings out of 476683
+ 543429 string characters out of 5807575
+ 1873012 words of memory out of 5000000
+ 44818 multiletter control sequences out of 15000+600000
+ 520802 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,6n,103p,480b,419s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,8n,103p,480b,409s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (14 pages).

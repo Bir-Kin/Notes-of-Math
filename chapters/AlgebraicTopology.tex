@@ -61,8 +61,19 @@
         因此异色单形个数的奇偶性与 $\partial K$ 上好单形的个数的奇偶性相同, 根据条件好单形仅在 $[v_0,\dots,v_{n-1}]$ 中出现, 由归纳假设知 $[v_0,\dots,v_{n-1}]$ 中好单形有奇数个, 命题成立.
     \end{proof}
 
-    \section{区域不变性定理(Invariance of domain)}
+    \section[Invariance of domain]{区域不变性定理(Invariance of domain)}
         该定理也是拓扑中的重要定理, 有人说它是欧式空间的内蕴性质, 用它可以区分不同维数的欧式空间.
         \begin{theorem}
             设 $U$ 为 $\mathbb{R}^n$ 中的开子集, $f:U\rightarrow\mathbb{R}^n$ 为连续单射, 则 $f(U)$ 为 $\mathbb{R}^n$ 的开子集且 $f$ 为开映射, 即 $f$ 为 $U$ 到 $f(U)$ 的同胚.
         \end{theorem}
+
+    \section[Poincar\'e Lemma]{Poincar\'e Lemma 的另一种表述形式}
+        \begin{lemma}[d-Poincar\'e lemma]
+            若整体有 $\md\omega = 0$, 则方程 $\md\eta=\omega$ 局部有解, 即在每点处存在邻域使得方程有解.
+        \end{lemma}
+        \begin{lemma}[$\overline{\partial}$-Poincar\'e lemma]
+            若整体有 $\overline{\partial}\omega = 0$, 则方程 $\overline{\partial}\eta=\omega$ 局部有解, 即在每点处存在邻域使得方程有解.
+        \end{lemma}
+        \begin{remark}
+            因此若整体有 $\md\omega = 0$, 但方程 $\md\eta=\omega$ 在整体上没有解, 这就表明空间本身限制的整体解的存在性, 也就是说我们检测到一个拓扑上的障碍.
+        \end{remark}
