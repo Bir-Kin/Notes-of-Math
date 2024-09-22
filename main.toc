@@ -1,7 +1,4 @@
 \contentsline {part}{I\hspace {1em}知识整理}{5}{part.1}%
-\contentsline {chapter}{\numberline {1}代数拓扑}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Brouwer不动点定理与Sperner引理}{7}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Invariance of domain}{9}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Poincar\'e Lemma}{9}{section.1.3}%
-\contentsline {part}{II\hspace {1em}杂题集萃}{11}{part.2}%
-\contentsline {part}{III\hspace {1em}易错知识}{13}{part.3}%
+\contentsline {section}{\numberline {0.1}乘积与扩张}{7}{section.0.1}%
+\contentsline {part}{II\hspace {1em}杂题集萃}{9}{part.2}%
+\contentsline {part}{III\hspace {1em}易错知识}{11}{part.3}%

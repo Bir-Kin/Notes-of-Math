@@ -1,0 +1,103 @@
+\section{乘积与扩张}
+    \begin{definition}[群的正合列]
+        设有群 $N$、 $Q$, 则群 $Q$ 过群 $N$ 的扩张为如下群短正合列:
+        \begin{center}
+            \begin{tikzcd}
+                1 \arrow[r] & N \arrow[r, "\iota"] & G \arrow[r, "\pi"] & Q \arrow[r] & 1
+            \end{tikzcd}
+        \end{center}
+        也即 $\iota$ 是一个单同态, $\pi$ 是一个满同态, 且 ${\rm Im}\iota=\ker\pi$.
+    \end{definition}
+
+    扩张得到的群 $G$ 不一定能写成核与商群的直积, 比如下面介绍的半直积, 它给核一个 “扭转”.
+
+    \begin{definition}[群的半直积]
+        设有群 $N$、 $Q$, 且有同态 $\varphi:Q\rightarrow\Aut(N)$ (也即群 $Q$ 通过 $\varphi$ 作用于 $N$ 上).
+        则群的半直积 $N\rtimes_{\varphi} Q$ 作为集合就是笛卡尔积 $N\times Q$, 其乘法定义为:
+        \begin{align*}
+            (N\rtimes_{\varphi}Q)\times(N\rtimes_{\varphi}Q)&\rightarrow(N\rtimes_{\varphi}Q) \\
+            (n_1,q_1)\cdot(n_2,q_2)&\mapsto(n_1\cdot\varphi(q_1)(n_2),\,q_1\cdot q_2)
+        \end{align*}
+    \end{definition}
+    \begin{remark}
+        可以验证上述定义的乘法确实构成一个群:
+        \begin{itemize}
+            \item 结合律:
+            \begin{align*}
+                &\Big((n_1,q_1)\cdot(n_2,q_2)\Big)\cdot(n_3,q_3) \\
+                =&\Big(n_1\cdot\varphi(q_1)(n_2),\,q_1q_2\Big)\cdot(n_3,q_3) \\
+                =&\Big(n_1\cdot\varphi(q_1)(n_2)\cdot\varphi(q_2q_3)(n_3),\,(q_1q_2)q_3\Big) 
+            \end{align*}
+            \begin{align*}
+                &(n_1,q_1)\cdot\Big((n_2,q_2)\cdot(n_3,q_3)\Big) \\
+                =&(n_1,q_1)\cdot\Big(n_2\cdot\varphi(q_2)(n_3),\,q_2q_3\Big) \\
+                =&\Big(n_1\cdot\varphi(q_1)(n_2\cdot\varphi(q_2)(n_3)),\,q_1(q_2q_3)\Big)
+            \end{align*}
+            而
+            \begin{align*}
+                &n_1\cdot\varphi(q_1)(n_2\cdot\varphi(q_2)(n_3)) \\
+                =&n_1\cdot\varphi(q_1)(n_2)\cdot\varphi(q_1)\varphi(q_2)(n_3) \\
+                =&n_1\cdot\varphi(q_1)(n_2)\cdot\varphi(q_2q_3)(n_3)
+            \end{align*}
+            因此上述乘法满足结合律.
+            \item 我们也可以算一下在这个乘法下的逆:
+            \begin{gather*}
+                (n_1,q_1)\cdot(n_2,q_2) = \Big(n_1\cdot\varphi(q_1)(n_2),\,q_1q_2\Big) = (e_N,e_Q) \\
+                \Rightarrow q_2 = q_1^{-1},\quad n_2 = \varphi(q_1^{-1})(n_1^{-1})
+            \end{gather*}
+        \end{itemize}
+
+        \begin{definition}[分裂的正合列]
+            我们称一个正合列
+            \begin{center}
+                \begin{tikzcd}
+                    1 \arrow[r] & N \arrow[r, "\iota"] & G \arrow[r, "\pi"] & Q \arrow[r] & 1
+                \end{tikzcd}
+            \end{center}
+            分裂, 若存在群同态 $s:Q\rightarrow G$ 使得 $\pi\circ s=\id_Q$. 也即 $Q$ 能嵌入 $G$ 中.
+        \end{definition}
+        \begin{remark}[群的半直积与分裂的正合列]
+            若有同态 $\varphi:Q\rightarrow\Aut(N)$, 则短正合列
+            \begin{center}
+                \begin{tikzcd}
+                    1 \arrow[r] & N \arrow[r, "\iota"] & N\rtimes_{\varphi}Q \arrow[r, "\pi"] & Q \arrow[r] & 1
+                \end{tikzcd}
+            \end{center}
+            是分裂的. 
+            
+            这里 $\iota:N\rightarrow N\rtimes_{\varphi}Q$ 是嵌入到第一个分量给出的同态, $\pi:N\rtimes_{\varphi}Q\rightarrow Q$ 是投射到第二个分量给出的同态.
+            分裂映射由
+            \begin{align*}
+                Q &\rightarrow N\rtimes_{\varphi}Q \\
+                q &\mapsto(e,q)
+            \end{align*}
+            给出.
+
+            反过来, 在一个分裂的群扩张中, 扩张得到的群可以写成核与商群的半直积: 设有分裂的正合列
+            \begin{center}
+                \begin{tikzcd}
+                    1 \arrow[r] & N \arrow[r, "\iota"] & G \arrow[r, "\pi",shift left=0.3ex, harpoon] & Q \arrow[r] \arrow[l, "s",shift left=0.3ex, harpoon] & 1
+                \end{tikzcd}
+            \end{center}
+            则可以定义映射
+            \begin{align*}
+                N\rtimes_{\varphi}Q&\rightleftharpoons G \\
+                (n,q)&\mapsto n\cdot s(q) \\
+                \Big(g\cdot(s\circ\pi(g))^{-1},\,\pi(g)\Big)&\reflectbox{$\mapsto$}\,g
+            \end{align*}
+            可以验证它们是互逆的群同态, 其中 $Q$ 在 $N$ 上的作用为
+            \begin{align*}
+                \varphi: Q & \rightarrow\Aut(N) \\
+                q & \mapsto\big(n\mapsto s(q)\cdot n\cdot s(q)^{-1}\big).
+            \end{align*}
+        \end{remark}
+        
+        让我们仔细解释一下每个映射的由来, 在分裂的群扩张中, $N$ 和 $Q$ 均可视作 $G$ 的一个子群, 从 $N\rtimes_{\varphi}Q$ 到 $G$ 的映射就是将两个分量重新组合到一起的过程;
+        从 $G$ 到 $N\rtimes_{\varphi}Q$ 的映射就是将两个分量提取出来的过程. 为了保证映射是群同态, 我们需要 $N\rtimes_{\varphi}Q$ 满足特定的乘法, 也就是说我们需要特定的群作用 
+        $Q\overset{\varphi}{\curvearrowright}N$. 群同态要求:
+        \begin{align*}
+            n_1\cdot s(q_1)\cdot n_2\cdot s(q_2)&=n_1\cdot \varphi(q_1)(n_2)\cdot s(q_1q_2) \\
+            \varphi(q_1)(n_2)&=s(q_1)\cdot n_2\cdot s(q_1)^{-1}
+        \end{align*}
+        因此 $\varphi$ 只能形如共轭作用, 这也解释了半直积比直积多出来的“扭转”. 注意到若 $N$ 和 $Q$ 中的元素可交换, 群作用平凡, 此时 $Q$ 自动成为 $G$ 的正规子群, 且 $N\rtimes_{\varphi}Q = N\times Q$.
+    \end{remark}
