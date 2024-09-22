@@ -1,0 +1,37 @@
+\chapter{\Lie 群}
+    \section{\Lie 群的连通性和单连通性在重要定理中的作用}
+        开始前我们先叙述 \Lie 群中的一个重要定理:
+        \begin{theorem}[\Lie 代数同态提升为 \Lie 群同态]\label{thm:Lifting-LieAlgebraHom-to-LieGroupHom}
+            设 $G,H$ 是 \Lie 群, $G$ 既连通又单连通, $\mathfrak{g},\mathfrak{h}$ 分别是 $G,H$ 的 \Lie 代数.
+            若 $\rho:\mathfrak{g}\rightarrow\mathfrak{h}$ 是一个 \Lie 代数同态, 则存在唯一的 \Lie 群同态 $\Phi:G\rightarrow H$ 
+            满足 $\md\Phi = \rho$.
+        \end{theorem}
+        需要注意定理中 $G$ 的单连通和连通的条件缺一不可.
+        \begin{example}
+            若 $G$ 不是单连通的, 则这样的 $\Phi$ 不一定存在.
+
+            \Lie 群 $(S^1,\cdot)$ 和 $(\mR,+)$ 的 \Lie 代数均为 $\mR$, 但不存在 $S^1$ 到 $\mR$ 的非平凡 \Lie 群同态. 
+            设 $\varphi:S^1\rightarrow\mR$ 为 \Lie 群同态, 取 $S^1$ 的一个稠密子群 $\me^{i\pi\mQ}:=\left\{\me^{i\pi\theta}\,\big|\,\theta\in\mQ\right\}$, 
+            则因为 $\me^{i\pi\mQ}$ 中的元素都是有限阶的, $\varphi(\me^{i\pi\mQ}) = \{0\}$. 由 $\varphi$ 的连续性可得 $\varphi(S^1) = \{0\}$. 因此 $\varphi$ 只能是平凡群同态.
+        \end{example}
+        \begin{example}
+            若 $G$ 不是连通的, 则就算每个连通分支都是单连通的也不一定存在这样的 $\Phi$.
+
+            考虑 $\mR\rtimes\mZ_2$, $\mZ_2$ 在 $\mR$ 上的作用由 $0\rightarrow\id,\,1\rightarrow-\id$ 给出. $\mR\rtimes\mZ_2$ 和 $\mR$ 的 \Lie 代数均为 $\mR$, 
+            但 $\mR$ 到自身的恒同映射无法提升为 $\mR\rtimes\mZ_2$ 到 $\mR$ 的同态.
+
+            假设这样的同态 $\varphi$ 存在, 取 $\mR\rtimes\mZ_2$ 包含 $(0,0)$ 的分支, 它是连通且单连通的 \Lie 群, 因此由定理{\rm\ref{thm:Lifting-LieAlgebraHom-to-LieGroupHom}}的唯一性知
+            \begin{align*}
+                \varphi:\mR\times\{0\}&\rightarrow\mR \\
+                (t,0)&\mapsto t,\quad\forall\,t\in\mR
+            \end{align*}
+            又因为 $(0,1)$ 是 $\mR\rtimes\mZ_2$ 的 $2$ 阶元, 因此 
+            \begin{equation*}
+                \varphi:(0,1)\mapsto 0
+            \end{equation*}
+            但是
+            \begin{equation*}
+                \varphi\Big((0,1)\cdot(t,0)\Big) = \varphi(-t,0) = -t \neq 0+t = \varphi(0,1)+\varphi(t,0),\quad t\neq0.
+            \end{equation*}
+            因此这样的群同态 $\varphi$ 不可能存在.
+        \end{example}
