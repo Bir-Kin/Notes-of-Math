@@ -1,25 +1,4 @@
 \contentsline {part}{I\hspace {1em}知识整理}{5}{part.1}%
-\contentsline {chapter}{\numberline {1}黎曼几何}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}仿射联络}{7}{section.1.1}%
-\contentsline {section}{\numberline {1.2}黎曼联络}{8}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}黎曼几何基本定理}{8}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}黎曼联络系数的坐标变换}{9}{section.1.3}%
-\contentsline {section}{\numberline {1.4}由联络定义的各种微分算子}{9}{section.1.4}%
-\contentsline {section}{\numberline {1.5}不同双曲模型之间的等距同构}{10}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}三种双曲模型}{10}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}双曲模型间的等距同构}{11}{subsection.1.5.2}%
-\contentsline {section}{\numberline {1.6}黎曼几何中的各种曲率}{11}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}曲率张量}{11}{subsection.1.6.1}%
-\contentsline {subsubsection}{缘起}{11}{section*.2}%
-\contentsline {subsubsection}{Ricci恒等式}{12}{section*.3}%
-\contentsline {subsection}{\numberline {1.6.2}黎曼曲率张量的代数性质}{13}{subsection.1.6.2}%
-\contentsline {subsubsection}{对称性}{13}{section*.4}%
-\contentsline {subsubsection}{Bianchi恒等式}{14}{section*.5}%
-\contentsline {subsection}{\numberline {1.6.3}相配二次型}{15}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4}曲率张量、挠率张量的坐标分量表示}{15}{subsection.1.6.4}%
-\contentsline {subsection}{\numberline {1.6.5}联络形式、挠率形式、曲率形式}{17}{subsection.1.6.5}%
-\contentsline {subsubsection}{各个形式的定义}{17}{section*.6}%
-\contentsline {subsubsection}{坐标变换下各个形式的变换}{18}{section*.7}%
-\contentsline {subsubsection}{用矩阵的语言重新表示联络形式}{18}{section*.8}%
-\contentsline {part}{II\hspace {1em}杂题集萃}{23}{part.2}%
-\contentsline {part}{III\hspace {1em}易错知识}{25}{part.3}%
+\contentsline {part}{II\hspace {1em}杂题集萃}{7}{part.2}%
+\contentsline {part}{III\hspace {1em}易错知识}{9}{part.3}%
+\contentsline {part}{IV\hspace {1em}亟待整理}{11}{part.4}%
