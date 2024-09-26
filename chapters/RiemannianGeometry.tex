@@ -190,10 +190,14 @@
     \end{equation*}
     我们仔细地将等号两侧的式子展开
     \begin{align*}
-        \nabla^2Z(X,Y) &= (\nabla_Y\nabla Z)(X) \\
+        \nabla^2Z(X,Y) &= (\nabla_Y\nabla Z)(X) \\ 
+        \footnotemark
         &= \nabla_Y((\nabla Z)(X)) - (\nabla Z)(\nabla_Y{X}) \\
         &= \nabla_Y\nabla_X{Z}-\nabla_{\nabla_Y{X}}Z
     \end{align*}
+    \footnotetext{这里出现了一些让人感到不适的Leibniz律, 实际上用求协变导数与张量缩并满足Leibniz律可以解释这一切.
+    $C(\nabla_Y(\nabla T)\otimes X) = \nabla_Y(C(\nabla T\otimes X))-C(\nabla T\otimes \nabla_Y X)$.}
+    
     若该仿射联络是无挠联络, 则有
     \begin{align*}
         & \nabla^2Z(X,Y) - \nabla^2Z(Y,X) \\
@@ -242,13 +246,15 @@
         =&(\mathcal{R}(Y,Z)\tau)(\cdots,\omega^i,\cdots;\cdots,X_j,\cdots) \;(\text{注意}Y,Z\text{顺序})
     \end{align*}
 \end{proposition}
-
+\begin{remark}
+    注意{\rm Ricci}恒等式并没有告诉我们更多的东西, 它只是反复推导定义式得到的.
+\end{remark}
 \subsection{黎曼曲率张量的代数性质}
 \subsubsection{对称性}
     设 $V$ 为 $n$ 维线性空间, 若 $R\in(V^*)^{\otimes4}$ 且满足:
     \begin{enumerate}
         \item $R(X,Y,Z,W) = -R(Y,X,Z,W) = -R(X,Y,W,Z) = R(Z,W,X,Y)$
-        \item $R(X,Y,Z,W) + R(Y,Z,X,W) + R(Z,X,Y,W) = 0$
+        \item 第一Bianchi恒等式: $R(X,Y,Z,W) + R(Y,Z,X,W) + R(Z,X,Y,W) = 0$
     \end{enumerate} 对 $\forall X,\,Y,\,Z,\,W\in V$ 均成立.
     则称 $R$ 为代数黎曼曲率张量, 全体代数黎曼曲率张量构成的线性空间记为 $\mathcal{R}(V^*)$.
 
@@ -307,6 +313,60 @@
         \end{equation*}
     \end{proof}
 
+\subsubsection{Bianchi恒等式}
+    Bianchi第一、第二恒等式有多种不同表现形式, 在这里统一说一下:
+    \begin{proposition}[曲率算子形式的Bianchi恒等式]\hfill\par
+        这里 $\mathcal{R}(\cdot,\cdot)\cdot$ 是一个 $(1,3)$-型张量.
+        \begin{enumerate}
+            \item $\mathcal{R}(X,Y)Z + \mathcal{R}(Y,Z)X + \mathcal{R}(Z,X)Y = 0$.
+            \item $(\nabla_X\mathcal{R})(Y,Z)W + (\nabla_Y\mathcal{R})(Z,X)W + (\nabla_Z\mathcal{R})(X,Y)W = 0$.
+        \end{enumerate}
+    \end{proposition}
+
+    \begin{proposition}[黎曼曲率张量形式的Bianchi恒等式]\hfill\par
+        这里 $R(\cdot,\cdot,\cdot,\cdot) = \langle\mathcal{R}(\cdot,\cdot)\cdot,\cdot\rangle$ 是一个 $(0,4)$-型张量.
+        \begin{enumerate}
+            \item $R(X,Y,Z,W) + R(Y,Z,X,W) + R(Z,X,Y,W) = 0$.
+            
+            事实上固定任何一个位置, 将其他三个位置轮换都正确.
+            \item $\nabla{R}(X,Y,Z,W,V) + \nabla{R}(Y,V,Z,W,X) + \nabla{R}(V,X,Z,W,Y) = 0$.
+        \end{enumerate}
+    \end{proposition}
+
+    \begin{proposition}[曲率算子在局部坐标表示下的Bianchi恒等式]\hfill\par
+        在局部坐标下曲率算子
+        \begin{gather*}
+            R = R^{i}_{jkl}\pd{}{x^i}\otimes\md{x^j}\otimes\md{x^k}\otimes\md{x^l}, \\
+            \nabla{R} = R^{i}_{jkl,h}\pd{}{x^i}\otimes\md{x^j}\otimes\md{x^k}\otimes\md{x^l}\otimes\md{x^h}.
+        \end{gather*}
+        \begin{enumerate}
+            \item $R^{i}_{jkl} + R^{i}_{klj} + R^{i}_{ljk} = 0$.
+            \item $R^{i}_{jkl,h} + R^{i}_{jlh,k} + R^{i}_{jhk,l} = 0$.
+        \end{enumerate}
+    \end{proposition}
+
+    \begin{proposition}[黎曼曲率张量在局部坐标表示下的Bianchi恒等式]\hfill\par
+        在局部坐标下黎曼曲率张量
+        \begin{gather*}
+            R = R_{ijkl}\md{x^i}\otimes\md{x^j}\otimes\md{x^k}\otimes\md{x^l}, \\
+            \nabla{R} = R_{ijkl,h}\md{x^i}\otimes\md{x^j}\otimes\md{x^k}\otimes\md{x^l}\otimes\md{x^h}.\footnotemark[2]
+        \end{gather*}
+        \begin{enumerate}
+            \item $R_{ijkl}+R_{jkil}+R_{kijl}=0$.
+            \item $R_{ijkl,h}+R_{jhkl,i}+R_{hikl,j}=0$.\footnotemark[3]
+        \end{enumerate}
+    \end{proposition}
+    \footnotetext[2]{此处存疑.}
+    \footnotetext[3]{此处存疑.}
+
+    \begin{proposition}[曲率形式的Bianchi恒等式]
+        详见{\rm(\ref{eq:Bianchi1})}和{\rm(\ref{eq:Bianchi2})}.
+    \end{proposition}
+
+    \begin{proposition}[一般向量丛上联络的Bianchi恒等式]
+        $\nabla^3=0$.
+    \end{proposition}
+    
 \subsection{相配二次型}
 
 \subsection{曲率张量、挠率张量的坐标分量表示}
