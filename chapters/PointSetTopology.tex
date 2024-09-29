@@ -1,0 +1,34 @@
+\chapter{点集拓扑}
+    \section{逆紧映射在微分流形的应用}
+        \begin{definition}[逆紧映射的定义]
+            设 $f:X\rightarrow Y$ 是拓扑空间之间的连续映射, 若对 $Y$ 中的任意紧子集 $K$, 
+            其完全原像 $f^{-1}(K)$ 都是 $X$ 中的紧集, 则称 $f$ 是逆紧的 {\rm (proper)}.
+        \end{definition}
+        \begin{proposition}[流形间的逆紧映射是闭映射]
+            设 $f:X\rightarrow Y$ 为逆紧映射且 $X,Y$ 均为 局部紧 {\rm Hausdorff} 空间, 
+            则 $f$ 是闭映射.
+
+            特别地, 若 $f$ 是流形间的逆紧映射, 则 $f$ 为闭映射.
+        \end{proposition}
+        \begin{proof}
+            设 $F$ 为 $X$ 中任意闭子集, 为证 $f(F)$ 是闭集, 等价于证 $Y\backslash f(F)$ 为开集.
+            对任意 $y\notin f(F)$, 因为 $Y$ 是局部紧空间, 存在 $y$ 的开领域 $V$ 使得 $\overline{V}$ 为紧集.
+            由条件知 $f^{-1}(\overline{V})$ 为紧集, 于是 $F\cap f^{-1}(\overline{V})$ 为紧集的闭子集, 从而仍为紧集.
+            于是 $f\big(F\cap f^{-1}(\overline{V})\big)$ 是紧集, 因为 $Y$ 是 {\rm Hausdorff} 的, 从而也是闭集.
+            令 $U = V - f\big(F\cap f^{-1}(\overline{V})\big)$, 则 $U$ 为开集, 且因为 $y\notin f(F)$, 所以 $y\in U$, 
+            即 $U$ 是 $y$ 的开邻域. 而因为 
+            \begin{equation*}
+                \Big(V - f\big(F\cap f^{-1}(\overline{V})\big)\Big) = \Big(V - f(F)\cap\overline{V}\Big) \subset\Big(V - f(F)\cap V\Big) = V - f(F)
+            \end{equation*}
+            于是 $U\cap f(F) = \emptyset$, 证毕.
+        \end{proof}
+
+        \begin{proposition}
+            逆紧的单浸入是嵌入.
+        \end{proposition}
+
+        \begin{proposition}
+            逆紧的满射如果是淹没, 则必为纤维丛的丛投影. 
+
+            这个命题的证明归功于 {\rm Ehresmann}.
+        \end{proposition}
