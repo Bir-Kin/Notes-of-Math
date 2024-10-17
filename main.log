@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  29 SEP 2024 18:44
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  17 OCT 2024 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -606,7 +606,7 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./main.aux (./chapters/PointSetTopology.aux) (./WaitingList.aux))
+(./main.aux (./chapters/RepresentationTheory&AssociativeAlgebra.aux) (./WaitingList.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
@@ -728,21 +728,21 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
  [3] [4
 
 ] [5] [6]
-\openout2 = `chapters/PointSetTopology.aux'.
+\openout2 = `chapters/RepresentationTheory&AssociativeAlgebra.aux'.
 
- (./chapters/PointSetTopology.tex
+ (./chapters/RepresentationTheory&AssociativeAlgebra.tex
 Chapter 1.
-) [7
+[7
 
 
-]
+])
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 118.
- [8
+(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 116.
+ [8] [9
 
 
 
-] [9] [10] [11
+] [10] [11
 
 ] [12] [13
 
@@ -754,17 +754,17 @@ File: Figures/20240926-223647.jpg Graphic file (type bmp)
 <Figures/20240926-223647.jpg>
 ) [15
 
-] (./main.aux (./chapters/PointSetTopology.aux) (./WaitingList.aux))
+] (./main.aux (./chapters/RepresentationTheory&AssociativeAlgebra.aux) (./WaitingList.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3751F7BE648F28A28E51021F038D3B82;595.
+(rerunfilecheck)             Checksum: 202007CAF7F70834F2183E41AD80CD17;619.
  ) 
 Here is how much of TeX's memory you used:
- 25618 strings out of 476683
- 561822 string characters out of 5807575
- 1858012 words of memory out of 5000000
- 45389 multiletter control sequences out of 15000+600000
+ 25654 strings out of 476683
+ 565130 string characters out of 5807575
+ 1860012 words of memory out of 5000000
+ 45425 multiletter control sequences out of 15000+600000
  520762 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,8n,103p,499b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,6n,103p,499b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (15 pages).

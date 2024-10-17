@@ -161,6 +161,7 @@
     \begin{remark}
         注意到在证明过程中并没有用到纤维具体是什么, 因此该证明可以逐字逐句地推广至一般纤维丛的同伦不变性.
     \end{remark}
+
     \section{Kunn\"{e}th 公式与 Leray-Hirsch 定理}
     \begin{theorem}[Kunn\"{e}th 公式]
         设流形 $M$ 有有限好覆盖, $F$ 是任意流形, 则
@@ -245,3 +246,70 @@
             H^*(S^3)\neq H^*(S^1)\otimes H^*(S^2)
         \end{equation*}
     \end{remark}
+
+    \section{微分流形中的同伦}
+    \subsection{连续映射同伦于光滑映射}
+        \begin{theorem}[用光滑映射逼近连续映射]
+            设 $f:M^m\rightarrow\mR^n$ 为任意连续映射, $\varepsilon:M\rightarrow\mR_{>0}$ 为任意误差函数.
+            则存在光滑映射 $g:M\rightarrow\mR^n$ 满足 $||f(x)-g(x)||<\varepsilon(x),\;\forall\,x\in M$.
+        \end{theorem}
+        \begin{proof}
+            对 $M$ 中任一点 $p$, 存在开邻域 $U_p$ 使得 
+            \begin{equation*}
+                ||f(q)-f(p)||<\varepsilon(p),\quad\varepsilon(q)>\frac{1}{2}\varepsilon(p),\quad\forall\,q\in U_p.
+            \end{equation*}
+            记 $\{\rho_p\}$ 为从属于开覆盖 $\{U_p\}$ 的单位分解, 定义 
+            \begin{equation*}
+                g(x) = \sum_{p}\rho_p(x)f(p) = \sum_{U_p\ni x}\rho_p(x)f(p).
+            \end{equation*}
+            则 $g(x)$ 是 $M$ 到 $\mR^n$ 的光滑映射且满足 
+            \begin{align*}
+                ||g(x)-f(x)|| &= \Big|\Big|\sum_{p}\rho_p(x)f(p) - \sum_{p}\rho_p(x)f(x)\Big|\Big| \\
+                &= \Big|\Big|\sum_{U_p\ni x}\rho_p(x)\Big(f(p)-f(x)\Big)\Big|\Big| \\
+                &\leqslant\sum_{U_p\ni x}\rho_p(x)\big|\big|f(p)-f(x)\big|\big| \\
+                &\leqslant\sum_{U_p\ni x}\rho_p(x)\varepsilon(x) \\
+                &=\varepsilon(x).
+            \end{align*}
+            $g(x)$ 即为所求.
+        \end{proof}
+        \begin{remark}
+            这个定理是单位分解的一个重要应用.
+        \end{remark}
+        \begin{remark}
+            若 $f$ 的像集 $f(M)$ 包含于 $\mR^n$ 的某个开集 $U$ 中, 则也可使 $g(M)\subset U$. 具体做法是稍微修改一下误差函数.
+            令 
+            \begin{equation*}
+                \varepsilon_1(x):=\min\left\{\varepsilon(x),\frac{1}{2}d(f(x),\mR^n\backslash U)\right\}
+            \end{equation*} 
+            以新误差函数 $\varepsilon_1$ 构造的 $g$ 自动满足 $g(M)\in U$.
+        \end{remark}
+        \begin{theorem}[用光滑映射逼近连续映射且保持在某个闭集不动]
+            设 $f:M^m\rightarrow\mR^n$ 为连续映射, 且在闭子集 $A$ 的某个开邻域 $U_0$ 内光滑, 则对任意误差函数 $\varepsilon:M\rightarrow\mR_{>0}$,
+            存在光滑映射 $g:M\rightarrow\mR^n$ 满足 $||f(x)-g(x)||<\varepsilon(x),\;\forall\,x\in M$ 且 $f\big|_A = g\big|_A$.
+        \end{theorem}
+        \begin{proof}
+            主要的构造思路保持不变, 但开覆盖有些许变化. 对任意 $p\in M\backslash A$, 取开邻域 $U_p\subset M\backslash A$ 使得 
+            \begin{equation*}
+                ||f(q)-f(p)||<\varepsilon(p),\quad\varepsilon(q)>\frac{1}{2}\varepsilon(p),\quad\forall\,q\in U_p.
+            \end{equation*}
+            设 $\{\rho_0\}\cup\{\rho_p\}_{p\notin A}$ 为从属于开覆盖 $\{U_0\}\cup\{U_p\}_{p\notin A}$ 的单位分解, 令
+            \begin{equation*}
+                g(x) = \rho_0(x)f(x) + \sum_{p\notin A}\rho_p(x)f(p).
+            \end{equation*}
+            则因为
+            \begin{equation*}
+                f(x) = \rho_0(x)f(x) + \sum_{p\notin A}\rho_p(x)f(x), 
+            \end{equation*}
+            可以验证 $g$ 满足定理要求.
+        \end{proof}
+        \begin{remark}
+            同上一个注一样, 该定理可以加强使逼近前后的像集在同一个开集中.
+        \end{remark}
+        \begin{theorem}[任意连续映射都同伦于一个光滑映射]
+            任意光滑流形间的连续映射 $f:M^m\rightarrow N^n$ 均同伦于某一个光滑映射 $g:M\rightarrow N$.
+        \end{theorem}
+        \begin{proof}
+            $f$ 在局部上可以看成是 $M$ 到 $\mR^n$ 的连续映射, 用之前的定理可以在局部上用光滑映射逼近 $f$, 则局部上可以用直线同伦连接 $f$ 与光滑映射, 对每个点的局部都如此考虑即可.
+
+            
+        \end{proof}

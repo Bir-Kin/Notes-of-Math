@@ -1,0 +1,66 @@
+\chapter{表示论与结合代数}
+    \section{幂零代数、根基、幂等元}
+        以下均设 $\mathcal{R}$ 是域 $\mathbb{F}$ 上的有限维结合代数.
+        \begin{definition}
+            {\bf 幂零元:} 若存在正整数 $k$ 使得 $\alpha^k = 0$, 则称 $\alpha$ 为幂零元.
+
+            {\bf 幂零代数:} 若存在正整数 $k$ 使得 $\mathcal{R}^k = 0$, 则称代数 $\mathcal{R}$ 是幂零代数. 
+
+            {\bf 特征幂零元:} 若 $\alpha\in\mathcal{R}$ 满足对任意 $\gamma\in\mathcal{R}$, $\gamma\alpha$ 均为幂零元, 
+            则称 $\alpha$ 为 $\mathcal{R}$ 的特征幂零元.
+
+            {\bf 根基:} $\mathcal{R}$ 的所有幂零左理想、幂零右理想、幂零理想都包含在一个更大的幂零理想中, 
+            $\mathcal{R}$ 存在唯一的极大幂零理想, 称这个极大幂零理想为 $\mathcal{R}$ 的根基, 记为 {\rm rad(}$\mathcal{R}${\rm )}.
+        \end{definition}
+        \begin{definition}
+            {\bf 幂等元:} 若元素 $e\in\mathcal{R}$ 满足 $e^2 = e$, 则称 $e$ 为幂等元.
+
+            {\bf 正交幂等元:}
+
+            {\bf 主幂等元:}
+
+            {\bf 本原幂等元:}
+
+            {\bf 中心幂等元:}
+        \end{definition}
+        \begin{proposition}
+            $\mathcal{R}$ 是幂零代数当且仅当 $\mathcal{R}$ 中的所有元素都是幂零的.
+        \end{proposition}
+        \begin{proposition}
+            若代数 $\mathcal{R}$ 不是幂零的, 则 $\mathcal{R}$ 一定存在一个幂等元.
+            进一步还能得到 $\mathcal{R}$ 有主幂等元.
+        \end{proposition}
+        \begin{proposition}
+            $\mathcal{R}$ 的根基 ${\rm rad}(\mathcal{R})$ 恰为所有特征幂零元构成的集合.
+        \end{proposition}
+        \begin{theorem}[特征幂零元的判定方法]
+            
+        \end{theorem}
+        \begin{theorem}[Pierce 分解]
+            设 $e$ 为 $\mathcal{R}$ 的幂等元, $\mathcal{N}$ 为 $\mathcal{R}$ 的根基. 则 $L_e=\{\alpha\in\mathcal{R}\,\big|\,\alpha e = 0\}$, 
+            $R_e=\{\beta\in\mathcal{R}\,\big|\,e\beta = 0\}$ 分别为 $\mathcal{R}$ 的左、右理想. 
+            $C_e = L_e\cap R_e$ 为 $\mathcal{R}$ 的子代数. 且
+
+            $1)$ 有子代数分解:
+            \begin{equation*}
+                \mathcal{R} = \mathcal{R}e\dot{+}L_e = e\mathcal{R}\dot{+}R_e = e\mathcal{R}e \dot{+} eL_e \dot{+} R_ee \dot{+} C_e.
+            \end{equation*}
+            进一步若 $e$ 为 $\mathcal{R}$ 的主幂等元, 则有 $eL_e \dot{+} R_ee \dot{+} C_e\in\mathcal{N}$.
+
+            % $2)$ $e\mathcal{R}e$ 的根基为 $e\mathcal{N}e = \mathcal{N}\cap e\mathcal{R}e$.
+
+            % $3)$ $C_e$ 的根基为 $C_e\cap\mathcal{N}$.
+        \end{theorem}
+
+        \begin{definition}
+            {\bf 半单结合代数:} 根基为零的结合代数称为半单结合代数.
+
+            {\bf 单结合代数:} 不含非平凡理想的代数称为单结合代数.
+        \end{definition}
+        \begin{remark}
+            一个结合代数是半单的当且仅当它不含特征幂零元. 当 ${\rm char}\mathbb{F} = 0$ 时, 这等价于代数的判别式不等于零.
+        \end{remark}
+        \begin{theorem}
+            半单结合代数的任意理想仍为半单的, 且任意理想都是理想直和项. 由此可知有限维半单结合代数{\bf 可分解为单代数的直和}, 且在不考虑次序的情况下该分解是{\bf 唯一}的.
+        \end{theorem}
+        
