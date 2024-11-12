@@ -310,7 +310,7 @@
 \section{外代数与Lie代数}
     设 $V$ 是 $n$ 维线性空间, 我们有 $V$ 对应的外代数 $(E(V),\,\wedge)$, 也即
     \begin{equation*}
-        E(V) = \bigoplus_{k=1}^{n}\bigwedge^{k}V
+        E(V) = \bigoplus_{k=0}^{n}\bigwedge^{k}V
     \end{equation*}
     在 $E(V)$ 中我们可以定义 “微分” $\md$, 它满足:
     \begin{itemize}
@@ -327,16 +327,16 @@
     \begin{itemize}
         \item $\md(u\wedge v) = \md u\wedge v-u\wedge\md v$
     \end{itemize}
-    再用线性性和外积使其扩充为 $E(V)$ 到自身的线性映射, 这样再加上 $\md^2 = 0$ 就可以定义一个微分运算了.
+    用线性以及与外积满足反Leibniz律使其扩充为 $E(V)$ 到自身的线性映射, 这样再加上 $\md^2 = 0$ 就可以定义一个微分运算了.
 
     接着上面的讨论, 我们考虑线性空间的对偶:
     \begin{align*}
         \md^*:\bigwedge^2V^*&\rightarrow V^*\\
-        u\wedge v&\mapsto \md(u\wedge v)=:[u,v]
+        \alpha\wedge\beta&\mapsto \md(\alpha\wedge \beta)=:[\alpha,\beta]
     \end{align*}
-    我们有意把 $\md(u\wedge v)$ 记为 $[u,v]$ 是有考量的, 因为我们有如下定理:
+    我们有意把 $\md(\alpha\wedge\beta)$ 记为 $[\alpha,\beta]$ 是有考量的, 因为我们有如下定理:
     \begin{theorem}\label{lie}
-        $\md$ 满足 $\md^2 = 0$ 当且仅当 $\md^*$ 满足 {\rm Jacobi} 恒等式, 此时 $(\mathfrak{g} = V,\,[\cdot,\cdot])$ 构成一个 {\rm Lie} 代数
+        $\md$ 满足 $\md^2 = 0$ 当且仅当 $\md^*$ 满足 {\rm Jacobi} 恒等式, 此时 $(\mathfrak{g} = V^*,\,[\cdot,\cdot])$ 构成一个 {\rm Lie} 代数
     \end{theorem}
     \begin{proof}
         对 $\forall u\in V$, 设 
@@ -347,23 +347,23 @@
         \end{align*}
         于是
         \begin{align*}
-            &[[\alpha,\beta],\gamma](u) \\
-            =&\md^*(\md^*(\alpha\wedge\beta)\wedge\gamma)(u) \\
-            =&(\md^*(\alpha\wedge\beta)\wedge\gamma)(\md u) \\
+            &[[\alpha,\beta],\gamma](u) 
+            = \md^*(\md^*(\alpha\wedge\beta)\wedge\gamma)(u) 
+            = (\md^*(\alpha\wedge\beta)\wedge\gamma)(\md u) \\
             =&(\md^*(\alpha\wedge\beta)\wedge\gamma)(\sum_{i=1}^{r}v_i\wedge w_i) \\
-            =&\sum_{i=1}^{r}(\md^*(\alpha\wedge\beta)(v_i)\gamma(w_i)-(\md^*(\alpha\wedge\beta))(w_i)\gamma(v_i)) \\
-            =&\sum_{i=1}^{r}\left((\alpha\wedge\beta)(\md v_i)\gamma(w_i)-(\alpha\wedge\beta)(\md w_i)\gamma(v_i)\right) \\
+            =&\sum_{i=1}^{r}\Big(\md^*(\alpha\wedge\beta)(v_i)\gamma(w_i)-\md^*(\alpha\wedge\beta)(w_i)\gamma(v_i)\Big) \\
+            =&\sum_{i=1}^{r}\Big((\alpha\wedge\beta)(\md v_i)\gamma(w_i)-(\alpha\wedge\beta)(\md w_i)\gamma(v_i)\Big) \\
             =&\sum_{i=1}^{r}\left((\alpha\wedge\beta)\left(\sum_{j=1}^{s}a_{ij}\wedge b_{ij}\right)\gamma(w_i)-(\alpha\wedge\beta)\left(\sum_{k=1}^{t}c_{ik}\wedge d_{ik}\right)\gamma(v_i)\right) \\
-            =&\sum_{i=1}^{r}\sum_{j=1}^{s}\alpha(a_{ij})\beta(b_{ij})\gamma(w_i)-\alpha(b_{ij})\beta(a_{ij})\gamma(w_i) \\
-            &-\sum_{i=1}^{r}\sum_{k=1}^{t}\alpha(c_{ik})\beta(d_{ik})\gamma(v_i)-\alpha(d_{ik})\beta(c_{ik})\gamma(v_i) \\
+            =&\sum_{i=1}^{r}\sum_{j=1}^{s}\Big(\alpha(a_{ij})\beta(b_{ij})\gamma(w_i)-\alpha(b_{ij})\beta(a_{ij})\gamma(w_i)\Big) \\
+            &-\sum_{i=1}^{r}\sum_{k=1}^{t}\Big(\alpha(c_{ik})\beta(d_{ik})\gamma(v_i)-\alpha(d_{ik})\beta(c_{ik})\gamma(v_i)\Big) \\
         \end{align*}
-        于是
+        轮换相加后可得
         \begin{align*}
-            &\left([[\alpha,\beta],\gamma]+[[\beta,\gamma],\alpha]+[[\gamma,\alpha],\beta]\right)(u) \\
-            =&\sum_{i=1}^{r}\sum_{j=1}^{s}\alpha(a_{ij})\beta(b_{ij})\gamma(w_i)-\alpha(b_{ij})\beta(a_{ij})\gamma(w_i)+\beta(a_{ij})\gamma(b_{ij})\alpha(w_i) \\
-            &\quad-\beta(b_{ij})\gamma(a_{ij})\alpha(w_i)+\gamma(a_{ij})\alpha(b_{ij})\beta(w_i)-\gamma(b_{ij})\alpha(a_{ij})\beta(w_i) \\
-            &-\sum_{i=1}^{r}\sum_{k=1}^{t}\alpha(c_{ik})\beta(d_{ik})\gamma(v_i)-\alpha(d_{ik})\beta(c_{ik})\gamma(v_i)+\beta(c_{ik})\gamma(d_{ik})\alpha(v_i) \\
-            &\quad-\beta(d_{ik})\gamma(c_{ik})\alpha(v_i)+\gamma(c_{ik})\alpha(d_{ik})\beta(v_i)-\gamma(d_{ik})\alpha(c_{ik})\beta(v_i) \\
+            &\Big([[\alpha,\beta],\gamma]+[[\beta,\gamma],\alpha]+[[\gamma,\alpha],\beta]\Big)(u) \\
+            =&\sum_{i=1}^{r}\sum_{j=1}^{s}\bigg(\alpha(a_{ij})\beta(b_{ij})\gamma(w_i)-\alpha(b_{ij})\beta(a_{ij})\gamma(w_i)+\beta(a_{ij})\gamma(b_{ij})\alpha(w_i) \\
+            &\quad-\beta(b_{ij})\gamma(a_{ij})\alpha(w_i)+\gamma(a_{ij})\alpha(b_{ij})\beta(w_i)-\gamma(b_{ij})\alpha(a_{ij})\beta(w_i)\bigg) \\
+            &-\sum_{i=1}^{r}\sum_{k=1}^{t}\bigg(\alpha(c_{ik})\beta(d_{ik})\gamma(v_i)-\alpha(d_{ik})\beta(c_{ik})\gamma(v_i)+\beta(c_{ik})\gamma(d_{ik})\alpha(v_i) \\
+            &\quad-\beta(d_{ik})\gamma(c_{ik})\alpha(v_i)+\gamma(c_{ik})\alpha(d_{ik})\beta(v_i)-\gamma(d_{ik})\alpha(c_{ik})\beta(v_i)\bigg) \\
             =&\sum_{i=1}^{r}\sum_{j=1}^{s}(\alpha\wedge\beta\wedge\gamma)(a_{ij}\wedge b_{ij}\wedge w_i)-\sum_{i=1}^{r}\sum_{k=1}^{t}(\alpha\wedge\beta\wedge\gamma)(c_{ik}\wedge d_{ik}\wedge v_i) \\
             =&(\alpha\wedge\beta\wedge\gamma)\left(\sum_{i=1}^{r}\sum_{j=1}^{s}a_{ij}\wedge b_{ij}\wedge w_i-\sum_{i=1}^{r}\sum_{k=1}^{t}c_{ik}\wedge d_{ik}\wedge v_i\right) \\
             =&(\alpha\wedge\beta\wedge\gamma)(\md^2 u)

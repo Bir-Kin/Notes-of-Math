@@ -1,6 +1,4 @@
 \contentsline {part}{I\hspace {1em}知识整理}{5}{part.1}%
-\contentsline {chapter}{\numberline {1}表示论与结合代数}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}幂零代数、根基、幂等元}{7}{section.1.1}%
-\contentsline {part}{II\hspace {1em}杂题集萃}{9}{part.2}%
-\contentsline {part}{III\hspace {1em}易错知识}{11}{part.3}%
-\contentsline {part}{IV\hspace {1em}亟待整理}{13}{part.4}%
+\contentsline {part}{II\hspace {1em}杂题集萃}{7}{part.2}%
+\contentsline {part}{III\hspace {1em}易错知识}{9}{part.3}%
+\contentsline {part}{IV\hspace {1em}亟待整理}{11}{part.4}%
