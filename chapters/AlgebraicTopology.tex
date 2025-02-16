@@ -15,28 +15,31 @@
         \end{figure}
     \end{lemma}
 
-    它们一个是拓扑的定理, 一个是组合的定理, 看似没有联系, 但实际上我们能证明它们是等价的: 由于 $B^n\cong K$, 我们将 Brouwer不动点定理的叙述改为 $K$ 到自身的连续映射 $f$ 必有不动点.
+    它们一个是拓扑的定理, 一个是组合的定理, 看似没有联系, 但实际上我们能证明它们是等价的: 
+    \begin{proof}[{\bf 等价性的证明}]
+        由于 $B^n\cong K$, 我们将 Brouwer不动点定理的叙述改为 $K$ 到自身的连续映射 $f$ 必有不动点.
 
-    $1^{\circ}$:Sperner引理 $\Rightarrow$ Brouwer不动点定理
+        $1^{\circ}$:Sperner引理 $\Rightarrow$ Brouwer不动点定理
+        
+        设 $K = [v_0,\dots,v_n]$ 是 $n$ 维单形, 对 $\forall x\in K$, $x=\sum_i\alpha_iv_i,\,\alpha_i\geqslant0,\,\sum_i\alpha_i=1$. 设 $f(x) = \sum_i\beta_iv_i$, 定义染色映射 
+        $\lambda(x)$ 为使得 $\alpha_i\geqslant\beta_i$ 且 $\alpha_i\neq0$ 的最小下标 $i$. 我们首先观察到在任意集合 $\{i_0,\dots,i_k\}\subseteq\{0,\dots,n\}$ 中, 
+        对 $\forall x\in[v_{i_0},\dots,v_{i_k}]$, $x$ 的坐标 $\alpha$ 满足 $\alpha_i=0,\,i\notin\{i_0,\dots,i_k\}$, 因此 $\lambda(x)$ 只可能在 $\{i_0,\dots,i_k\}$ 中取值.
+
+        固定染色 $\lambda$, 取重心重分 $K^0,K^1,\dots$, 则在每一个 $K^j$ 中 $\lambda$ 均满足引理条件, 于是存在异色单形 $\Delta^j=[u^j_0,\dots,u^j_n]$, 不妨设 $\lambda(u^j_i)=i$.
+        因为 $K$ 是紧集, 因此 $\{u^j_0\}_j$ 存在收敛子列, 不妨设就为序列本身, 由重心重分的性质知 $\Delta^j$ 的直径趋于零, 因此对所有 $i$, $\{u^j_i\}_j$ 均收敛于同一点 $u$, 即 
+        $u=\lim\limits_{j\rightarrow\infty}u^j_i,\,\forall\,i=0,\dots,n$. 由染色的定义知 $u^j_i$ 的 $v_i$ 坐标不等于零且大于等于 $f(u^j_i)$ 的, 
+        根据极限的保号性知 $u$ 的所有坐标 $\alpha_i$ 大于等于 $f(u)$ 对应的坐标 $\beta_i$, 但因为 $\sum_i\alpha_i = \sum_i\beta_i = 1$, 所以 $\alpha_i=\beta_i$, 因此 $u = f(u)$ 是 $f$ 的不动点.
+
+        $2^{\circ}$:Sperner引理 $\Leftarrow$ Brouwer不动点定理
+        
+        设 $K = [v_0,\dots,v_n]$ 是 $n$ 维单形, $\lambda$ 为满足引理要求的染色, $T$ 是 $K$ 的一个三角剖分, 则可以定义单纯映射 $f:K\rightarrow K$ 如下: 对 $\forall x\in V(T)$, 
+        定义 $f(x) = v_{\lambda(x)}$, 若 $x = \sum_{i=0}^{k}\alpha_ix_i$, 其中 $[x_0,\dots,x_k]$ 为 $T$ 的 $k$ 维单形, 定义 $f(x) = \sum_{i=0}^{k}\alpha_iv_{\lambda(x_i)}$.
+
+        若 $T$ 中没有 $n$ 维异色单形, 则 $f$ 的像集包含于 $\partial K$ 中, 且对于每个 $(n-1)$ 维面 $[v_0,\dots,\hat{v_i},\dots,v_n]$ 均有 $f([v_0,\dots,\hat{v_i},\dots,v_n])\subset[v_0,\dots,\hat{v_i},\dots,v_n]$.
+        不妨设 $\sum_{i=0}^{n}v_i = 0$, 即 $K$ 的重心是原点. 定义 $g:\partial K\rightarrow \partial K$, $g(x)$ 为射线 $xO$ 与 $\partial K$ 的另一个交点, 类比对径映射. 则 $g([v_0,\dots,\hat{v_i},\dots,v_n])\cap[v_0,\dots,\hat{v_i},\dots,v_n]=\emptyset$
+        则 $g\circ f$ 是 $K$ 到自身的连续映射, 但没有不动点, 与Brouwer不动点定理矛盾.
+    \end{proof}
     
-    设 $K = [v_0,\dots,v_n]$ 是 $n$ 维单形, 对 $\forall x\in K$, $x=\sum_i\alpha_iv_i,\,\alpha_i\geqslant0,\,\sum_i\alpha_i=1$. 设 $f(x) = \sum_i\beta_iv_i$, 定义染色映射 
-    $\lambda(x)$ 为使得 $\alpha_i\geqslant\beta_i$ 且 $\alpha_i\neq0$ 的最小下标 $i$. 我们首先观察到在任意集合 $\{i_0,\dots,i_k\}\subseteq\{0,\dots,n\}$ 中, 
-    对 $\forall x\in[v_{i_0},\dots,v_{i_k}]$, $x$ 的坐标 $\alpha$ 满足 $\alpha_i=0,\,i\notin\{i_0,\dots,i_k\}$, 因此 $\lambda(x)$ 只可能在 $\{i_0,\dots,i_k\}$ 中取值.
-
-    固定染色 $\lambda$, 取重心重分 $K^0,K^1,\dots$, 则在每一个 $K^j$ 中 $\lambda$ 均满足引理条件, 于是存在异色单形 $\Delta^j=[u^j_0,\dots,u^j_n]$, 不妨设 $\lambda(u^j_i)=i$.
-    因为 $K$ 是紧集, 因此 $\{u^j_0\}_j$ 存在收敛子列, 不妨设就为序列本身, 由重心重分的性质知 $\Delta^j$ 的直径趋于零, 因此对所有 $i$, $\{u^j_i\}_j$ 均收敛于同一点 $u$, 即 
-    $u=\lim\limits_{j\rightarrow\infty}u^j_i,\,\forall\,i=0,\dots,n$. 由染色的定义知 $u^j_i$ 的 $v_i$ 坐标不等于零且大于等于 $f(u^j_i)$ 的, 
-    根据极限的保号性知 $u$ 的所有坐标 $\alpha_i$ 大于等于 $f(u)$ 对应的坐标 $\beta_i$, 但因为 $\sum_i\alpha_i = \sum_i\beta_i = 1$, 所以 $\alpha_i=\beta_i$, 因此 $u = f(u)$ 是 $f$ 的不动点.
-
-    $2^{\circ}$:Sperner引理 $\Leftarrow$ Brouwer不动点定理
-    
-    设 $K = [v_0,\dots,v_n]$ 是 $n$ 维单形, $\lambda$ 为满足引理要求的染色, $T$ 是 $K$ 的一个三角剖分, 则可以定义单纯映射 $f:K\rightarrow K$ 如下: 对 $\forall x\in V(T)$, 
-    定义 $f(x) = v_{\lambda(x)}$, 若 $x = \sum_{i=0}^{k}\alpha_ix_i$, 其中 $[x_0,\dots,x_k]$ 为 $T$ 的 $k$ 维单形, 定义 $f(x) = \sum_{i=0}^{k}\alpha_iv_{\lambda(x_i)}$.
-
-    若 $T$ 中没有 $n$ 维异色单形, 则 $f$ 的像集包含于 $\partial K$ 中, 且对于每个 $(n-1)$ 维面 $[v_0,\dots,\hat{v_i},\dots,v_n]$ 均有 $f([v_0,\dots,\hat{v_i},\dots,v_n])\subset[v_0,\dots,\hat{v_i},\dots,v_n]$.
-    不妨设 $\sum_{i=0}^{n}v_i = 0$, 即 $K$ 的重心是原点. 定义 $g:\partial K\rightarrow \partial K$, $g(x)$ 为射线 $xO$ 与 $\partial K$ 的另一个交点, 类比对径映射. 则 $g([v_0,\dots,\hat{v_i},\dots,v_n])\cap[v_0,\dots,\hat{v_i},\dots,v_n]=\emptyset$
-    则 $g\circ f$ 是 $K$ 到自身的连续映射, 但没有不动点, 与Brouwer不动点定理矛盾.
-
     现在我们回到Sperner引理本身的证明
     \begin{proof}
         对维数 $n$ 做归纳, 我们证明对任意维数异色单形的个数均为奇数.
@@ -350,4 +353,65 @@
         %                                                                    &                                         &                                                           &  H_{n-1}(X^{n-1}) \arrow[ru, "j_{n-1}"'] &                               \\
         %                                                                    &                                         & 0 \arrow[ru]                                              &                                          &                           
         % \end{tikzcd}
+
+    \section[紧支集上同调]{紧支集上同调\footnote{这一段完全摘抄自\url{https://people.math.wisc.edu/~lmaxim/Topnotes9.pdf}}}
+    Let \( X \) be a topological space and \( K \) be a compact subset of \( X \), then
+    \begin{align*}
+        C_c^i(X) := \bigcup_K C^i(X, X \setminus K) &= \Big\{\varphi : C_i(X) \to \mathbb{Z} \, \big| \, \exists \, \text{compact } K_\varphi \subset X \\
+        &\text{ s.t. } \varphi = 0 \text{ on chains in } X \setminus K_\varphi\Big\} \subset C^i(X).
+    \end{align*}
+    Define \( \delta \varphi(\sigma) := \varphi(\partial\sigma) \), note if \( \varphi \in C_c^i(X) \), then \( \delta \varphi \) is also zero on all chains in \( X \setminus K_\varphi \) and so \( \delta \varphi \in C_c^{i+1}(X) \). Then we get a cochain subcomplex \( C_c^*(X) \).
+    \begin{definition}
+        $H_c^i(X) := H^i(C_c^*(X))$ is called the cohomology of $X$ with compact support.
+    \end{definition}
+    
+    这个定义和紧支集 de Rham 上同调是一致的.
+
+    \begin{theorem}[紧支集上同调与相对上同调\footnote{有点抽象废话的意思, 能增进我的理解, 但是无法将其与其它更熟悉的概念联系起来.}]
+        \( H_{c}^{i}(X) \cong \lim\limits_{K \in I} H^{i}(X, X \setminus K) \) where \( K \) denotes a compact subset of $X$.
+    \end{theorem}
+    \begin{proof}
+        Let \( I = \{ K \subset X \mid K \text{ compact} \} \), 
+        and then \( I \) is a directed set since it is partially ordered by inclusion, 
+        and the union of two compact sets is also compact. 
+        Let \( K \subset L \) be compact subsets of \( X \), 
+        then there is a homomorphism \( f_{KL} : H^i(X, X \setminus K) \to H^i(X, X \setminus L) \) induced by inclusion. 
+        Note since each element of \( \varinjlim H^i(X, X \setminus K) \) is represented by some cocycle \( \varphi \in C^i(X, X \setminus K) \) for some compact \( K \) with \( [\varphi] \in H_c^i(X) \), 
+        and such \( \varphi \) is the zero element in \( \varinjlim H^i(X, X \setminus K) \) iff \( \varphi = \delta \psi \) for some \( \psi \in C^i(X, X \setminus L) \), 
+        and so \( [\varphi] = 0 \) in \( H_c^i(X) \). 
+        Thus \( H_c^i(X) \cong \varinjlim H^i(X, X \setminus K) \).
+    \end{proof}
+
+    \begin{theorem}[紧支集上同调与一点紧化空间的约化上同调]\label{thm:c-cohomology_v.s._reductive_cohomology}
+        Let $X^{+} = X \cup \{\infty\}$ be one piont compactification of $X$. Then $H^*_c(X)\cong H^*(X^+,\infty)\cong\tilde{H}^*(X^+)$.
+    \end{theorem}
+    \begin{proof}
+        Consider $U\overset{open}{\hookrightarrow} X \hookleftarrow X\setminus U$, we have a short exact sequence:
+        
+        \begin{center}
+            \begin{tikzcd}[row sep = 0, column sep = 1.8em]
+                0 \arrow[r] & \Omega^*_c(U) \arrow[r]   & \Omega^*_c(X) \arrow[r]   & \Omega^*_c(X\setminus U) \arrow[r] & 0 \\
+                            & \theta \arrow[r, maps to] & j_*\theta                 &                                    &   \\
+                            &                           & \omega \arrow[r, maps to] & \iota^*\omega                      &  
+            \end{tikzcd}
+        \end{center}
+        where $j_*$ means extension by zero, $\iota^*$ is the pull-back of $\iota:X\setminus U\hookrightarrow X$.
+        So we can get a long exact sequnce of cohomology with compact support:
+        \begin{equation*}
+            \cdots\rightarrow H^n_c(U)\rightarrow H^n_c(X)\rightarrow H^n_c(X\setminus U)\rightarrow H^{n+1}_c(U)\rightarrow\cdots
+        \end{equation*}
+        In case of $X^+ = X\cup\{\infty\}\}$, we get:
+        \begin{equation*}
+            \cdots\rightarrow H^n_c(X)\rightarrow H^n_c(X^+)\rightarrow H^n_c(\{\infty\})\rightarrow H^{n+1}_c(X)\rightarrow\cdots
+        \end{equation*}
+        Since both $X^+$ and $\{\infty\}$ are compact, we have
+        \begin{equation*}
+            \cdots\rightarrow H^n_c(X)\rightarrow H^n(X^+)\rightarrow H^n(\{\infty\})\rightarrow H^{n+1}_c(X)\rightarrow\cdots
+        \end{equation*}
+        Thus 
+        \begin{equation*}
+            H^n_c(X)\cong H^n(X^+,\{\infty\})\cong\tilde{H}^n(X^+).
+        \end{equation*}
+    \end{proof}
+    类似的事情对于de Rham上同调也成立.
 
