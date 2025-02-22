@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  16 FEB 2025 21:58
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.16)  20 FEB 2025 19:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -614,7 +614,7 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./main.aux (./chapters/Manifolds.aux) (./chapters/AlgebraicTopology.aux))
+(./main.aux (./example/LieGroup.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
@@ -735,124 +735,39 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [3] [4
 
-] [5] [6]
-\openout2 = `chapters/Manifolds.aux'.
+] [5] [6] [7
 
- (./chapters/Manifolds.tex
+] [8] [9
+
+] [10]
+\openout2 = `example/LieGroup.aux'.
+
+ (./example/LieGroup.tex
 Chapter 1.
-[7
-
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 34.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 34.
-
-
-Overfull \hbox (19.91583pt too wide) in paragraph at lines 38--40
-[]$\OT1/cmr/m/n/12 1[]\OML/cmm/m/it/12 :$ \TU/FandolSong-Regular(0)/m/n/12 设 $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M; g\OT1/cmr/m/n/12 )$ \TU/FandolSong-Regular(0)/m/n/12 为 一 个 黎 曼 流 形\TU/lmr/m/n/12 , \TU/FandolSong-Regular(0)/m/n/12 取 $\OML/cmm/m/it/12 M$ \TU/FandolSong-Regular(0)/m/n/12 的 一 个 局 部 坐 标 覆 盖 $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 U[]\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 x[]; [] ; x[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\TU/lmr/m/n/12 ,
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 60.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 60.
-
-LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 63.
-[8] [9] [10]
-Overfull \hbox (21.67465pt too wide) in paragraph at lines 188--189
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
-Overfull \hbox (29.05685pt too wide) in paragraph at lines 223--224
-[][] 
- []
-
-[12] [13] [14]) [15]
-\openout2 = `chapters/AlgebraicTopology.aux'.
-
- (./chapters/AlgebraicTopology.tex [16
-
-
-
-
-]
-Chapter 2.
-File: Figures/SpernerLemma.jpg Graphic file (type bmp)
-<Figures/SpernerLemma.jpg>
-[17]
-
-Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
-(fontspec)                Script "CJK".
-
-
-Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
-(fontspec)             'FandolFang-Regular' with options
-(fontspec)             [Script={CJK},Extension={.otf}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
-[18] [19]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 104.
- (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+LaTeX Font Info:    Trying to load font information for U+euf on input line 5.
+(d:/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [20] [21]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 207.
- (d:/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [22]
-File: ./Figures/重心重分与恒同的链同论.png Graphic file (type bmp)
-<./Figures/重心重分与恒同的链同论.png>
-File: ./Figures/20240926-223647.jpg Graphic file (type bmp)
-<./Figures/20240926-223647.jpg>
- [23] [24] [25] [26]) [27] [28
+) [11
+
+
+]
+LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 97.
+ [12]) [13] [14
 
 
 
-] [29] [30] [31
-
-] [32] [33
-
-] [34] (./main.aux (./chapters/Manifolds.aux) (./chapters/AlgebraicTopology.aux))
+] [15] [16] (./main.aux (./example/LieGroup.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 02C72389D1D3D327ED0D23B1E51683DC;3156.
+(rerunfilecheck)             Checksum: B8941675BB8CEE1CCEEFEA03CBFAB539;1019.
  ) 
 Here is how much of TeX's memory you used:
- 26588 strings out of 476683
- 589349 string characters out of 5807575
- 1874012 words of memory out of 5000000
- 46308 multiletter control sequences out of 15000+600000
- 526892 words of font info for 140 fonts, out of 8000000 for 9000
+ 25669 strings out of 476683
+ 562431 string characters out of 5807575
+ 1861012 words of memory out of 5000000
+ 45444 multiletter control sequences out of 15000+600000
+ 522355 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,15n,103p,499b,1047s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,14n,103p,499b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (34 pages).
+Output written on main.pdf (16 pages).

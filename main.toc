@@ -1,21 +1,8 @@
 \contentsline {part}{I\hspace {1em}知识整理}{5}{part.1}%
-\contentsline {chapter}{\numberline {1}微分流形}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}向量丛结构群的约化}{7}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}流形可定向与结构群可约化至 ${\rm GL^+(k,\mathbb {R})}$}{8}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}黎曼度量与结构群可约化至正交群 $O(k)$}{8}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}复向量丛与近复结构, 与结构群可约化至 ${\rm GL}(k,\mathbb {C})$}{9}{subsection.1.1.3}%
-\contentsline {section}{\numberline {1.2}向量丛分类定理}{9}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}同伦的映射拉回同构的向量丛(纤维丛)}{9}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Kunn\"{e}th 公式与 Leray-Hirsch 定理}{11}{section.1.3}%
-\contentsline {section}{\numberline {1.4}微分流形中的同伦}{14}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}连续映射同伦于光滑映射}{14}{subsection.1.4.1}%
-\contentsline {section}{\numberline {1.5}Thom同构、Thom空间与Thom类}{15}{section.1.5}%
-\contentsline {chapter}{\numberline {2}代数拓扑}{17}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Brouwer不动点定理与Sperner引理}{17}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Invariance of domain}{19}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Poincar\'e Lemma}{19}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Excision Theorem in Signular Homology}{19}{section.2.4}%
-\contentsline {section}{\numberline {2.5}紧支集上同调}{26}{section.2.5}%
-\contentsline {part}{II\hspace {1em}杂题集萃}{29}{part.2}%
-\contentsline {part}{III\hspace {1em}易错知识}{31}{part.3}%
-\contentsline {part}{IV\hspace {1em}亟待整理}{33}{part.4}%
+\contentsline {part}{II\hspace {1em}杂题集萃}{7}{part.2}%
+\contentsline {part}{III\hspace {1em}易错知识}{9}{part.3}%
+\contentsline {chapter}{\numberline {1}{\rm Lie}群}{11}{chapter.1}%
+\contentsline {section}{\numberline {1.1}{\rm Lie}群的连通性和单连通性在重要定理中的作用}{11}{section.1.1}%
+\contentsline {section}{\numberline {1.2}非紧{\rm Lie}群的非完全可约表示}{12}{section.1.2}%
+\contentsline {section}{\numberline {1.3}非紧连通{\rm Lie}群不一定存在非平凡环面子群}{12}{section.1.3}%
+\contentsline {part}{IV\hspace {1em}亟待整理}{15}{part.4}%
