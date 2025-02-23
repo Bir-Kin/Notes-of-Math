@@ -1,8 +1,0 @@
-\contentsline {part}{I\hspace {1em}知识整理}{5}{part.1}%
-\contentsline {part}{II\hspace {1em}杂题集萃}{7}{part.2}%
-\contentsline {part}{III\hspace {1em}易错知识}{9}{part.3}%
-\contentsline {chapter}{\numberline {1}{\rm Lie}群}{11}{chapter.1}%
-\contentsline {section}{\numberline {1.1}{\rm Lie}群的连通性和单连通性在重要定理中的作用}{11}{section.1.1}%
-\contentsline {section}{\numberline {1.2}非紧{\rm Lie}群的非完全可约表示}{12}{section.1.2}%
-\contentsline {section}{\numberline {1.3}非紧连通{\rm Lie}群不一定存在非平凡环面子群}{12}{section.1.3}%
-\contentsline {part}{IV\hspace {1em}亟待整理}{15}{part.4}%
