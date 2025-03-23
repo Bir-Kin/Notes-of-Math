@@ -411,3 +411,29 @@
             
             因此每个 $\varphi_i\left(U_i\cap V(f)\right)$ 都是复流形, 因此 $V(f)$ 是一个复流形, 且注意到 $V(f)$ 是 $\mCP^n$ 的闭子集, 从而也是一个紧集.
         \end{example}
+
+    \section{K\"ahler几何}
+    \begin{definition}
+        Let $M$ be an almost complex manifold, $J$ be its almost complex structure. We say a metric $g$ is a Hermitian metric if it satisfies
+        \[
+            g(X,Y)=g(JX,JY)
+        \]
+    \end{definition}
+    We then extend it to be a $\mC$-bilinear tensor, i.e. $g_{\mC}\in C^{\infty}(M,\bigwedge^{\!2}T^*_{\mC}M)$. 
+
+    Now let $M$ be a complex manifold, $J$ be its natural complex structure. In a local coordinate $\{U;(z^1,\cdots z^n)\}$, let
+    \[
+        g_{i\bar{j}}:=\left\langle \pd{}{z^i},\pd{}{\bar{z}^j}\right\rangle 
+    \]
+    It satisfies
+    \begin{gather*}
+        g_{i\bar{j}}=g_{\bar{j}i} \\
+        g_{j\bar{i}}=\overline{g_{i\bar{j}}}
+    \end{gather*}
+    The first equality comes from the symmetirc of $g$. The second one comes from:
+    \begin{align*}
+    &g_{j\bar{i}} = \left\langle\pd{}{z^j},\pd{}{\bar{z}^i}\right\rangle = \left\langle\frac{1}{2}\left(\pd{}{x^j}-\sqrt{-1}\pd{}{y^j}\right), \frac{1}{2}\left(\pd{}{x^i}+\sqrt{-1}\pd{}{y^i}\right)\right\rangle \\
+    =& \frac{1}{4} \left[\left(\left\langle\pd{}{x^j},\pd{}{x^i}\right\rangle+\left\langle\pd{}{y^j},\pd{}{y^i}\right\rangle\right)+\sqrt{-1}\left(\left\langle\pd{}{x^j},\pd{}{y^i}\right\rangle-\left\langle\pd{}{y^j},\pd{}{x^i}\right\rangle\right)\right] \\
+    =& \frac{1}{4} \left[\left(\left\langle\pd{}{x^i},\pd{}{x^j}\right\rangle+\left\langle\pd{}{y^i},\pd{}{y^j}\right\rangle\right)-\sqrt{-1}\left(\left\langle\pd{}{x^i},\pd{}{y^j}\right\rangle-\left\langle\pd{}{x^j},\pd{}{y^i}\right\rangle\right)\right] \\
+    =& \overline{\left\langle\frac{1}{2}\left(\pd{}{x^i}-\sqrt{-1}\pd{}{y^i}\right), \frac{1}{2}\left(\pd{}{x^j}+\sqrt{-1}\pd{}{y^j}\right)\right\rangle} = \overline{\left\langle\pd{}{z^i},\pd{}{\bar{z}^j}\right\rangle} = \overline{g_{i\bar{j}}}
+    \end{align*}

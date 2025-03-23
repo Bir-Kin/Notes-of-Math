@@ -1,81 +1,13 @@
-\contentsline {part}{I\hspace {1em}知识整理}{7}{part.1}%
-\contentsline {chapter}{\numberline {1}高等代数}{9}{chapter.1}%
-\contentsline {section}{\numberline {1.1}线性空间、对偶空间}{9}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}对偶空间}{9}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}协变张量与反变张量}{9}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}线性映射、线性变换的矩阵表示}{11}{section.1.2}%
-\contentsline {section}{\numberline {1.3}矩阵迹的几何解释}{12}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}用矩阵定义的向量场}{12}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}迹的性质}{13}{subsection.1.3.2}%
-\contentsline {section}{\numberline {1.4}外代数与Lie代数}{14}{section.1.4}%
-\contentsline {chapter}{\numberline {2}黎曼几何}{19}{chapter.2}%
-\contentsline {section}{\numberline {2.1}仿射联络}{19}{section.2.1}%
-\contentsline {section}{\numberline {2.2}黎曼联络}{20}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}黎曼几何基本定理}{20}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}黎曼联络系数的坐标变换}{21}{section.2.3}%
-\contentsline {section}{\numberline {2.4}由联络定义的各种微分算子}{21}{section.2.4}%
-\contentsline {section}{\numberline {2.5}不同双曲模型之间的等距同构}{22}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}三种双曲模型}{22}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}双曲模型间的等距同构}{23}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}黎曼几何中的各种曲率}{23}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}曲率张量}{23}{subsection.2.6.1}%
-\contentsline {subsubsection}{缘起}{23}{section*.2}%
-\contentsline {subsubsection}{Ricci恒等式}{24}{section*.3}%
-\contentsline {subsection}{\numberline {2.6.2}黎曼曲率张量的代数性质}{25}{subsection.2.6.2}%
-\contentsline {subsubsection}{对称性}{25}{section*.4}%
-\contentsline {subsubsection}{Bianchi恒等式}{27}{section*.5}%
-\contentsline {subsection}{\numberline {2.6.3}相配二次型}{28}{subsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.6.4}曲率张量、挠率张量的坐标分量表示}{28}{subsection.2.6.4}%
-\contentsline {subsection}{\numberline {2.6.5}联络形式、挠率形式、曲率形式}{29}{subsection.2.6.5}%
-\contentsline {subsubsection}{各个形式的定义}{30}{section*.6}%
-\contentsline {subsubsection}{坐标变换下各个形式的变换}{31}{section*.7}%
-\contentsline {subsubsection}{用矩阵的语言重新表示联络形式}{31}{section*.8}%
-\contentsline {chapter}{\numberline {3}复几何、多复变}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}实线性空间与复线性空间}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}实可微与复可微}{36}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}一维情形: 复导数是复数}{36}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}高维情形: 复微分是复线性变换}{37}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}复导数存在与复线性}{38}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}全纯部分与反全纯部分}{40}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}复流形的例子}{40}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Lie群基础}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Lie群同态}{43}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Lie子群}{43}{section.4.2}%
-\contentsline {section}{\numberline {4.3}覆叠映射}{44}{section.4.3}%
-\contentsline {section}{\numberline {4.4}单连通Lie群}{44}{section.4.4}%
-\contentsline {chapter}{\numberline {5}微分流形}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}向量丛结构群的约化}{45}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}流形可定向与结构群可约化至 ${\rm GL^+(k,\mathbb {R})}$}{46}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}黎曼度量与结构群可约化至正交群 $O(k)$}{46}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}复向量丛与近复结构, 与结构群可约化至 ${\rm GL}(k,\mathbb {C})$}{47}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}向量丛分类定理}{47}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}同伦的映射拉回同构的向量丛(纤维丛)}{47}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}Kunn\"{e}th 公式与 Leray-Hirsch 定理}{49}{section.5.3}%
-\contentsline {section}{\numberline {5.4}微分流形中的同伦}{52}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}连续映射同伦于光滑映射}{52}{subsection.5.4.1}%
-\contentsline {section}{\numberline {5.5}Thom同构、Thom空间与Thom类}{53}{section.5.5}%
-\contentsline {chapter}{\numberline {6}代数拓扑}{55}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Brouwer不动点定理与Sperner引理}{55}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Invariance of domain}{57}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Poincar\'e Lemma}{57}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Excision Theorem in Signular Homology}{57}{section.6.4}%
-\contentsline {section}{\numberline {6.5}紧支集上同调}{64}{section.6.5}%
-\contentsline {section}{\numberline {6.6}乘积与扩张}{66}{section.6.6}%
-\contentsline {chapter}{\numberline {7}点集拓扑}{69}{chapter.7}%
-\contentsline {section}{\numberline {7.1}逆紧映射在微分流形的应用}{69}{section.7.1}%
-\contentsline {chapter}{\numberline {8}表示论与结合代数}{71}{chapter.8}%
-\contentsline {section}{\numberline {8.1}幂零代数、根基、幂等元}{71}{section.8.1}%
-\contentsline {part}{II\hspace {1em}杂题集萃}{73}{part.2}%
-\contentsline {chapter}{\numberline {9}组合论}{75}{chapter.9}%
-\contentsline {section}{\numberline {9.1}图论}{75}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}一个关于二部图的小问题}{75}{subsection.9.1.1}%
-\contentsline {chapter}{\numberline {10}高等代数}{77}{chapter.10}%
-\contentsline {chapter}{\numberline {11}纤维丛}{79}{chapter.11}%
-\contentsline {chapter}{\numberline {12}尺规作图}{81}{chapter.12}%
-\contentsline {part}{III\hspace {1em}易错知识}{85}{part.3}%
-\contentsline {chapter}{\numberline {13}{\rm Lie}群}{87}{chapter.13}%
-\contentsline {section}{\numberline {13.1}{\rm Lie}群的连通性和单连通性在重要定理中的作用}{87}{section.13.1}%
-\contentsline {section}{\numberline {13.2}非紧{\rm Lie}群的非完全可约表示}{88}{section.13.2}%
-\contentsline {section}{\numberline {13.3}非紧连通{\rm Lie}群不一定存在非平凡环面子群}{88}{section.13.3}%
-\contentsline {chapter}{\numberline {14}复几何}{91}{chapter.14}%
-\contentsline {part}{IV\hspace {1em}亟待整理}{93}{part.4}%
+\contentsline {part}{I\hspace {1em}知识整理}{5}{part.1}%
+\contentsline {chapter}{\numberline {1}复几何、多复变}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}实线性空间与复线性空间}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}实可微与复可微}{8}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}一维情形: 复导数是复数}{8}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}高维情形: 复微分是复线性变换}{9}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}复导数存在与复线性}{10}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}全纯部分与反全纯部分}{12}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}复流形的例子}{12}{section.1.3}%
+\contentsline {section}{\numberline {1.4}K\"ahler几何}{15}{section.1.4}%
+\contentsline {part}{II\hspace {1em}杂题集萃}{17}{part.2}%
+\contentsline {part}{III\hspace {1em}易错知识}{19}{part.3}%
+\contentsline {part}{IV\hspace {1em}亟待整理}{21}{part.4}%
