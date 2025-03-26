@@ -211,7 +211,7 @@
     下面我们从比较几何的角度给出矩阵迹的一个定义, 并用这个定义重新证明关于迹的一些性质.
 
 \subsection{用矩阵定义的向量场}
-    设矩阵  $A$ 如上, 定义 $\mathbb{R}^n$ 上的向量场 $F_A(X) := AX,\,\forall X\in\mathbb{R}^n$.
+    设矩阵  $A\in\mR^{n\times n}$, 定义 $\mathbb{R}^n$ 上的向量场 $F_A(X) := AX,\,\forall X\in\mathbb{R}^n$.
     则可证明向量场 $F_A$ 的散度 ${\rm div}(F_A)$ 是常数, 且经计算恰好是我们所熟知的 $A$ 的迹, 我们就把这个值作为矩阵迹的定义, 即
     \begin{equation*}
         {\rm div}F_A := {\rm tr}A
@@ -235,15 +235,15 @@
 
     取 $\mathbb{R}^n$ 中的平坦度量, 并取自然坐标系 $(x^1,\dots,x^n)$, 则体积形式为
     \begin{equation*}
-        \Omega = \md x^1\wedge\cdots\wedge\md x^n
+        \md V = \md x^1\wedge\cdots\wedge\md x^n
     \end{equation*}
     向量场 $F_A$ 的表达式为
     \begin{equation*}
         F_A(x^1,\dots,x^n) = \sum_{i,\,j}a_{ij}x^j\frac{\partial}{\partial x^i}\Bigg|_{(x^1,\dots,x^n)}
     \end{equation*}
-    向量场 $F_A$ 的散度定义为
+    向量场 $F_A$ 的散度定义为\footnote{这个定义和黎曼几何中的定义是一致的}
     \begin{equation}\label{div}
-        (\mathrm{div}F_A)\Omega = L_{F_A}\Omega
+        (\mathrm{div}F_A)\md V = L_{F_A}\md V
     \end{equation}
     因为
     \begin{equation*}
@@ -254,20 +254,16 @@
     \end{equation*}
     所以
     \begin{align*}
-        L_{F_A}\Omega &= L_{F_A}(\md x^1\wedge\cdots\wedge\md x^n) \\
+        L_{F_A}\md V &= L_{F_A}(\md x^1\wedge\cdots\wedge\md x^n) \\
         &= \sum_{i=1}^{n}\md x^1\wedge\cdots\wedge L_{F_A}\md x^i \wedge\cdots\wedge\md x^n \\
         &= \sum_{i=1}^{n}\md x^1\wedge\cdots\wedge\left(\sum_{k=1}^{n}a_{ik}\md x^k\right)\wedge\cdots\wedge\md x^n \\
         &= \left(\sum_{i=1}^{n}a_{ii}\right)\md x^1\wedge\cdots\wedge\md x^n \\
-        &= \left(\sum_{i=1}^{n}a_{ii}\right)\Omega
+        &= \left(\sum_{i=1}^{n}a_{ii}\right)\md V
     \end{align*}
     经过一通计算我们再次验证了这么定义矩阵迹的合理性, 更进一步地, 我们可以用外微分的语言重新证明迹的几个性质, 比如, $\mathrm{tr}AB = \mathrm{tr}BA$.
     
     \subsection{迹的性质}
-    我们知道关于李导数和李括号有等式
-    \begin{equation*}
-        [L_X, L_Y] = L_{[X,Y]}, \quad\forall X,\,Y\in C^{\infty}(\mathbb{R}^n,T\mathbb{R}^n)
-    \end{equation*}
-    设矩阵 $A = (a_{ij}),\,B = (b_{ij})$, 对应的向量场为 $F_A,\,F_B$, 因为
+    设矩阵 $A = (a_{ij}),\,B = (b_{ij})$, 对应的向量场分别为 $F_A,\,F_B$. 下面我们计算 $[F_A, F_B]$. 因为
     \begin{equation*}
         \mathrm{ent}_{ij}[A,B] = \sum_{k=1}^{n}a_{ik}b_{kj}-b_{ik}a_{kj}
     \end{equation*}
@@ -279,13 +275,17 @@
         &= \sum_{i=1}^{n}\left(\sum_{k=1}^{n}\mathrm{ent}_{ik}[B,A]x^k\right)\frac{\partial}{\partial x^i} \\
         &= F_{[B,A]}
     \end{align*}
+    我们知道关于李导数和李括号有等式 (Jacobi恒等式)
+    \begin{equation*}
+        [L_X, L_Y] = L_{[X,Y]}, \quad\forall X,\,Y\in C^{\infty}(\mathbb{R}^n,T\mathbb{R}^n)
+    \end{equation*}
     因此
     \begin{align*}
-        \mathrm{div}(F_{[B,A]})\Omega &= L_{F_{[B,A]}}\Omega \\
-        &= L_{[F_A,F_B]}\Omega \\
-        &= [L_{F_A},L_{F_B}]\Omega \\
-        &= (L_{F_A}L_{F_B}-L_{F_B}L_{F_A})\Omega \\
-        &= (\mathrm{div}F_A)(\mathrm{div}F_B)\Omega - (\mathrm{div}F_B)(\mathrm{div}F_A)\Omega \\
+        \mathrm{div}(F_{[B,A]})\md V &= L_{F_{[B,A]}}\md V \\
+        &= L_{[F_A,F_B]}\md V \\
+        &= [L_{F_A},L_{F_B}]\md V \\
+        &= (L_{F_A}L_{F_B}-L_{F_B}L_{F_A})\md V \\
+        &= (\mathrm{div}F_A)(\mathrm{div}F_B)\md V - (\mathrm{div}F_B)(\mathrm{div}F_A)\md V \\
         &= 0
     \end{align*}
     从而推出

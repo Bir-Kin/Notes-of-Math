@@ -131,6 +131,28 @@
             \bar{\Delta}f=\Delta f
         \end{equation*}
     \end{itemize}
+
+    \begin{proposition}
+        在高等代数章节我们定义向量场 $X$ 的散度为 
+        \begin{equation}\label{eq:divergence}
+            (\mathrm{div}X)\md V:= L_X\md V
+        \end{equation}
+        这个定义与联络的定义实际上是一致的.
+    \end{proposition}
+    \begin{proof}
+        在局部坐标系 $\{U;x^1,\dots,x^n\}$ 下, 体积元的表达式为
+        \begin{equation*}
+            \md V = \sqrt{G}\md x^1\wedge\cdots\wedge\md x^n.
+        \end{equation*}
+        向量场 $X = X^i\pd{}{x^i}$. 于是
+        \begin{align*}
+            L_X\md V &= L_X\Big(\sqrt{G}\md x^1\wedge\cdots\wedge\md x^n\Big) \\
+            &= X(\sqrt{G})\md x^1\wedge\cdots\wedge\md x^n + \sqrt{G}\sum_{k = 1}^{n}\md x^1\wedge\cdots\wedge L_X\md x^k\wedge\cdots\wedge\md x^n \\
+            &= \sum_{k=1}^{n}X^k\pd{\sqrt{G}}{x^k}\md x^1\wedge\cdots\wedge\md x^n + \sqrt{G}\sum_{k = 1}^{n}\pd{X^k}{x^k}\md x^1\wedge\cdots\wedge\md x^n \\
+            &= \pd{}{x^k}(\sqrt{G}X^k)\md x^1\wedge\cdots\wedge\md x^n = \frac{1}{\sqrt{G}}\pd{}{x^k}(\sqrt{G}X^k)\md V
+        \end{align*}
+        比较散度算子的局部表达式会发现这就是(\ref{eq:divergence})式.
+    \end{proof}
 \section{不同双曲模型之间的等距同构}
 \subsection{三种双曲模型}
     \begin{itemize}
@@ -143,9 +165,9 @@
 
         \item Poincare球模型 $D^n:=\left\{\left(y^1,\dots,y^n\right)\in\mathbb{R}^n\,\Big|\,|y|<1\right\}$
         
-        其上的度量定义为
+        其上的度量定义为\footnote{注意这里有一个常数 $4$, 不加上就无法与上半平面模型同构.}
         \begin{equation*}
-            g_{-1}=\frac{(\md y^1)^2+\cdots+(\md y^n)^2}{(1-|y|^2)^2}
+            g_{-1}=\frac{4\left[(\md y^1)^2+\cdots+(\md y^n)^2\right]}{(1-|y|^2)^2}
         \end{equation*}
 
         \item Minkowski模型: $\mathbb{R}^{n+1}$ 上定义Lorentz内积 $l=\langle\cdot,\cdot\rangle$
