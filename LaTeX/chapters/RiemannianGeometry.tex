@@ -450,31 +450,44 @@
     \end{itemize}
 
 \subsection{联络形式、挠率形式、曲率形式}
-    除了用某个局部坐标给出的自然坐标标架场之外, 我们也经常用一般的标架场, 设 $\{e_i\}$ 为某个领域 $U$ 上处处线性无关的 $n$ 个向量场, $\{\omega^i\}$ 为其对偶一次微分式.
+    除了用某个局部坐标给出的自然坐标标架场之外, 我们也经常用一般的标架场, 
+    设 $\{e_i\}$ 为某个领域 $U$ 上处处线性无关的 $n$ 个向量场, 
+    $\{\omega^i\}$ 为其对偶一次微分式.
     \begin{remark}
         一般地, $\{e_i\}$ 不能定义在整个 $M$ 上, 因为这要求 $M$ 的切丛平凡.
     \end{remark}
     在这种一般的标架场下, 仍可以写出坐标分量表示, 设
     \begin{equation*}
-        \lc{e_i}{e_j} = \Gamma_{ji}^{k}e_k
+        \lc{e_i}{e_j} = \Gamma_{ij}^{k}e_k
     \end{equation*}
     则
     \begin{equation*}
-        \lc{}{e_j} = \Gamma_{ji}^{k}\omega^i\otimes e_k
+        \lc{}{e_j} = \Gamma_{ij}^{k}e_k\otimes\omega^i
     \end{equation*}
+    \begin{remark}[1]
+        注意此时的 $\rm{Christoffel}$ 符号的下标顺序, $e_j$ 沿 $e_i$ 求导, 
+        对应的下标顺序是\textcolor{red}{先 $i$ 后 $j$}. 
+        强调这点的原因是对于一般的标架, 其 $\rm{Christoffel}$ 符号的下标没有对称性! 
+        这会是之后推导的一个容易出错的细节. 
+    \end{remark}
+    \begin{remark}[2]
+        在 $\nabla e_i$ 的张量展开式中, 我们选择把新出现的 $\omega^i$ \textcolor{red}{放在最后面}, 
+        因为协变微分最后一个空为协变导数下的空. 
+        同时我们在 $e_k$ 与 $\omega^k$ 中间加上张量积符号, 以表严谨. 
+    \end{remark}
     \subsubsection{各个形式的定义}
         \begin{itemize}
             \item 联络形式:
             
             令一次外微分式
             \begin{equation*}
-                \omega_{j}^{k} := \Gamma_{ji}^{k}\omega^i
+                \omega_{k}^{j} := \Gamma_{ij}^{k}\omega^i
             \end{equation*}
             于是
             \begin{equation*}
-                \lc{}{e_j} = \omega_{j}^{k}\otimes e_k
+                \lc{}{e_j} = e_k\otimes\omega_{j}^{k}
             \end{equation*}
-            我们称 $\{\omega_{j}^{k}\}$ 为黎曼流形的联络形式.
+            我们称 $\{\omega_{j}^{k}\}$ 为关于标架场 $\{e_i\}$ 的联络形式. 
             \item 挠率形式:
             
             令二次外微分式
@@ -512,7 +525,9 @@
                 \mathcal{R}(X,Y)e_i = \Omega^j_i(X,Y)e_j
             \end{equation*}
         \end{itemize}
-
+        \begin{remark}
+            同样注意联络形式定义时角标的对应, $\omega_{k}^{j} = \Gamma_{\textcolor{red}{i}j}^{k}\omega^{\textcolor{red}{i}}$
+        \end{remark}
         \begin{definition}[结构方程]
             我们称
             \begin{equation}
@@ -754,3 +769,48 @@
                 \tilde{\Omega} = a^{-1}\Omega a
             \end{equation*}
         \end{proof}
+    \subsubsection{协变导数与外微分之间的关系}
+        设 $\{e_i\}$ 是局部标架场, $\{\omega^i\}$ 是对偶标架场. 
+        $\nabla$ 是 Levi-Civita 联络, 则外微分 $d$ 满足关系式:
+        \begin{equation*}
+            d = \omega^i\wedge\lc{e_i}{}
+        \end{equation*}
+        注意到这个式子与\textcolor{red}{局部标架场的选取无关}, 特别地, 
+        如果标架场恰好由坐标给出 $e_i=\pd{}{x^i}$, 则
+        \begin{equation*}
+            d = \md x^i\wedge\lc{\pd{}{x^i}}{}
+        \end{equation*}
+        我们可以先在光滑函数和 $1$-形式上验证其正确性, 对于函数 $f$
+        \begin{equation*}
+            \md f = \pd{f}{x^i}\md x^i = \md x^i\wedge\lc{\pd{}{x^i}}{f}
+        \end{equation*}
+        对于 $1$-形式 $\omega^i$, 一方面根据联络的无挠性
+        \begin{equation*}
+            \md \omega^k = \omega^j\wedge\omega^k_j
+        \end{equation*}
+        另一方面 
+        \begin{equation*}
+            \omega^i\wedge\lc{e_i}{\omega^k} 
+            = \omega^i\wedge(-\Gamma_{ij}^{k}\omega^j) 
+            = -\omega^k_j\wedge\omega^j 
+            = \omega^j\wedge\omega^k_j. \;
+            \footnote{\text{这里必须严格按照定义来写, 
+            若克氏符的下标顺序弄混, 就有可能会相差正负号.}}
+        \end{equation*}
+        所以
+        \begin{proof}
+            对于一般的 $r$-形式 $\eta=f\omega^{I}$, 其中 $I = \{\ft{i}{1}{r}\}$, 
+            \begin{align*}
+                \mathrm{RHS} &= \omega^i\wedge\lc{e_i}{\eta} \\
+                &= \left(\omega^i\wedge\lc{e_i}{f}\right)\omega^I 
+                + f\omega^i\wedge\left(\sum_{k=1}^{r}\omega^{i_1}\wedge\cdots\wedge\wedge\cdots\wedge\omega^{i_k}\right) \\
+                &= \md f\wedge\omega^I 
+                + f\sum_{k=1}^{r}(-1)^{k-1}\omega^{i_1}\wedge\cdots\wedge(\omega^i\wedge\lc{e_i}{\omega^{i_k}})\wedge\cdots\wedge\omega^{i_k} \\
+                &= \md f\wedge\omega^I 
+                + f\sum_{k=1}^{r}(-1)^{k-1}\omega^{i_1}\wedge\cdots\wedge\md\omega^{i_k}\wedge\cdots\wedge\omega^{i_k} \\
+                &= \md \Big(f\omega^I\Big) = \mathrm{LHS}.
+            \end{align*}
+        \end{proof}
+        \begin{remark}
+            这个命题可以用其他方法证明, 比如像 {\rm \cite{梅加强2013流形与几何初步}} 的第 $137$ 页.
+        \end{remark}

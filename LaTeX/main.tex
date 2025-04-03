@@ -1,9 +1,10 @@
 % 注释的快捷键: Ctrl + /
-
 % \documentclass[a4paper]{ctexart}
+
 \documentclass[12pt,a4paper]{book}
 
 \usepackage{xeCJK}
+% \usepackage{ctex}
 \usepackage{amsmath, amssymb, amsfonts, amsthm, bbm}
 \usepackage{mathrsfs}
 \usepackage{gensymb}
@@ -15,6 +16,10 @@
 \usepackage{tikz-cd}
 \usepackage{quiver}
 \usepackage{setspace}
+
+\bibliographystyle{plain}
+
+\allowdisplaybreaks
 % \usepackage{times}
 % \usepackage{mathptmx}
 % \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
@@ -92,8 +97,6 @@
 
 % \graphicspath{{Figures/}}
 
-\allowdisplaybreaks
-
 \begin{document}
 
     \title{数学笔记}
@@ -105,7 +108,7 @@
     \newpage
     
     \part{知识整理}
-    \include{chapters/LinearAlgebra} %引用高等代数章节
+    % \include{chapters/LinearAlgebra} %引用高等代数章节
     \include{chapters/RiemannianGeometry} %引用黎曼几何章节
     % \include{chapters/ComplexGeometry} %引用多复变、复几何章节
     % \include{chapters/LieGroup} %引用李群章节
@@ -117,7 +120,7 @@
     % \include{chapters/RepresentationTheory&AssociativeAlgebra} %引用表示论与结合代数章节
 
 
-    \part{杂题集萃}
+    % \part{杂题集萃}
     % \include{problems/Combinatorics} %引用组合问题
     % \include{problems/Algebra} %引用代数问题
     % \include{problems/Topology} %引用拓扑问题
@@ -126,9 +129,11 @@
     \part{易错知识} %收录各种例子与反例，收录各种易错的小细节
     % \include{example/LieGroup} %引用李群易错知识点
     % \include{example/ComplexGeometry} %引用复几何易错知识点
+    \include{example/RiemannianGeometry} %引用黎曼几何易错知识点
 
     \part{亟待整理} %收录每天讨论后来不及整理的内容
     \include{WaitingList}
 
+    \bibliography{References}
 \end{document}
 
