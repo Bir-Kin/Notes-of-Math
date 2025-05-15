@@ -1,0 +1,112 @@
+\chapter{定向极限的对偶和对偶的逆向极限}
+\begin{definition}[定向极限]
+    设 $I$ 是一个定向集, $\{V_i\}_{i\in I}$ 是一族以 
+    $I$ 为指标集的域 $\mathbb{F}$ 上的线性空间, 
+    满足对任意 $i\ls j$ 都有线性映射 
+    $\varphi^i_j:V_i\to V_j$. 
+    基于此, 我们定义定向极限
+    \begin{equation*}
+        \varinjlim_{i\in I} V_i := 
+        \bigg(\bigoplus_{i\in I} V_i\bigg)/\sim
+    \end{equation*}
+    其中等价关系 $\sim$ 定义为:
+    \begin{equation*}
+        v_i \sim v_j \iff \exists\, k\gs i,j, 
+        \text{ s.t. }\varphi^i_k(v_i)=\varphi^j_k(v_j).
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[逆向极限]
+    条件同上, 对于对偶空间 $V_i^*:=\Hom(V_i,\mbb{F})$ 
+    当 $i\ls j$ 时, 存在 $(\varphi^i_j)^*:V_j^*\ra V_i^*$. 
+    基于此我们定义逆向极限
+    \begin{equation*}
+        \varprojlim_{i\in I} V_i^* := 
+        \Big\{\{f_i\}_{i\in I}\in\prod_{i \in I}V_i^*\,\Big|\,
+        f_i=f_j\circ\varphi^i_j,\text{ for }\forall\, i\ls j\Big\}
+    \end{equation*}
+\end{definition}
+
+从定义能看出对偶的关系, 定向极限是直和对象的商对象, 
+逆向极限是直积对象的子对象. 事实上它们确实存在自然的同构关系:
+
+\begin{theorem}[定向极限的对偶是对偶的逆向极限]
+    \begin{equation*}
+        \Hom\left(\varinjlim_{i\in I}V_i,\mathbb{F}\right)
+        \cong\varprojlim_{i\in I}\,\Hom(V_i,\mathbb{F}).
+    \end{equation*}
+    也即
+    \begin{equation*}
+        \left(\varinjlim_{i\in I}V_i\right)^*
+        \cong\varprojlim_{i\in I}V_i^*.
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    我们分别定义 
+    \begin{align*}
+        \Phi&:\left(\varinjlim V_i\right)^*
+        \ra\varprojlim V_i^*, \\
+        \Psi&:\varprojlim V_i^*\ra
+        \left(\varinjlim V_i\right)^*.
+    \end{align*}
+    并说明它们互为对方的逆映射.
+
+    $1^{\circ}$ 定义 $\Phi$: 对任意 
+    $f:\varinjlim V_i\ra\mbb{F}$, 对每一个 $i\in I$, 
+    令 
+    \begin{equation*}
+        f_i:=f\circ \pi_i:V_i\ra\varinjlim V_i\ra\mbb{F}
+    \end{equation*}
+    则当 $j\ls k$ 时, 有如下交换图
+    \begin{center}
+        \begin{tikzcd}
+            V_j \arrow[r, "\pi_j"] \arrow[d, "\varphi^j_k"'] & \varinjlim V_i \\
+            V_k \arrow[ru, "\pi_k"']                         &               
+        \end{tikzcd}
+    \end{center}
+    因此
+    \begin{equation*}
+        f_j=f\circ\pi_j
+        =f\circ\pi_k\circ\varphi^j_k=f_k\circ\varphi^j_k
+    \end{equation*}
+    这说明 $\{f_i\}_{i\in I}$ 定义了 $\varprojlim V^*_i$ 
+    中的一个元素. 
+    令 
+    \begin{equation*}
+        \Phi(f):=\{f_i\}_{i\in I}=\{f\circ\pi_i\}_{i\in I}.
+    \end{equation*}
+
+    $2^{\circ}$ 定义 $\Psi$: 对任意 
+    $\{g_i\}_{i\in I}\in\varprojlim V^*_i$, 定义 
+    \begin{equation*}
+        \Psi(\{g_i\})([v_j]):=g_j(v_j),\quad
+        \forall\,[v_j]\in\varinjlim V_i.
+    \end{equation*}
+    为了验证其良定义性, 注意到逆向极限保证了对于任意 $j\ls k$, 
+    都有 
+    \begin{equation*}
+        g_j = g_k \circ \varphi^j_k.
+    \end{equation*}
+    因此当 $[v_j]=[v_k]$ 时, 
+    由定向极限的定义知存在 $l\gs j,k$ 使得 
+    \begin{equation*}
+        \varphi^j_l(v_j)=\varphi^k_l(v_k)
+    \end{equation*} 
+    因此 
+    \begin{equation*}
+        g_j(v_j) = g_l(\varphi^j_l(v_j))
+        =g_l(\varphi^k_l(v_k))=g_k(v_k).
+    \end{equation*}
+    这说明我们的定义是良好的. 
+
+    从定义不难看出对任意 $\{g_i\}_{i\in I}\in\varprojlim V^*_i$,
+    \begin{equation*}
+        \Psi(\{g_i\})\circ\pi_j=g_j,\quad\forall\,j\in I.
+    \end{equation*}
+    因此 $\Phi\circ\Psi=\id$. 另一方面对任意 
+    $f:\varinjlim V_i\ra\mbb{F}$, 
+    \begin{equation*}
+        \Psi(\{f_i\})([v_j])=f\circ\pi_j(v_j)=f([v_j]).
+    \end{equation*}
+    因此 $\Psi\circ\Phi=\id$.
+\end{proof}

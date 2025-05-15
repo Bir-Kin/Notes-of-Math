@@ -34,6 +34,7 @@
         \tau^{i_1\cdots i_r,i}_{j_1\cdots j_s} =& \pd{\tau^{i_1\cdots i_r}_{j_1\cdots j_s}}{x^i} + \sum_{a=1}^{r}\tau^{i_1\cdots i_{a-1}k i_{a+1}\cdots i_r}_{j_1\cdots j_s}\Gamma^{i_a}_{ki} \\
         & -\sum_{b=1}^{s}\tau^{i_1\cdots i_r}_{j_i\cdots j_{b-1}k j_{b+1}\cdots j_s}\Gamma^{k}_{j_b i}
     \end{align*}
+
 \section{黎曼联络}
     定义挠率张量 $T$ 为
     \begin{equation*}
@@ -153,6 +154,7 @@
         \end{align*}
         比较散度算子的局部表达式会发现这就是(\ref{eq:divergence})式.
     \end{proof}
+
 \section{不同双曲模型之间的等距同构}
 \subsection{三种双曲模型}
     \begin{itemize}
@@ -771,10 +773,14 @@
         \end{proof}
     \subsubsection{协变导数与外微分之间的关系}
         设 $\{e_i\}$ 是局部标架场, $\{\omega^i\}$ 是对偶标架场. 
-        $\nabla$ 是 Levi-Civita 联络, 则外微分 $d$ 满足关系式:
-        \begin{equation*}
-            d = \omega^i\wedge\lc{e_i}{}
-        \end{equation*}
+        $\nabla$ 是 Levi-Civita 联络, 则有:
+        \begin{theorem}
+            外微分 $d$ 满足关系式:
+            \begin{equation*}
+                d = \omega^i\wedge\lc{e_i}{}
+            \end{equation*}
+        \end{theorem}
+        
         注意到这个式子与\textcolor{red}{局部标架场的选取无关}, 特别地, 
         如果标架场恰好由坐标给出 $e_i=\pd{}{x^i}$, 则
         \begin{equation*}
@@ -814,3 +820,39 @@
         \begin{remark}
             这个命题可以用其他方法证明, 比如像 {\rm \cite{梅加强2013流形与几何初步}} 的第 $137$ 页.
         \end{remark}
+
+\section{作用量变分和Morse指标定理}
+对一个黎曼流形 $(M,g)$, 取定其上的两个点 $p$ 和 $q$, 定义道路空间 $\Omega_{p,q}$ 为连接 $p$, $q$ 的分段光滑曲线构成的空间, 即
+\begin{align*}
+    \Omega_{p,q}:=\Big\{\omega:[0,1]\rightarrow M\,\Big|\,\omega(0)=p,\omega(1)=q, 
+    \omega \text{ is comtinuous and } \\
+    \exists\, 0=t_0<t_1<\cdots<t_k=1, 
+    \text{ such that }\omega|_{[t_{i-1},t_i]}\text{ is smooth.}\Big\}
+\end{align*}
+道路空间是一个非常 "大" 的空间, 它并没有流形结构, 
+但我们可以类比流形某点处的切空间, 定义所谓道路空间在某点处的切空间 $T\Omega_{p,q}$.
+
+首先回顾一般的切向量, 设 $X$ 是 $p$ 处的切向量, 
+那么存在一条光滑曲线 $\alpha:(-\vep,+\vep)\ra M$, 
+使得 $\alpha(0)=p$, $\dot{\alpha}(0)=X$.
+也就是说一个切向量总可以从一条经过点 $p$ 的曲线所决定. 
+把这个想法推广到道路空间上, 
+就得到了道路的变分和变分向量场的概念:
+\begin{definition}
+    我们称 $\alpha:(-\vep,+\vep)\times[0,1]\ra M$ 为 $\omega\in\Omega_{p,q}$ 的一个变分, 
+    若 $\alpha$ 是连续的, 且存在分划 $0=t_0<\cdots<t_k=1$ 
+    使得 $\alpha|_{(-\vep,+\vep)\times[t_{i-1},t_i]}$ 是光滑的. 
+    且满足 $\alpha(0,t)=\omega(t)$, $\alpha(u,\cdot)\in\Omega_{p,q}$.
+\end{definition}
+\begin{remark}
+    这里的定义自动推出 $\alpha$ 一定是一个定端变分, 
+    也即 $\alpha(u,0)\equiv p,\,\alpha(u,1)\equiv q$. 
+    一般地我们也可以定义非定端的变分.
+\end{remark}
+\begin{definition}
+    我们称 $W$ 是沿分段光滑曲线 $\omega$ 的变分向量场, 
+    若 $W(t)$ 是连续且分段光滑的, 其光滑分段和 $\omega$ 是一致的.
+\end{definition}
+\begin{remark}
+    曲线段的变分和曲线上的变分向量场之间的关系就犹如过某点的光滑曲线以及某点处的切向量.  
+\end{remark}
