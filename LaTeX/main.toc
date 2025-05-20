@@ -1,2 +1,3 @@
 \contentsline {part}{I\hspace {1em}知识整理}{5}{part.1}%
-\contentsline {chapter}{\numberline {1}定向极限的对偶和对偶的逆向极限}{7}{chapter.1}%
+\contentsline {chapter}{\numberline {1}向量丛与示性类}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Constructions of vector bundles}{7}{section.1.1}%
