@@ -1,0 +1,83 @@
+\chapter{复几何}
+\begin{problem}
+    证明 $\mathbb{C}P^n$ 上的全纯线丛 $\mathcal{O}(q)$ 的单位球丛 
+    $S\left(\mathcal{O}(q)\right)$ 微分同胚于透镜空间 $L(n,|q|)$。
+\end{problem}
+\begin{proof}
+    我们先看 $S\left(\mathcal{O}(-1)\right)$, 因为
+    \[
+        \mathcal{O}(-1)=\left\{([z],v)\,\big|\,v\in [z]\subset\mbb{C}^{n+1}\right\}
+    \]
+    其中 $[z]$ 表示 $\mbb{C}^{n+1}$ 中由 $z$ 张成的复直线,
+    因此
+    \[
+        S\left(\mathcal{O}(-1)\right)=\left\{([z],v)\,\big|\,v\in [z]\subset\mbb{C}^{n+1},|v|=1\right\}.    
+    \]
+    定义映射
+    \begin{align*}
+        f: S\left(\mathcal{O}(-1)\right) & \to S^{2n+1} \\
+        ([z],v) & \mapsto v
+    \end{align*}
+    容易看出 $f$ 是光滑的, 且是双射. 且它的逆映射
+    \begin{align*}
+        f^{-1}: S^{2n+1} & \to S\left(\mathcal{O}(-1)\right) \\
+        v & \mapsto ([v],v)
+    \end{align*}
+    也是光滑的. 因此 $f$ 是一个微分同胚. 
+    
+    我们知道 $S^1$ 在 $S^{2n+1}$ 上的作用为
+    \[
+        e^{i\theta}\cdot z = e^{i\theta}z,
+    \]
+    定义 $S^1$ 在 $S\left(\mathcal{O}(-1)\right)$ 上的作用为
+    \[
+        e^{i\theta}\cdot ([z],v) 
+        = ([e^{i\theta}z],e^{i\theta}v) 
+        = ([z],e^{i\theta}v).
+    \]
+    显然 $f$ 保持了这种作用, 因此 $f$ 是 $S^1$-等变的. 
+    因为 $\mbb{Z}_q$ 是 $S^1$ 的子群, 因此 $f$ 诱导了一个微分同胚
+    \begin{align*}
+        \tilde{f}: S\left(\mathcal{O}(-1)\right)/\mbb{Z}_q 
+        & \to S^{2n+1}/\mbb{Z}_q = L(n,q).\\
+        ([z],[v]_q) & \mapsto [v]_q.
+    \end{align*}
+    接下来只需证明
+    \[
+        S\left(\mathcal{O}(-q)\right) \cong 
+        S\left(\mathcal{O}(-1)\right)/\mbb{Z}_q.
+    \]
+    由于 $\mathcal{O}(-q)=\mathcal{O}(-1)^{\otimes q}$,
+    \begin{align*}
+        S\left(\mathcal{O}(-q)\right) 
+        &= \left\{([z],v_1\otimes\cdots\otimes v_q)\,\Big|\,
+        v_i\in [z]\subset\mbb{C}^{n+1},|v_1\otimes\cdots\otimes v_q|=1\right\} \\
+        &= \Big\{([z],\underbrace{v\otimes\cdots\otimes v}_{q\text{个 }v})
+        \,\Big|\,v\in [z]\subset\mbb{C}^{n+1},|v|=1\Big\}.
+    \end{align*}
+    定义映射
+    \begin{align*}
+        g: S\left(\mathcal{O}(-1)\right) & \to 
+        S\left(\mathcal{O}(-q)\right) \\
+        ([z],v) & \mapsto 
+        ([z],\underbrace{v\otimes\cdots\otimes v}_{q\text{个 }v}).
+    \end{align*}
+    容易看出 $g$ 是 $q$-叶覆盖映射, 且 $\mbb{Z}_q$ 在 
+    $S\left(\mathcal{O}(-1)\right)$ 上作用的轨道正好是 $g$ 的纤维,
+    因此 $g$ 诱导了一个微分同胚
+    \begin{align*}
+        \tilde{g}: S\left(\mathcal{O}(-1)\right)/\mbb{Z}_q 
+        & \to S\left(\mathcal{O}(-q)\right) \\
+        ([z],[v]_q) & \mapsto 
+        ([z],\underbrace{v\otimes\cdots\otimes v}_{q\text{个 }v}).
+    \end{align*}
+
+    综合以上讨论, 我们得到了微分同胚
+    \[
+        S\left(\mathcal{O}(-q)\right) \cong 
+        S\left(\mathcal{O}(-1)\right)/\mbb{Z}_q \cong 
+        S^{2n+1}/\mbb{Z}_q \cong 
+        L(n,q).
+    \]
+    因此 $S\left(\mathcal{O}(-q)\right)$ 微分同胚于透镜空间 $L(n,q)$.
+\end{proof}
